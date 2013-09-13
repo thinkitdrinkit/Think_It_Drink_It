@@ -82,7 +82,7 @@
             if (tallan != null) {
                 tallan.addEventListener('click', function (args) {
                     // Go to Tallan.com
-                    var uri = Windows.Foundation.Uri("http://www.tallan.com");
+                    var uri = Windows.Foundation.Uri("http://www.thinkitdrinkit.com");
                     Windows.System.Launcher.launchUriAsync(uri);
                 });
             }
