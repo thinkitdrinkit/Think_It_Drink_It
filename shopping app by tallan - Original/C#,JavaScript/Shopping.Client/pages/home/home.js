@@ -1,11 +1,11 @@
 ﻿//*************************************************************************
 //
-//    Copyright (c) 2013 Tallan Inc.  All rights reserved. 
+//    Copyright (c) 2013 ThinkitDrinkit Inc.  All rights reserved. 
 //
 //    Use of this sample source code is subject to the terms of the Microsoft Limited Public License
 //    at http://msdn.microsoft.com/en-us/cc300389.aspx#P and is provided AS-IS. 
 //
-//    For more information about Tallan, visit our website, http://tallan.com/.     
+//    For more information about ThinkitDrinkit, visit our website, http://ThinkitDrinkit.com/.     
 //
 //    To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/jj635241. 
 //
@@ -81,7 +81,7 @@
             var tallan = document.querySelector("#TallanLink");
             if (tallan != null) {
                 tallan.addEventListener('click', function (args) {
-                    // Go to Tallan.com
+                    // Go to ThinkitDrinkit.com
                     var uri = Windows.Foundation.Uri("http://www.thinkitdrinkit.com");
                     Windows.System.Launcher.launchUriAsync(uri);
                 });
