@@ -321,7 +321,7 @@
     
      .billingEntry input, .billingEntry select {
     display: block;
-    margin: 10px 5px 10x 0;
+    margin: 10px 5px 10px 0;
 }  
 
     .billingEntry label.field-first,
@@ -364,7 +364,7 @@
     }
 
     .billingEntry article {
-        padding: none;
+        padding: 0;
        }
 
     .billingEntry section button {
