@@ -1,4 +1,16 @@
-﻿//*************************************************************************
+﻿/// <reference path="api.js" />
+/// <reference path="binding.js" />
+/// <reference path="designModeShim.js" />
+/// <reference path="extendedSplash.js" />
+/// <reference path="navigator.js" />
+/// <reference path="noInternet.js" />
+/// <reference path="offline_services.js" />
+/// <reference path="services.js" />
+/// <reference path="sharingProvider.js" />
+/// <reference path="../Scripts/underscore.min.js" />
+/// <reference path="../Scripts/underscore.js" />
+/// <reference path="tileUpdater.js" />
+//*************************************************************************
 //
 //    Copyright (c) 2013 Tallan Inc.  All rights reserved. 
 //
