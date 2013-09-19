@@ -1,0 +1,74 @@
+﻿/*************************************************************************
+*
+*    Copyright (c) 2013 ThinkitDrinkit Inc.  All rights reserved. 
+*
+*    Use of this sample source code is subject to the terms of the Microsoft Limited Public License
+*    at http://msdn.microsoft.com/en-us/cc300389.aspx#P and is provided AS-IS. 
+*
+*    For more information about ThinkitDrinkit, visit our website, http://ThinkitDrinkit.com/.     
+*
+*    To see the topic that inspired this sample app, go to http://msdn.microsoft.com/en-us/library/windows/apps/jj635241. 
+*
+************************************************************************/
+
+
+.mainNav section[role=main] {
+
+	-ms-grid-columns: 1fr 550px 1fr;
+	-ms-grid-rows: 100px 500px 2fr;
+	display: -ms-grid;
+}
+
+.mainNav div {
+	-ms-grid-column: 2;
+	-ms-grid-row: 2;
+	background-color: #eee;
+	padding: 20px 30px;
+	-ms-transform: skew(2deg);
+}
+.mainNav h1 {
+	margin: 0 auto 30px auto;
+	font-size: 24pt;
+	-ms-transform: skew(-2deg);
+}
+.mainNav p {
+	font-size: 12pt;
+	-ms-transform: skew(-2deg);
+	letter-spacing: 1px;
+}
+.mainNav button {
+	border: none;
+	background-color: #60574c;
+	color: #fff;
+	width: 115px;
+	height: 40px;
+	padding: 0;
+	text-transform: uppercase;
+	margin: 60px 40% auto 40%;
+	-ms-transform: skew(-2deg);
+
+}
+
+
+.mainNav button:hover {
+	background-color: #786d60;
+}
+
+.mainNav button:hover:active {
+	background-color: #786d60;
+}
+
+@media (-ms-view-state: snapped) {
+    .mainNav section[role=main] {
+        display: block;
+        width: 280px;
+    }
+    .mainNav div {
+        height: 400px;
+        margin-top: 100px;
+    }
+    .mainNav button {
+        margin-left: 40px;
+        margin-top: 0;
+    }
+}

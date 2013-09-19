@@ -1450,6 +1450,9 @@
     <Content Include="js\tileUpdater.js" />
     <Content Include="pages\settings\settings-flyout.html" />
     <Content Include="pages\settings\settings-flyout.js" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.css" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.html" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.js" />
     <Content Include="pages\thankYou\thankYou.css" />
     <Content Include="pages\thankYou\thankYou.html" />
     <Content Include="pages\thankYou\thankYou.js" />

@@ -15,6 +15,7 @@
 /// <reference path="ms-appx://Microsoft.WinJS.1.0/js/base.js" />
 /// <reference path="ms-appx://Microsoft.WinJS.1.0/js/ui.js" />
 /// <reference path="homeViewModel.js" />
+/// <reference path="../../Scripts/underscore.js" />
 
 (function () {
     "use strict";

@@ -1,7 +1,7 @@
 [
 	{
 	    "ProductId": "1",
-	    "Name": "Fedora",
+	    "Name": "Fedora",		
 	    "Area": "For the Head",
 	    "AreaImage": "http://localhost:2139/Images/Areas/3_head.png",
 	    "AreaAppBarImage": "http://localhost:2139/Images/Appbar/head.png",
