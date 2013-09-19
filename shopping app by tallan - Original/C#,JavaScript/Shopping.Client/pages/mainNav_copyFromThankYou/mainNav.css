@@ -12,31 +12,31 @@
 ************************************************************************/
 
 
-.thankYou section[role=main] {
+.mainNav section[role=main] {
 
 	-ms-grid-columns: 1fr 550px 1fr;
 	-ms-grid-rows: 100px 500px 2fr;
 	display: -ms-grid;
 }
 
-.thankYou div {
+.mainNav div {
 	-ms-grid-column: 2;
 	-ms-grid-row: 2;
 	background-color: #eee;
 	padding: 20px 30px;
 	-ms-transform: skew(2deg);
 }
-.thankYou h1 {
+.mainNav h1 {
 	margin: 0 auto 30px auto;
 	font-size: 24pt;
 	-ms-transform: skew(-2deg);
 }
-.thankYou p {
+.mainNav p {
 	font-size: 12pt;
 	-ms-transform: skew(-2deg);
 	letter-spacing: 1px;
 }
-.thankYou button {
+.mainNav button {
 	border: none;
 	background-color: #60574c;
 	color: #fff;
@@ -50,24 +50,24 @@
 }
 
 
-.thankYou button:hover {
+.mainNav button:hover {
 	background-color: #786d60;
 }
 
-.thankYou button:hover:active {
+.mainNav button:hover:active {
 	background-color: #786d60;
 }
 
 @media (-ms-view-state: snapped) {
-    .thankYou section[role=main] {
+    .mainNav section[role=main] {
         display: block;
         width: 280px;
     }
-    .thankYou div {
+    .mainNav div {
         height: 400px;
         margin-top: 100px;
     }
-    .thankYou button {
+    .mainNav button {
         margin-left: 40px;
         margin-top: 0;
     }

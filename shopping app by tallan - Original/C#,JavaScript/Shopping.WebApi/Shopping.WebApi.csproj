@@ -595,7 +595,6 @@
     <Content Include="Images\Products\TShirt\7_tb.png" />
     <Content Include="Images\Products\TShirt\7_zoom.png" />
     <Content Include="SampleData\Catalog.xlsx" />
-    <Content Include="SampleData\products.json" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -617,6 +616,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleData\products.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SampleData\ageGroup.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

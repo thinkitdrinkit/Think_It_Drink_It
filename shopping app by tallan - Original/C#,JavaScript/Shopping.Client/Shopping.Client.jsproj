@@ -1450,12 +1450,19 @@
     <Content Include="js\tileUpdater.js" />
     <Content Include="pages\settings\settings-flyout.html" />
     <Content Include="pages\settings\settings-flyout.js" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.css" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.html" />
+    <Content Include="pages\mainNav_copyFromThankYou\mainNav.js" />
     <Content Include="pages\thankYou\thankYou.css" />
     <Content Include="pages\thankYou\thankYou.html" />
     <Content Include="pages\thankYou\thankYou.js" />
     <None Include="Shopping.Client_StoreKey.pfx" />
-    <None Include="Package.StoreAssociation.xml" />
-    <Content Include="packages.config" />
+    <None Include="Package.StoreAssociation.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="pages\billingEntry\billingEntry.css" />
     <Content Include="pages\billingEntry\billingEntry.html" />
     <Content Include="pages\billingEntry\billingEntry.js" />

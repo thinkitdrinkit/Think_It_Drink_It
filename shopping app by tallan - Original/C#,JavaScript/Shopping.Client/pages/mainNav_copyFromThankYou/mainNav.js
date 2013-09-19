@@ -12,27 +12,25 @@
 //*************************************************************************
 
 
-/// <reference path="/js/api.js" />
-
-(function (api) {
+(function () {
     "use strict";
+    
+    var nav = WinJS.Navigation;
 
-    WinJS.UI.Pages.define("/pages/settings/settings-flyout.html", {
+    WinJS.UI.Pages.define("/pages/mainNav/mainNav.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            var dropdown = element.querySelector("#sltServices");
-            dropdown.addEventListener('change', function () {
+            //var cartBtn = document.getElementById("CartBtn");
+            //var label = WinJS.Utilities.query('.win-label', cartBtn)[0];
+            //label.textContent = "Cart (0)";
 
-                api.settings.useOffline = +dropdown.value;
-
-            }, false);
+            var close = element.querySelector('.close');
+            close.addEventListener('click', function () {
+                nav.navigate('/pages/home/home.html');
+            });
             
-            if (api.settings.useOffline) {
-                dropdown.selectedIndex = 1;
-            }
-        }
+        },
     });
-
-})(Shopping.Api)
+})();
