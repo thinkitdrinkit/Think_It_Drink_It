@@ -48,6 +48,9 @@
             /// <summary>
             /// Gets the areas by getting a distinct list of areas from all products in the catalog.
             /// </summary>
+            /* MILO NOTES: _.groupBy(list, iterator, [context]) Splits a collection into sets, 
+            grouped by the result of running each value through iterator. If iterator is a string instead of a function,
+            groups by the property named by iterator on each of the values. */
             var areaGroups = _.groupBy(this.products, function (p) { return p.Area });
             return _.map(areaGroups, function(v, k) {
                 return {
@@ -297,8 +300,6 @@
             /// Handles the 'updateQuantity' type of command.  See processCommandAsync.
             /// </summary>
             command.item.Quantity = command.newQuantity;
-
-            return services().updateCartAsync(this.cart);
         },
         remove: function (command) {
             /// <summary>
@@ -311,8 +312,6 @@
             else {
                 this.cart.Items.splice(command.index, 1);
             }
-            
-            return services().updateCartAsync(this.cart);
         }
     });
 

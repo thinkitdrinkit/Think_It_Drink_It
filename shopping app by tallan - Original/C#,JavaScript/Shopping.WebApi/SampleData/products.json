@@ -1,6 +1,7 @@
 [
 	{
 	    "ProductId": "1",
+		"Age": "Teen",
 	    "Name": "Fedora",		
 	    "Area": "For the Head",
 	    "AreaImage": "http://localhost:2139/Images/Areas/3_head.png",
@@ -27,6 +28,7 @@
 	},
 		{
 	    "ProductId": "2",
+		"Age": "Adult",
 	    "Name": "Men's Red Scarf",
 	    "Area": "Around the Neck",
 	    "AreaImage": "http://localhost:2139/Images/Areas/5_neck.png",
