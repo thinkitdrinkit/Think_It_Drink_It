@@ -1,0 +1,154 @@
+﻿[
+    {
+        "backgroundImage": "images/Chinese/Chinese_1_600_C.jpg",
+        "directions": "Mix the ground pork with the sal",
+        "extraImages": [
+            {
+                "image": "images/Chinese/Chinese_1_600_C.jpg"
+            },
+            {
+                "image": "images/Chinese/Chinese_2_600_C.jpg"
+            },
+            {
+                "image": "images/Chinese/Chinese_3_600_C.jpg"
+            }
+        ],
+        "favorite": false,
+        "group": {
+            "backgroundImage": "images/Chinese/chinese_group_detail.png",
+            "groupBase": {
+                "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                "groupFlavor": {
+                    "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                    "groupBoost": {
+                        "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                        "groupImage": "images/Chinese/chinese_group.png",
+                        "key": "1000",
+                        "rank": "",
+                        "shortTitle": "Boost",
+                        "title": "Boost"
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                    "groupImage": "images/Chinese/chinese_group.png",
+                    "key": "1000",
+                    "rank": "",
+                    "shortTitle": "Flavor",
+                    "title": "Flavor"
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                "groupImage": "images/Chinese/chinese_group.png",
+                "key": "1000",
+                "rank": "",
+                "shortTitle": "Base",
+                "title": "Base 1", 
+				"base1": "Sour Apple", 
+				"base2": "Lemonade"
+            },
+            "description": "Lorem ipsum dolor sit amet,",
+            "groupImage": "images/Chinese/chinese_group.png",
+            "key": "1000",
+            "rank": "",
+            "recipesCount": 6,
+            "shortTitle": "Teen",
+            "title": "Teen"
+        },
+        "ingredients": [
+            "600 g Ground pork",
+            "1 tsp Salt",
+            "1 tsp sugar",
+            "1/2 tsp Ground black pepper",
+            "2 tsp Cornstarch",
+            "1 tbsp Sesame oil",
+            "1 handful Sliced dried mushrooms ",
+            "soaked and well drained",
+            "18 Quail eggs",
+            "cooked and peeled - alternately use 5 chicken eggs and cut them into quarters ",
+            "3/4 cup Sugar",
+            "4 1/2 cups Self-raising flour",
+            "1 1/2 cups Milk"
+        ],
+        "key": 1000,
+        "preptime": 60,
+        "rating": 4,
+        "shortTitle": "First Item",
+        "tileImage": "images/Chinese/Chinese_1_150_C.jpg",
+        "title": "First Item"
+    },
+ {
+        "backgroundImage": "images/Chinese/Chinese_1_600_C.jpg",
+        "directions": "Mix the ground pork with the sal",
+        "extraImages": [
+            {
+                "image": "images/Chinese/Chinese_1_600_C.jpg"
+            },
+            {
+                "image": "images/Chinese/Chinese_2_600_C.jpg"
+            },
+            {
+                "image": "images/Chinese/Chinese_3_600_C.jpg"
+            }
+        ],
+        "favorite": false,
+        "group": {
+            "backgroundImage": "images/Chinese/chinese_group_detail.png",
+            "groupBase": {
+                "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                "groupFlavor": {
+                    "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                    "groupBoost": {
+                        "backgroundImage": "images/Chinese/chinese_group_detail.png",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                        "groupImage": "images/Chinese/chinese_group.png",
+                        "key": "1001",
+                        "rank": "",
+                        "shortTitle": "Boost",
+                        "title": "Boost"
+                    },
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                    "groupImage": "images/Chinese/chinese_group.png",
+                    "key": "1001",
+                    "rank": "",
+                    "shortTitle": "Flavor",
+                    "title": "Flavor"
+                },
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis laoreet tempus libero vitae feugiat. Proin justo velit, luctus ornare posuere eget, pulvinar ac nibh. Integer dapibus leo in metus volutpat blandit. Morbi facilisis laoreet magna iaculis porta. Donec quis ipsum et justo faucibus lacinia. Vivamus id sapien nec dolor venenatis hendrerit. Aenean sit amet pretium quam. ",
+                "groupImage": "images/Chinese/chinese_group.png",
+                "key": "1001",
+                "rank": "",
+                "shortTitle": "Base",
+                "title": "Base 2",
+				"base1": "Sour Apple", 
+				"base2": ""
+            },
+            "description": "Lorem ipsum dolor sit amet,",
+            "groupImage": "images/Chinese/chinese_group.png",
+            "key": "1001",
+            "rank": "",
+            "recipesCount": 6,
+            "shortTitle": "Adult",
+            "title": "Adult"
+        },
+        "ingredients": [
+            "600 g Ground pork",
+            "1 tsp Salt",
+            "1 tsp sugar",
+            "1/2 tsp Ground black pepper",
+            "2 tsp Cornstarch",
+            "1 tbsp Sesame oil",
+            "1 handful Sliced dried mushrooms ",
+            "soaked and well drained",
+            "18 Quail eggs",
+            "cooked and peeled - alternately use 5 chicken eggs and cut them into quarters ",
+            "3/4 cup Sugar",
+            "4 1/2 cups Self-raising flour",
+            "1 1/2 cups Milk"
+        ],
+        "key": 1001,
+        "preptime": 60,
+        "rating": 4,
+        "shortTitle": "First Item",
+        "tileImage": "images/Chinese/Chinese_1_150_C.jpg",
+        "title": "Second Item"
+    }
+]
