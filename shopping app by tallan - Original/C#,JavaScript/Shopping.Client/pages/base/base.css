@@ -12,12 +12,12 @@
 ************************************************************************/
 
 
-.homepage {
+.basepage {
     height: 100%;
     width: 100%;
 }
 
-.homepage section {
+.basepage section {
     display: -ms-grid;
     -ms-grid-columns: 75px (360px 20px) [12];
     overflow-y: hidden;
@@ -117,27 +117,27 @@
 /*****************snapped view styles*******************/
 @media screen and (-ms-view-state: snapped) {
 
-    .homepage {
+    .basepage {
         overflow-x: hidden;
         display: block;
         background-image: none;
         overflow-y: visible;
     }
 
-    .homepage section {
+    .basepage section {
         margin-top: -30px;
         display: block;
         overflow-x: hidden;
         overflow-y: visible;
     }
 
-    .homepage section div, .homepage header {
+    .basepage section div, .basepage header {
         display: block;
     }
-    .homepage header{
+    .basepage header{
         margin-left: 0px;
     }
-    .homepage .ageGroupColumn {
+    .basepage .ageGroupColumn {
         max-width: 100%;
         width: 300px;
         max-height: 100px;
@@ -145,12 +145,12 @@
         margin-bottom: 20px;
     }
 
-    .homepage .ageGroupColumn:first-child {
+    .basepage .ageGroupColumn:first-child {
         margin-top: 40px;
         margin-left: 0;
     }
 
-    .homepage .ageGroupHeader img {
+    .basepage .ageGroupHeader img {
         height: 100px;
         width: 100px;
         background-color: rgba(0,0,0,0);
@@ -158,28 +158,28 @@
         margin-right: 80px;
     }
 
-    .homepage .itemList {
+    .basepage .itemList {
         display: none;
     }
 
-    .homepage header {
+    .basepage header {
         display: block;
         margin-top: 20px;
     }
 
-    .homepage header hgroup {
+    .basepage header hgroup {
         -ms-transform: rotate(0deg);
         -ms-transform-origin: 0 50%;
         width: 300px;
         position: inherit;
     }
 
-    .homepage header hgroup h1 {
+    .basepage header hgroup h1 {
         font-weight: 400 !important;
         margin-left: 0;
     }
 
-    .homepage .ageGroupHeader hgroup {
+    .basepage .ageGroupHeader hgroup {
         margin: 0 auto;
         text-align: center;
          -ms-transform: none;
@@ -187,14 +187,14 @@
         text-align: left;
     }
 
-    .homepage .ageGroupHeader hgroup h3 {
+    .basepage .ageGroupHeader hgroup h3 {
         color: #60574c;
         display: inline-block;
         font-size: 16pt;
         margin-top: 30px;
     }
 
-    .homepage .ageGroupHeader hgroup h4 {
+    .basepage .ageGroupHeader hgroup h4 {
         color: #666;
         display: none;
         font-size: 16pt;

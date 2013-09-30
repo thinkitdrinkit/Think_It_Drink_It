@@ -28,12 +28,12 @@ namespace Shopping.Web.Models
     public class MiniProduct
     {
         public int ProductId { get; set; }
-        public string Area { get; set; }
-        public string AreaImage { get; set; }
-        public string AreaAppBarImage { get; set; }
-        public string Category { get; set; }
-        public string CategoryImage { get; set; }
-        public string Name { get; set; }
+        public string AgeGroup { get; set; }
+        public string AgeGroupImage { get; set; }
+        public string Base1 { get; set; }
+        public string Base2 { get; set; }
+        public string Base3 { get; set; }
+        public string Base4 { get; set; }
         public string Description { get; set; }
         public string ThumbnailImage { get; set; }
         public double Price { get; set; }
@@ -44,15 +44,14 @@ namespace Shopping.Web.Models
     public class Product
     {
         public int ProductId { get; set; }
-        public string Area { get; set; }
-        public string AreaImage { get; set; }
-        public string AreaAppBarImage { get; set; }
-        public string Category { get; set; }
-        public string CategoryImage { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string AgeGroup { get; set; }
+        public string AgeGroupImage { get; set; }
+        public string Base1 { get; set; }
         public double Price { get; set; }
-        public string Image { get; set; }
+        public string Base2 { get; set; }
+        public string Base3 { get; set; }
+        public string Base4 { get; set; }
+        public string Base5 { get; set; }
         public string XLargeImage { get; set; }
         public string LargeImage { get; set; }
         public string MediumImage { get; set; }

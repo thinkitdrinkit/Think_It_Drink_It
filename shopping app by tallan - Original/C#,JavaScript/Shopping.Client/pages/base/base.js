@@ -14,7 +14,7 @@
 
 /// <reference path="ms-appx://Microsoft.WinJS.1.0/js/base.js" />
 /// <reference path="ms-appx://Microsoft.WinJS.1.0/js/ui.js" />
-/// <reference path="homeViewModel.js" />
+/// <reference path="baseViewModel.js" />
 /// <reference path="../../Scripts/underscore.js" />
 
 (function () {
@@ -23,11 +23,11 @@
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
     var api = Shopping.Api;
-    var vm = new Shopping.ViewModel.HomeViewModel(api.catalog);
+    var vm = new Shopping.ViewModel.BaseViewModel(api.catalog);
 
-    function HomeLayout(options) {
+    function BaseLayout(options) {
         /// <summary>
-        /// Used to layout the home screen as a post rendering workaround to nesting
+        /// Used to layout the base screen as a post rendering workaround to nesting
         /// a list of <li> elements inside an actual itemTemplate, this is used instead
         /// of a custom renderer in a ListView which would also work here.
         /// </summary>
@@ -65,14 +65,14 @@
         };
     }
     
-    ui.Pages.define("/pages/home/home.html", {
+    ui.Pages.define("/pages/base/base.html", {
 
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             var listView = element.querySelector("section[role=main]").winControl;
             listView.itemTemplate = element.querySelector(".itemTemplate");
-            listView.layoutManager = new HomeLayout({
+            listView.layoutManager = new BaseLayout({
                 template: element.querySelector('.featuredProductTemplate'),
                 path: 'featuredProducts'
             });

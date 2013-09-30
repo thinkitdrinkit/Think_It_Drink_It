@@ -1448,11 +1448,12 @@
     <Content Include="js\services.js" />
     <Content Include="js\sharingProvider.js" />
     <Content Include="js\tileUpdater.js" />
+    <Content Include="pages\base\base.css" />
+    <Content Include="pages\base\base.html" />
+    <Content Include="pages\base\base.js" />
+    <Content Include="pages\base\baseViewModel.js" />
     <Content Include="pages\settings\settings-flyout.html" />
     <Content Include="pages\settings\settings-flyout.js" />
-    <Content Include="pages\mainNav_copyFromThankYou\mainNav.css" />
-    <Content Include="pages\mainNav_copyFromThankYou\mainNav.html" />
-    <Content Include="pages\mainNav_copyFromThankYou\mainNav.js" />
     <Content Include="pages\thankYou\thankYou.css" />
     <Content Include="pages\thankYou\thankYou.html" />
     <Content Include="pages\thankYou\thankYou.js" />
@@ -1488,9 +1489,7 @@
     <Content Include="pages\search\search.html" />
     <Content Include="pages\search\search.js" />
     <Content Include="Scripts\underscore-min.js" />
-    <Content Include="Scripts\underscore.BCK" />
     <Content Include="Scripts\underscore.js" />
-    <Content Include="Scripts\underscore.min.BCK" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="LiveSDKHTML, Version=5.0" />

@@ -152,6 +152,7 @@
     <Content Include="Images\Areas\1_neck.png" />
     <Content Include="Images\Areas\1_shoulder.png" />
     <Content Include="Images\Areas\1_sole.png" />
+    <Content Include="Images\Areas\1_test.png" />
     <Content Include="Images\Areas\2_head.png" />
     <Content Include="Images\Areas\2_leg.png" />
     <Content Include="Images\Areas\2_neck.png" />
@@ -191,6 +192,7 @@
     <Content Include="Images\Products\Blazer\2_browse.png" />
     <Content Include="Images\Products\Blazer\2_product.png" />
     <Content Include="Images\Products\Blazer\2_tb.png" />
+    <Content Include="Images\Products\Blazer\2_test.png" />
     <Content Include="Images\Products\Blazer\2_zoom.png" />
     <Content Include="Images\Products\Blazer\3_zoom.png" />
     <Content Include="Images\Products\Blazer\3_browse.png" />
@@ -619,9 +621,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="SampleData\products.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SampleData\ageGroup.json" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

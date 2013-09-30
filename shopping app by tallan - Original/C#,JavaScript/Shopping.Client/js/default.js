@@ -1,4 +1,5 @@
-﻿/// <reference path="api.js" />
+﻿/// <reference path="../pages/thankYou/thankYou.html" />
+/// <reference path="api.js" />
 /// <reference path="binding.js" />
 /// <reference path="designModeShim.js" />
 /// <reference path="extendedSplash.js" />
@@ -186,7 +187,7 @@
 
     function initializeAppBar() {
         /// <summary>
-        /// Initialized the top AppBar with the list of areas available from the catalog.  Since these areas are dynamic this is done in javascript
+        /// Initialized the top AppBar with the list of ageGroups available from the catalog.  Since these ageGroups are dynamic this is done in javascript
         /// rather than in HTML.
         /// </summary>
         var cartLabel = function () {
@@ -221,16 +222,27 @@
         });
         commands.push(home);
 
-        // create commands for each Area
-        _.each(Shopping.Api.catalog.getAreas(), function(i) {
-            var el = document.createElement("button");
-            el.style.backgroundImage = "url(" + i.appBarImage + ")";
-            var cmd = new WinJS.UI.AppBarCommand(el, { label: i.area, section: 'selection' });
-            cmd.addEventListener('click', function () {
-                nav.navigate('/pages/categories/categories.html', { item: i.area });
+        // create commands for each ageGroup
+        _.each(Shopping.Api.catalog.getAgeGroups(), function (i) {
+            var ag = document.createElement("button");
+            ag.style.backgroundImage = "url(" + i.appBarImage + ")";
+            var cmdo = new WinJS.UI.AppBarCommand(ag, { label: i.ageGroup, section: 'selection' });
+            cmdo.addEventListener('click', function () {
+                nav.navigate('/pages/categories/categories.html', { item: i.ageGroup });
             });
-            commands.push(cmd);
+            commands.push(cmdo);
         });
+
+        //// create commands for each Base
+        //_.each(Shopping.Api.catalog.getAreas(), function(i) {
+        //    var el = document.createElement("button");
+        //    el.style.backgroundImage = "url(" + i.appBarImage + ")";
+        //    var cmd = new WinJS.UI.AppBarCommand(el, { label: i.area, section: 'selection' });
+        //    cmd.addEventListener('click', function () {
+        //        nav.navigate('/pages/categories/categories.html', { item: i.area });
+        //    });
+        //    commands.push(cmd);
+        //});
         
         topAppBar.commands = commands;
         topAppBar.disabled = false;

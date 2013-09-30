@@ -19,7 +19,7 @@
     "use strict";
 
     WinJS.Namespace.define("Shopping.ViewModel", {
-        HomeViewModel: WinJS.Class.define(function HomeViewModel_ctor(catalog) {
+        BaseViewModel: WinJS.Class.define(function BaseViewModel_ctor(catalog) {
             this.ageGroups = catalog.getAgeGroups();
         }, {
             init: function () { }

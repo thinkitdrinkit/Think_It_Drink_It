@@ -26,14 +26,14 @@
 
         }, {
 
-            init: function (area) {
+            init: function (ageGroup) {
                 /// <summary locid="Shopping.ViewModel.CategoriesViewModel.init">
-                /// loads the data for the specified area.
+                /// loads the data for the specified ageGroup.
                 /// </summary>
                 var catalog = this.catalog;
 
-                this.area = area;
-                this.list = new WinJS.Binding.List(catalog.getProductsForArea(area));
+                this.ageGroup = ageGroup;
+                this.list = new WinJS.Binding.List(catalog.getProductsForAgeGroup(ageGroup));
 
                 this.categories = this.list.createGrouped(
                             function groupKeySelector(product) { return product.Category; },

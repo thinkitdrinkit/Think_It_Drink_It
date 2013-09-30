@@ -44,24 +44,42 @@
         this.catalog = catalogModel;
         this.products = catalogModel.products;
     }, {
-        getAreas: function () {
+
+        getAgeGroups: function () {
             /// <summary>
-            /// Gets the areas by getting a distinct list of areas from all products in the catalog.
+            /// Gets the Age Groups Teen to Toddlert that are specified from all products in the catalog.
             /// </summary>
-            /* MILO NOTES: _.groupBy(list, iterator, [context]) Splits a collection into sets, 
-            grouped by the result of running each value through iterator. If iterator is a string instead of a function,
-            groups by the property named by iterator on each of the values. */
-            var areaGroups = _.groupBy(this.products, function (p) { return p.Area });
-            return _.map(areaGroups, function(v, k) {
+            var ageGroups = _.groupBy(this.products, function (p) { return p.AgeGroup });
+            return _.map(ageGroups, function (v, k) {
                 return {
-                    area: k,
+                    ageGroup: k,
                     featuredProducts: _.take(v, 4),
-                    mainImage: v[0].AreaImage,
-                    appBarImage: v[0].AreaAppBarImage,
+                    mainImage: v[0].AgeGroupImage,
+                    appBarImage: v[0].AgeGroupAppBarImage,
                     itemCount: v.length
                 };
             });
         },
+
+
+        //getAreas: function () {
+        //    /// <summary>
+        //    /// Gets the areas by getting a distinct list of areas from all products in the catalog.
+        //    /// </summary>
+        //    /* MILO NOTES: _.groupBy(list, iterator, [context]) Splits a collection into sets, 
+        //    grouped by the result of running each value through iterator. If iterator is a string instead of a function,
+        //    groups by the property named by iterator on each of the values. */
+        //    var areaGroups = _.groupBy(this.products, function (p) { return p.Area });
+        //    return _.map(areaGroups, function(v, k) {
+        //        return {
+        //            area: k,
+        //            featuredProducts: _.take(v, 4),
+        //            mainImage: v[0].AreaImage,
+        //            appBarImage: v[0].AreaAppBarImage,
+        //            itemCount: v.length
+        //        };
+        //    });
+        //},
         getCategories: function () {
             /// <summary>
             /// Gets the categories by getting a distinct list of categories from all products in the catalog.
@@ -69,12 +87,18 @@
             var categoryGroups = _.groupBy(this.products, function (p) { return p.Category });
             return _.map(categoryGroups, function (v, k) { return { category: k }; });
         },
-        getProductsForArea: function (area) {
+        getProductsForAgeGroup: function (ageGroup) {
             /// <summary>
             /// Gets a list of products that match the specified filter.
             /// </summary>
-            return _.filter(this.products, function (v, k) { return v.Area == area; });
+            return _.filter(this.products, function (v, k) { return v.AgeGroup == ageGroup; });
         },
+        //getProductsForArea: function (area) {
+        //    /// <summary>
+        //    /// Gets a list of products that match the specified filter.
+        //    /// </summary>
+        //    return _.filter(this.products, function (v, k) { return v.Area == area; });
+        //},
         getProductCountForCategory: function (category) {
             /// <summary>
             /// Gets the count of products that match the specified category
