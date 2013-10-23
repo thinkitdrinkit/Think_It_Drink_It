@@ -1,0 +1,88 @@
+﻿.boost section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#picked_age{
+    font-size: 50px;
+}#choosen_age_pic, #choosen_base_pic{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #c8060c;
+}#choosen_base{
+    width: auto;
+    font-size: 50px;
+}#choosen_base_pic{
+    margin-left: -140px;
+}#boost_header{
+     margin-top: -30px;
+}.boost_bg_img_class{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+}.the_boost_list{
+    width: 300px;
+    height: 250px;
+    border: 2px solid #c8060c;
+}#boost_name{
+    width: auto;
+    height: 80px;
+    color: #fff;
+    font-weight: 800; 
+    margin-top: 210px;
+    background-color: rgba(0,0,0,.6);
+}#flav2_pic{
+   border: 2px solid #000;
+}#boost_list_placement{
+   margin-top: -15px;
+   margin-left: -100px;
+   height: 280px;
+}overError{
+    font-size: 40px;
+}#choosen_bg_img {
+   float: left;
+   width: 250px;
+   height: 200px;
+   background-color: #fff;
+   border: 2px solid #c8060c;
+   margin-right: 10px;
+}.the_choosen_boost {
+   width: 700px;
+   background-color: #000;
+   height: 200px;
+}#choosen_boost_info_placement{
+      margin-left: -100px;
+      width: auto;
+      height: 210px;
+}#sel_btn3{
+      margin-left: 5px;
+      margin-top: 10px;
+      position: absolute;
+}#choosen_boost_area_placement{
+     margin-left: 630px;
+     margin-top: -200px;
+     width: auto;
+     height: 120px;
+}#area_img{
+     width: 100px;
+     height: 100px;
+     position: absolute;
+     z-index: -1;
+}.the_boost_area{
+    width: 100px;
+    height: 100px;
+    float: left;
+    border: 2px solid #0945e9;
+ }#btn_right{
+    float: right;
+    margin-left: 635px;
+    position: absolute;
+}.area_img_class{
+    margin-left: 1px;
+    border: 2px solid #0945e9;
+}#the_test{
+     margin-left: 630px;
+     margin-top: -170px;
+     margin-bottom: 5px;
+}#choosen_info{
+     font-size: 12px;
+ }

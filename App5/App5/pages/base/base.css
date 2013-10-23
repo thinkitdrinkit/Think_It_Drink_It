@@ -1,0 +1,53 @@
+﻿.base section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#age_pic{
+     border: 2px solid #000;
+     margin-left: 3px;
+     margin-top: 0px;
+ }.base_pic_class{
+     width: 300px;
+     height: 250px;
+     position: absolute;
+     z-index: -1;
+  }#bases_placement{
+     margin-top: -15px;
+     margin-left: -100px;
+   }#base_header{
+     margin-top: -30px;
+    }#base_name{
+     width: auto;
+     height: 80px;
+     color: #fff;
+     font-weight: 800; 
+     margin-top: 210px;
+     background-color: rgba(0,0,0,.6);
+}#the_bases{
+    width: 300px;
+    height: 250px;
+    border: 2px solid #c8060c;
+}#choosen_age{
+     margin-right: 20px;
+     position: relative;
+}.sel_base_pic_class{
+   float: left;
+   width: 300px;
+   height: 350px;
+   background-color: #fff;
+   border: 2px solid #c8060c;
+}#sel_bases_placement{
+       margin-top: -120px;
+       margin-left: -100px;
+       width: auto;
+       height: 220px;
+ }#sel_btn2{
+      margin-left: 5px;
+      margin-top: 40px;
+      position: absolute;
+}#the_sel_bases{
+       width: 800px;
+       background-color: #000;
+       height: 800px;
+}#choosen_age{
+    position: relative;
+}

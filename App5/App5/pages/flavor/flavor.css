@@ -1,0 +1,44 @@
+﻿.flavor section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}.flav_pic_class{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+}.the_flavors{
+    width: 300px;
+    height: 250px;
+    border: 2px solid #c8060c;
+}.flav_name_class{
+    width: auto;
+    height: 80px;
+    color: #fff;
+    font-weight: 800; 
+    margin-top: 210px;
+    background-color: rgba(0,0,0,.6);
+ }#base_pic{
+     border: 2px solid #000;
+ }#flavor_header{
+       margin-top: -30px;
+  }#flavor_placement{
+     margin-top: -15px;
+     margin-left: -100px;
+}#choosen_flav_pic{
+   float: left;
+   width: 250px;
+   height: 200px;
+   background-color: #fff;
+   border: 2px solid #c8060c;
+   margin-right: 10px;
+}#choosen_flav_placement{
+      margin-left: -100px;
+      margin-top: -120px;
+      width: auto;
+      height: 210px;
+}.the_choosen_flav{
+   width: 700px;
+   background-color: #000;
+   height: 250px;
+   margin-top: -15px;
+}
