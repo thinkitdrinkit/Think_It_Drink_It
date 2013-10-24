@@ -14,14 +14,64 @@
 </head>
 <body>
     <div class="final fragment">
-        <header aria-label="Header content" role="banner">
+        <header id="final_header" aria-label="Header content" role="banner">
             <button data-win-control="WinJS.UI.BackButton"></button>
-            <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Please Enter Your Name, Review Your Order, and Hit Submit.</span>
-            </h1>
+            <h1 class="titlearea win-type-ellipsis">Please Enter Your Name, Review Your Order, and Hit Submit.</h1>
         </header>
         <section aria-label="Main content" role="main">
-            <p>Content goes here.</p>
+            
+            <div id="my_base">
+                <img src="#" id="my_base_img" width="210" height="210"/>
+                <h2 id="my_base_name">your base!</h2>
+            </div>
+
+            <div id="my_flav">
+                <img src="#" id="my_flav_img" width="100" height="100"/>
+                <h2 id="my_flav_name">your flav!</h2>
+            </div>
+
+             <ul id="your_boost">
+
+               <li><div id="my_boost1">
+                    <img src="#" id="my_boost1_img" width="100" height="100"/>
+                    <h2 id="my_boost1_name">your first boost!</h2>
+                </div></li>
+
+               <li><div hidden="" id="my_boost2">
+                    <img src="#" id="my_boost2_img" width="100" height="100"/>
+                    <h2 id="my_boost2_name">your second boost!</h2>
+                </div></li>
+
+                <li><div hidden="" id="my_boost3">
+                    <img src="#" id="my_boost3_img" width="100" height="100"/>
+                    <h2 id="my_boost3_name">your last boost!</h2>
+                </div></li>
+
+            </ul>
+
+            <form action="mailto: anthony@thinkitdrink.com" enctype="text/plain" method="post" id="find_name">
+                <ul>              
+                    <li><label for="first_name">First Name:</label></li>
+                    <li><input type="text" name="first_name" id="first_name" /></li>
+                    <li><label for="last_name">Last Name:</label></li>
+                    <li><input type="text" name="last_name" id="last_name" /></li>
+                                  
+                 <ul id="the_name">
+                    <li><label for="base_price" id="price_base">Base Price</label></li>
+                    <li><input type="text" name="base_price" id="base_price" /></li>
+                    <li><label for="boost_price1" id="price1_boost">First Boost Price</label></li>
+                    <li><input name="boost_price1" type="text" id="boost_price1" /></li>
+                    <li><label hidden=""  for="boost_price2" id="price2_boost">Second Boost Price</label></li>
+                    <li><input hidden=""  name="boost_price2" type="text" id="boost_price2" /></li>
+                    <li><label hidden=""  for="boost_price3" id="price3_boost">Third Boost Price</label></li>
+                    <li><input hidden=""  name="boost_price3" type="text" id="boost_price3" /></li> 
+                    <li><label for="total" id="the_total">Your Total:</label></li>
+                    <li><input name="total" type="text" id="total" /></li>  
+                    <li><input type="submit" name="sub_btn" id="sub_btn"/></li>
+                     </ul>                       
+                </ul>
+            </form>
+
              
         </section>
          <footer id="main_footer">

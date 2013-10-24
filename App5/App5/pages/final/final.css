@@ -2,7 +2,49 @@
     margin-left: 120px;
     margin-right: 120px;
 }#boost_pic1, #boost_pic2, #boost_pic3{
-       border: 3px solid #0945e9;
+    border: 3px solid #fff;
 }#boost_pic1{
     margin-left: 20px;
+}#my_boost1_img, #my_boost2_img, #my_boost3_img,#my_base_img,#my_flav_img{
+     position: absolute;
+     border: 1px solid #c8060c;
+     z-index: -1;
+}#your_boost li{
+      display: inline;
+      list-style: none;
+      float: left;
+      margin-left: 5px;
+}#final_header{
+       margin-top: -30px;
+ }#my_boost1_name,#my_boost2_name,#my_boost3_name,#my_flav_name{
+      font-size: 11px;
+      width: 105px;
+      height: 25px;
+      background-color: rgba(0,0,0,.6);
+      font-family: sans-serif;
+      font-weight: 100;
+}#your_boost{
+   margin-top: 45px;
+   margin-left: 180px;
+}#my_flav{
+   margin-left: 225px;
+   margin-bottom: 95px;
+   margin-top: -20px;
+}#my_base_name{
+   background-color: rgba(0,0,0,.6);
+   font-size: 15px;
+   font-weight: 200;
+   width: 215px;
+}#find_name{
+     margin-top: 210px;
+     margin-left: -45px;
+}#find_name ul li{
+      line-height: 12px;
+      list-style: none;
+}input{
+     height: 25px;
+}#the_name{
+    float: right;
+    margin-right: 1000px;
+    margin-top: -95px;
 }

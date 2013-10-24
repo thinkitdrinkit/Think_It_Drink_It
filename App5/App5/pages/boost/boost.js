@@ -47,7 +47,7 @@
 
     WinJS.Namespace.define("boost_clicked", {
        
-        clicked1: function (name, img) {
+        clicked1: function (name, img, price) {
             document.getElementById("btn_right").removeAttribute("hidden");
             if (age_data.model.the_boost_sel.length < 3) {
 
@@ -55,16 +55,16 @@
        
 
                 if (age_data.model.the_boost_sel.length === 1) {
-                    get_set.get_boost1(name, img, null, null);
+                    get_set.get_boost1(name, img, null, price);
                     document.getElementById("area_img1").src = get_set.set_boost1("pic");
                     document.getElementById("area_img1").removeAttribute("hidden");
                     document.getElementById("the_test");
                 } else if (age_data.model.the_boost_sel.length === 2) {
-                    get_set.get_boost2(name, img, null, null)
+                    get_set.get_boost2(name, img, null, price)
                     document.getElementById("area_img2").src = get_set.set_boost2("pic");
                     document.getElementById("area_img2").removeAttribute("hidden");
                 } else if (age_data.model.the_boost_sel.length === 3) {
-                    get_set.get_boost3(name, img, null, null);
+                    get_set.get_boost3(name, img, null, price);
                     document.getElementById("area_img3").src = get_set.set_boost3("pic");
                     document.getElementById("area_img3").removeAttribute("hidden");
                 }
@@ -91,7 +91,7 @@
             WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
                 var the_sel_boost = JSON.parse(xhr.responseText);
                 the_sel_boost.forEach(function (sel) {
-                    age_data.model.info_page5.push({ the_name: sel[the_age_num].Base[the_base_num].boost[the_boost_num].name, the_info: sel[the_age_num].Base[the_base_num].boost[the_boost_num].info, the_label: sel[the_age_num].Base[the_base_num].boost[the_boost_num].label, the_pic: sel[the_age_num].Base[the_base_num].boost[the_boost_num].image });
+                    age_data.model.info_page5.push({ the_name: sel[the_age_num].Base[the_base_num].boost[the_boost_num].name, the_info: sel[the_age_num].Base[the_base_num].boost[the_boost_num].info, the_label: sel[the_age_num].Base[the_base_num].boost[the_boost_num].label, the_pic: sel[the_age_num].Base[the_base_num].boost[the_boost_num].image, the_price: sel[the_age_num].Base[the_base_num].boost[the_boost_num].price });
                 })
             })
         },
