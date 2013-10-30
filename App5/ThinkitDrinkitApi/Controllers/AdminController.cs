@@ -12,6 +12,8 @@ using ThinkitDrinkitApi.Models;
 
 namespace ThinkitDrinkitApi.Controllers
 {
+    //milo: added this authorize
+    [Authorize(Roles = "Administrator")]
     public class AdminController : ApiController
     {
         private OrdersContext db = new OrdersContext();

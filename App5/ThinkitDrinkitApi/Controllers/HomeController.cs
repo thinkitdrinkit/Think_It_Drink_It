@@ -28,6 +28,8 @@ namespace ThinkitDrinkitApi.Controllers
 
             return View();
         }
+        //milo: added this to admin
+        [Authorize(Roles = "Administrator")]
         public ActionResult Admin()
         {
             string apiUri = Url.HttpRouteUrl("DefaultApi", new { controller = "admin", });
