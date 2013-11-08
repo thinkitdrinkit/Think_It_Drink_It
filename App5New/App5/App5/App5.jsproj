@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>e3f10fc1-365d-4d2e-b488-7e61baad9bf4</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup Condition="'$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0'">
+    <VisualStudioVersion>12.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).Default.props" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).props" />
+  <PropertyGroup>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetPlatformVersion>8.1</TargetPlatformVersion>
+    <RequiredPlatformVersion>8.1</RequiredPlatformVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <PackageCertificateKeyFile>App5_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="css\default.css" />
+    <Content Include="images\adult.jpg" />
+    <Content Include="images\another_logo.jpg" />
+    <Content Include="images\another_logo.scale-100.jpg" />
+    <Content Include="images\another_logo.scale-180.jpg" />
+    <Content Include="images\bar1.jpg" />
+    <Content Include="images\base1.jpg" />
+    <Content Include="images\base2.jpg" />
+    <Content Include="images\base3.jpg" />
+    <Content Include="images\base4.jpg" />
+    <Content Include="images\base5.jpg" />
+    <Content Include="images\base6.jpg" />
+    <Content Include="images\base7.jpg" />
+    <Content Include="images\base8.jpg" />
+    <Content Include="images\boost1.jpg" />
+    <Content Include="images\boost10.jpg" />
+    <Content Include="images\boost11.jpg" />
+    <Content Include="images\boost12.jpeg" />
+    <Content Include="images\boost12.jpg" />
+    <Content Include="images\boost13.jpg" />
+    <Content Include="images\boost14.jpg" />
+    <Content Include="images\boost15.jpg" />
+    <Content Include="images\boost16.jpg" />
+    <Content Include="images\boost17.jpg" />
+    <Content Include="images\boost18.jpg" />
+    <Content Include="images\boost19.jpg" />
+    <Content Include="images\boost2.jpg" />
+    <Content Include="images\boost20.jpg" />
+    <Content Include="images\boost20.png" />
+    <Content Include="images\boost3.jpg" />
+    <Content Include="images\boost4.jpg" />
+    <Content Include="images\boost5.jpg" />
+    <Content Include="images\boost6.jpg" />
+    <Content Include="images\boost7.jpg" />
+    <Content Include="images\boost8.jpg" />
+    <Content Include="images\boost9.jpg" />
+    <Content Include="images\cal.jpg" />
+    <Content Include="images\cal2.jpg" />
+    <Content Include="images\flav1.jpg" />
+    <Content Include="images\flav2.jpg" />
+    <Content Include="images\flav3.jpg" />
+    <Content Include="images\flav4.jpg" />
+    <Content Include="images\flav5.jpg" />
+    <Content Include="images\flav6.jpeg" />
+    <Content Include="images\logo.scale-100.png" />
+    <Content Include="images\logo1.jpg" />
+    <Content Include="images\logo_splash.png" />
+    <Content Include="images\senior.jpg" />
+    <Content Include="images\smalllogo.scale-100.png" />
+    <Content Include="images\splash.jpg" />
+    <Content Include="images\splash.scale-100.jpg" />
+    <Content Include="images\splashscreen.scale-100.png" />
+    <Content Include="images\storelogo.scale-100.png" />
+    <Content Include="images\teen.jpg" />
+    <Content Include="images\toddler.jpg" />
+    <Content Include="images\youth.jpg" />
+    <Content Include="js\dataStore.js" />
+    <Content Include="js\default.js" />
+    <Content Include="js\gatherInfo.js" />
+    <Content Include="js\MobileServices.intellisense.js" />
+    <Content Include="js\MobileServices.js" />
+    <Content Include="js\MobileServices.min.js" />
+    <Content Include="js\MobileServices.pri" />
+    <Content Include="js\navigator.js" />
+    <Content Include="default.html" />
+    <Content Include="js\removeInfo.js" />
+    <Content Include="packages.config" />
+    <Content Include="pages\base\base.css" />
+    <Content Include="pages\base\base.html" />
+    <Content Include="pages\base\base.js" />
+    <Content Include="pages\boost\boost.css" />
+    <Content Include="pages\boost\boost.html" />
+    <Content Include="pages\boost\boost.js" />
+    <Content Include="pages\final\final.css" />
+    <Content Include="pages\final\final.html" />
+    <Content Include="pages\final\final.js" />
+    <Content Include="pages\final\print.css" />
+    <Content Include="pages\final\process.cpp" />
+    <Content Include="pages\flavor\flavor.css" />
+    <Content Include="pages\flavor\flavor.html" />
+    <Content Include="pages\flavor\flavor.js" />
+    <Content Include="pages\flav_sel\flav_sel.css" />
+    <Content Include="pages\flav_sel\flav_sel.html" />
+    <Content Include="pages\flav_sel\flav_sel.js" />
+    <Content Include="pages\home\home.css" />
+    <Content Include="pages\home\home.html" />
+    <Content Include="pages\home\home.js" />
+    <Content Include="resource\data.txt" />
+    <None Include="App5_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Microsoft.WinJS.2.0.Preview, Version=1.0" />
+    <SDKReference Include="MobileServicesJavaScriptClient, Version=0.3.0.0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
+  <!-- To modify your build process, add your task inside one of the targets below then uncomment
+       that target and the DisableFastUpToDateCheck PropertyGroup. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <PropertyGroup>
+    <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
+  </PropertyGroup>
+  -->
+</Project>
