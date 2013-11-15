@@ -9,12 +9,12 @@
     position: absolute;
     z-index: -1;
 }#flav_sel_name{
-    width: auto;
-    height: 80px;
-    color: #fff;
-    font-weight: 800; 
-    margin-top: 210px;
-    background-color: rgba(0,0,0,.6);
+   width: auto;
+   height: 80px;
+   color: #fff;
+   font-weight: 800; 
+   margin-top: 210px;
+   background-color: rgba(0,0,0,.6);
 }#the_flav_sel{
    width: 300px;
    height: 250px;
@@ -24,18 +24,17 @@
 }#flav_sel_placement{
    margin-top: -15px;
    margin-left: -100px;
-   height: 280px;
 }.flav_sel_sel_pic_class {
    float: left;
-   width: 300px;
-   height: 350px;
+   width: 250px;
+   height: 200px;
    background-color: #fff;
    border: 2px solid #c8060c;
    margin-right: 10px;
 }#the_flav_sel_sel{
-   width: 800px;
+   width: 700px;
    background-color: #fff;
-   height: 800px;
+   height: 250px;
  }#flav_sel_sel_placement{
    margin-top: -120px;
    margin-left: -100px;

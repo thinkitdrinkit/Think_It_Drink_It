@@ -96,7 +96,7 @@
                 boost = 9;
             } else if (boost === "Cellular Support") {
                 boost = 10;
-            } else if (boost === "Fat Buner") {
+            } else if (boost === "Fat Burner") {
                 boost = 11;
             } else if (boost === "Strength and Agility" ) {
                 boost = 12;
@@ -120,13 +120,13 @@
                 boost = 20;
             } else if (boost === "Womens Hormone") {
                 boost = 21;
-            } else if (boost === "bone") {
+            } else if (boost === "Bone(Y)") {
                 boost = 0;
-            } else if (boost === "immunity") {
+            } else if (boost === "Immunity(Y)") {
                 boost = 1;
-            } else if (boost === "digestive") {
+            } else if (boost === "Digestive(Y)") {
                 boost = 2;
-            } else if (boost === "dental") {
+            } else if (boost === "Dental(Y)") {
                 boost = 3;
             } else if (boost === "Endurance(Y)") {
                 boost = 4;

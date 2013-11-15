@@ -138,12 +138,13 @@
            var the_base_num = age_data.get_base_num(roamingSettings.values["Base_name"]);
            var the_boost_num = age_data.get_boost_num(name);
 
-           /* WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var the_sel_boost = JSON.parse(xhr.responseText);
-                the_sel_boost.forEach(function (sel) {
-                    age_data.model.info_page5.push({ the_name: sel[the_age_num].Base[the_base_num].boost[the_boost_num].name, the_info: sel[the_age_num].Base[the_base_num].boost[the_boost_num].info, the_label: sel[the_age_num].Base[the_base_num].boost[the_boost_num].label, the_pic: sel[the_age_num].Base[the_base_num].boost[the_boost_num].image, the_price: sel[the_age_num].Base[the_base_num].boost[the_boost_num].price });
-                })
-            })*/
+
+           var query = Age.where({
+           }).read().done(function (results) {
+               age_data.model.info_page5.push({ the_name: results[the_boost_num].Name, the_info: results[the_boost_num].Info, the_pic: results[the_boost_num].Image, the_label: results[the_boost_num].Label, the_price: results[the_boost_num].Price })
+           }, function (err) {
+               console.log(err);
+           })
         },
 
         release: function () {

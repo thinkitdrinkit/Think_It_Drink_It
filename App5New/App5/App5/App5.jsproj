@@ -142,7 +142,6 @@
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
-    <Content Include="resource\data.txt" />
     <Content Include="services\mobile services\thinkitdrinkitData\service.js">
       <ConnectedServiceReference>thinkitdrinkitData</ConnectedServiceReference>
     </Content>
