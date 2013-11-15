@@ -6,6 +6,7 @@
     var _num3 = "";
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
+    var Age = thinkitdrinkitDataClient.getTable("Boost");
 
     WinJS.UI.Pages.define("/pages/boost/boost.html", {
         // This function is called whenever a user navigates to this page. It
@@ -24,14 +25,47 @@
             _num3 = age_data.get_base_num(roamingSettings.values["Base_name"]);
 
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
+            /*WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
                 var age_boost = JSON.parse(xhr.responseText);
                 age_boost.forEach(function (age_boosts) {
                     for (var i = 0; i < age_boosts[_num4].Base[_num3].boost.length; i++) {
                         age_data.model.boost.push({ boost_name: age_boosts[_num4].Base[_num3].boost[i].name, boost_pic: age_boosts[_num4].Base[_num3].boost[i].image });
                     }
                 });
-            });
+            });*/
+
+            if (roamingSettings.values["Age_name"] === "Youth") {
+                var query = Age.where({
+                    Access1: 11
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+
+            } else if (roamingSettings.values["Age_name"] === "Toddler") {
+                var query = Age.where({
+                    Access: 1
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else {
+                var query = Age.where({
+                    Access: 2
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
         },
 
         unload: function () {
@@ -104,12 +138,12 @@
            var the_base_num = age_data.get_base_num(roamingSettings.values["Base_name"]);
            var the_boost_num = age_data.get_boost_num(name);
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
+           /* WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
                 var the_sel_boost = JSON.parse(xhr.responseText);
                 the_sel_boost.forEach(function (sel) {
                     age_data.model.info_page5.push({ the_name: sel[the_age_num].Base[the_base_num].boost[the_boost_num].name, the_info: sel[the_age_num].Base[the_base_num].boost[the_boost_num].info, the_label: sel[the_age_num].Base[the_base_num].boost[the_boost_num].label, the_pic: sel[the_age_num].Base[the_base_num].boost[the_boost_num].image, the_price: sel[the_age_num].Base[the_base_num].boost[the_boost_num].price });
                 })
-            })
+            })*/
         },
 
         release: function () {

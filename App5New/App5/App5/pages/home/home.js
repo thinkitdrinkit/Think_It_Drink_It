@@ -2,6 +2,7 @@
     "use strict";
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
+    var Age = thinkitdrinkitDataClient.getTable("Age");
 
     WinJS.UI.Pages.define("/pages/home/home.html", {
         // This function is called whenever a user navigates to this page. It
@@ -12,15 +13,15 @@
         }
     });
 
-    WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-        var user_age = JSON.parse(xhr.responseText);
-        user_age.forEach(function (user_ages) {
-            for (var i = 0; i < user_ages.length; i++) {
-                age_data.model.age.push({ age: user_ages[i].AgeGroup, img: user_ages[i].AgeGroupImage })
-            }
-        });
+    var query = Age.where({
+    }).read().done(function (results) {
+        for (var i = 0; i < results.length; i++) {
+            age_data.model.age.push({ age: results[i].Name, img: results[i].Image })
+        }
+    }, function (err) {
+        console.log(err);
     });
-
+  
     // the following namespace will be used to complete all click events on the home.html page
 
     var _choosen_age = "";
@@ -33,11 +34,11 @@
             var num = 0;
             num = age_data.get_age_num(me);
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var user_age = JSON.parse(xhr.responseText);
-                user_age.forEach(function (user_ages) {
-                    age_data.model.info.push({ the_info: user_ages[num].info, info_img: user_ages[num].AgeGroupImage })
-                });
+            var query = Age.where({
+            }).read().done(function (results) {
+                    age_data.model.info.push({ the_info: results[num].Info, info_img: results[num].Image })
+            }, function (err) {
+                console.log(err);
             });
         },
         next_page: function () {
@@ -50,4 +51,5 @@
             roamingSettings.values["Age_price"] = null;
         }
     })
+    
 })();

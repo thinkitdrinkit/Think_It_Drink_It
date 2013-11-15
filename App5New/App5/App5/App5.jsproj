@@ -118,6 +118,7 @@
     <Content Include="js\MobileServices.js" />
     <Content Include="js\MobileServices.min.js" />
     <Content Include="js\MobileServices.pri" />
+    <Content Include="js\myAzure.js" />
     <Content Include="js\navigator.js" />
     <Content Include="default.html" />
     <Content Include="js\removeInfo.js" />
@@ -132,7 +133,6 @@
     <Content Include="pages\final\final.html" />
     <Content Include="pages\final\final.js" />
     <Content Include="pages\final\print.css" />
-    <Content Include="pages\final\process.cpp" />
     <Content Include="pages\flavor\flavor.css" />
     <Content Include="pages\flavor\flavor.html" />
     <Content Include="pages\flavor\flavor.js" />
@@ -143,6 +143,12 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="resource\data.txt" />
+    <Content Include="services\mobile services\thinkitdrinkitData\service.js">
+      <ConnectedServiceReference>thinkitdrinkitData</ConnectedServiceReference>
+    </Content>
+    <Content Include="services\mobile services\thinkitdrinkit\service.js">
+      <ConnectedServiceReference>thinkitdrinkit</ConnectedServiceReference>
+    </Content>
     <None Include="App5_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

@@ -6,12 +6,14 @@
 
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0.Preview/css/ui-light.css" rel="stylesheet" />
+    
     <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
 
     <link href="/css/default.css" rel="stylesheet" />
 
     <link href="/pages/home/home.css" rel="stylesheet" />
+    <!--<script src="https://thinkitdrinkit.azure-mobile.net/client/MobileServices.Web-1.0.0.min.js"></script>-->
     <script src="/pages/home/home.js"></script>
     <script src="/js/gatherInfo.js"></script>
 </head>
@@ -41,16 +43,6 @@
                     <p id="info_text" data-win-bind="textContent: the_info"></p>
                  <button onclick=" clicked_me.next_page()" id="sel_btn" name="sel_btn" type="submit">Select Age</button>
             </div>
-
-             <!-- BEGINTEMPLATE: Template code for an app bar -->
-    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
-        <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdSignUp',label:'Sign-Up',icon:'people',
-                section:'selection',tooltip:'Take a picture'}">
-        </button>
-    </div>
-    <!-- ENDTEMPLATE -->
 
             <div id="info_template_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info.dataSource" data-win-options="{
                 itemTemplate: select ('#age_info_template'),

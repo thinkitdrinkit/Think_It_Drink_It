@@ -7,6 +7,7 @@
     var _flavNum4 = "";
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
+    var Age = thinkitdrinkitDataClient.getTable("Flavor");
 
     WinJS.UI.Pages.define("/pages/flav_sel/flav_sel.html", {
         // This function is called whenever a user navigates to this page. It
@@ -27,14 +28,29 @@
             document.getElementById("base_pic").src = roamingSettings.values["Base_pic"];
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var user_flav_sel = JSON.parse(xhr.responseText);
-                user_flav_sel.forEach(function (user_flav_sels) {
-                    for (var i = 0; i < user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors.length; i++) {
-                        age_data.model.flavor1.push({ sel_flav_name: user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[i].name, sel_flav_pic: user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[i].image })
+            if (roamingSettings.values["Flav_name"] === "Caloric") {
+                var query = Age.where({
+                    Caloric: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name + "(c)", sel_flav_pic: results[i].Image })
                     }
+                }, function (err) {
+                    console.log(err);
                 });
-            });
+
+            }else{
+                var query = Age.where({
+                    NonCaloric: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name, sel_flav_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+
         },
 
         unload: function () {
@@ -60,12 +76,12 @@
 
             var the_flav_num = age_data.get_flav_sel_num(flav1);
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var sel_the_flav = JSON.parse(xhr.responseText);
-                sel_the_flav.forEach(function (sel_the_flavs) {
-                    age_data.model.info_page4.push({ sel_name: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].name, sel_label: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].label, sel_info: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].info, sel_pic: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].image });
-                });
-            });
+            var query = Age.where({
+            }).read().done(function (results) {
+                age_data.model.info_page4.push({ sel_name: results[the_flav_num].Name, sel_info: results[the_flav_num].Info, sel_pic: results[the_flav_num].Image, sel_label: results[the_flav_num].Label })
+            }, function (err) {
+                console.log(err);
+            })
         },
 
         next_page_boost: function () {

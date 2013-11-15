@@ -5,6 +5,8 @@
     var num = 0;
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
+    var Age = thinkitdrinkitDataClient.getTable("Base");
+
     WinJS.UI.Pages.define("/pages/base/base.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -19,20 +21,32 @@
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
 
-           //alt = options.age;
-
             //sending the users choosen age to the age_data namespace and then receiving a number that will 
             //be used to access the right object on the array
             num = age_data.get_age_num(roamingSettings.values["Age_name"]);
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var age_bases = JSON.parse(xhr.responseText);
-                age_bases.forEach(function (age_base) {
-                    for (var i = 0; i < age_base[num].Base.length; i++) {
-                        age_data.model.base.push({ b_name: age_base[num].Base[i].name, b_pic: age_base[num].Base[i].image })
+            if (roamingSettings.values["Age_name"] === "Youth" || roamingSettings.values["Age_name"] === "Toddler") {
+                var query = Age.where({
+                    Access: 1
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
                     }
+                }, function (err) {
+                    console.log(err);
                 });
-            });
+
+            } else {
+                var query = Age.where({
+                    Access: 2
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
         },
 
         unload: function () {
@@ -57,7 +71,7 @@
             remove.pop_list(age_data.model.info_page2)
             var age_num = 0;
             var base_num = 0;
-            age3 = get_set.set_age("name");
+            age3 = roamingSettings.values["Age_name"];
             base3 = base;
 
             if (base === "Protein") {
@@ -66,12 +80,13 @@
                 age_num = age_data.get_age_num(roamingSettings.values["Age_name"]);
                 base_num = age_data.get_base_num(base);
 
-                WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                    var base_sel = JSON.parse(xhr.responseText);
-                    base_sel.forEach(function (sel) {
-                        age_data.model.info_page2.push({ the_name: sel[age_num].Base[base_num].name, the_img: sel[age_num].Base[base_num].label, the_info: sel[age_num].Base[base_num].info, the_pic: sel[age_num].Base[base_num].image, base_price: sel[age_num].Base[base_num].price });
-                    });
-                });
+                var query = Age.where({
+                }).read().done(function (results) {
+                    age_data.model.info_page2.push({the_name: results[base_num].Name, the_info: results[base_num].Info, the_img: results[base_num].Label, base_price: results[base_num].Price, the_pic: results[base_num].Image})
+                }, function (err) {
+                    console.log(err);
+                })
+
             };
         },
         next_page_flavor: function () {

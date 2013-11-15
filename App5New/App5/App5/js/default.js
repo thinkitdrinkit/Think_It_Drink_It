@@ -6,6 +6,7 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
+    var Age = thinkitdrinkitDataClient.getTable("Age");
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -38,6 +39,7 @@
         // suspended, call args.setPromise().
         app.sessionState.history = nav.history;
     };
-
+   
     app.start();
+
 })();

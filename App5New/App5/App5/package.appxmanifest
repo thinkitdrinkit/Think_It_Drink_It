@@ -15,12 +15,15 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="App5" Description="App5" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
+      <m2:VisualElements DisplayName="ThinkitDrinkit" Description="App5" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
         <m2:SplashScreen Image="images\another_logo.jpg" BackgroundColor="#ffffff" />
       </m2:VisualElements>
       <Extensions>
         <Extension Category="windows.printTaskSettings" />
       </Extensions>
+      <ApplicationContentUriRules>
+        <Rule Match="https://thinkitdrinkit.azure-mobile.net/client/MobileServices.Web-1.0.0.min.js" Type="include" />
+      </ApplicationContentUriRules>
     </Application>
   </Applications>
   <Capabilities>

@@ -11,6 +11,7 @@
 
    var appData = Windows.Storage.ApplicationData.current;
    var roamingSettings = appData.roamingSettings;
+   var Age = thinkitdrinkitDataClient.getTable("FlavorBase");
 
     WinJS.UI.Pages.define("/pages/flavor/flavor.html", {
         // This function is called whenever a user navigates to this page. It
@@ -36,14 +37,27 @@
             document.getElementById("age_pic").src = _agePic;
             document.getElementById("base_pic").src = _basePic;
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var age_flavor = JSON.parse(xhr.responseText);
-                age_flavor.forEach(function (age_flavors) {
-                    for (var i = 0; i < age_flavors[_ageChoice].Base[_baseChoice].flavor.length; i++) {
-                        age_data.model.flavor.push({ flavor_name: age_flavors[_ageChoice].Base[_baseChoice].flavor[i].name, flavor_pic: age_flavors[_ageChoice].Base[_baseChoice].flavor[i].image });
+            if (roamingSettings.values["Age_name"] === "Youth" || roamingSettings.values["Age_name"] === "Toddler") {
+                var query = Age.where({
+                    Access: 1
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.flavor.push({ flavor_name: results[i].Name, flavor_pic: results[i].Image })
                     }
+                }, function (err) {
+                    console.log(err);
                 });
-            });
+
+            } else {
+                var query = Age.where({
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.flavor.push({ flavor_name: results[i].Name, flavor_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            }
             
         },
 
@@ -65,13 +79,13 @@
             remove.pop_list(age_data.model.info_page3);
 
             var flav_3 = age_data.get_flav_num(flavor);
-
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var flav_info = JSON.parse(xhr.responseText);
-                flav_info.forEach(function (flav_infos) {
-                    age_data.model.info_page3.push({ the_info_flav: flav_infos[_ageChoice].Base[_baseChoice].flavor[flav_3].info, info_img_flav: flav_infos[_ageChoice].Base[_baseChoice].flavor[flav_3].image, info_name_flav: flav_infos[_ageChoice].Base[_baseChoice].flavor[flav_3].name });
-                });
-            });
+            
+            var query = Age.where({
+            }).read().done(function (results) {
+                age_data.model.info_page3.push({info_name_flav: results[flav_3].Name, the_info_flav: results[flav_3].Info, base_price: results[flav_3].Price, info_img_flav: results[flav_3].Image})
+            }, function (err) {
+                console.log(err);
+            })
         },
 
         next_page_boost: function () {
@@ -82,6 +96,5 @@
             roamingSettings.values["Flav_info"] = null;
             roamingSettings.values["Flav_price"] = null;
         }
-
     });
 })();

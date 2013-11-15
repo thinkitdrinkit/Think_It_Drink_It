@@ -57,68 +57,69 @@
                 base = 3;
             } else if (base === "Protein") {
                 base = 4;
-                //b_p_sel = 0;
-            } 
+            } else if (base === "Sports Nutrition(Y)") {
+                base = 8;
+            }
             return base
         },
 
         get_flav_num: function (flav) {
-            if (flav === "non-caloric") {
-                flav = 0;
-            } else if (flav === "caloric") {
+            if (flav === "Non-Caloric") {
                 flav = 1;
+            } else if (flav === "Caloric") {
+                flav = 0;
             }
             return flav
         },
 
         get_flav_sel_num: function (flav) {
-            if (flav === "Sour Apple") {
+            if (flav === "Sour Apple" || flav === "Sour Apple(c)") {
                 flav = 0;
-            } else if (flav === "Lemonade") {
+            } else if (flav === "Lemonade" || flav === "Lemonade(c)") {
                 flav = 1;
-            } else if (flav === "Pineapple") {
+            } else if (flav === "Pineapple" || flav === "Pineapple(c)") {
                 flav = 2;
-            } else if (flav === "Pom Acia") {
+            } else if (flav === "Pom Acia" || flav === "Pom Acia(c)") {
                 flav = 3;
-            } else if (flav === "Lemon Lime") {
-                flav = 0;
-            } else if (flav === "Mint") {
-                flav = 1;
+            } else if (flav === "Lemon Lime" || flav === "Lemon Lime(c)") {
+                flav = 4;
+            } else if (flav === "Mint" || flav === "Mint(c)") {
+                flav = 5;
             }
             return flav;
         },
 
         get_boost_num: function (boost) {
             if (boost === "Focus") {
-                boost = 0;
-            } else if (boost === "Joint Tissue") {
-                boost = 1;
-            } else if (boost === "Cellular Support") {
-                boost = 2;
-            } else if (boost === "Fat Buner") {
-                boost = 3;
-            } else if (boost === "Strength/Agility") {
-                boost = 4;
-            } else if (boost === "Endurance") {
-                boost = 5;
-            } else if (boost === "Energy") {
-                boost = 6;
-            } else if (boost === "Natural Energy") {
-                boost = 7;
-            } else if (boost === "Digestive Probiotic") {
                 boost = 8;
-            } else if (boost === "Fiber") {
+            } else if (boost === "Joint Tissue") {
                 boost = 9;
-            } else if (boost === "Beauty/ Skin Health") {
+            } else if (boost === "Cellular Support") {
                 boost = 10;
-            } else if (boost === "Vitamin D") {
+            } else if (boost === "Fat Buner") {
                 boost = 11;
-            } else if (boost === "Omega 3's") {
+            } else if (boost === "Strength and Agility" ) {
                 boost = 12;
-            } else if (boost === "Womens Mineral") {
+            } else if (boost === "Endurance") {
+                boost = 22;
+            } else if (boost === "Energy") {
                 boost = 13;
-            } else if (boost === "Womens Hormone") {
+            } else if (boost === "Natural Energy") {
                 boost = 14;
+            } else if (boost === "Digestive Probiotic") {
+                boost = 15;
+            } else if (boost === "Fiber") {
+                boost = 16;
+            } else if (boost === "Beauty/ Skin Health") {
+                boost = 17;
+            } else if (boost === "Vitamin D") {
+                boost = 18;
+            } else if (boost === "Omega 3's") {
+                boost = 19;
+            } else if (boost === "Womens Mineral") {
+                boost = 20;
+            } else if (boost === "Womens Hormone") {
+                boost = 21;
             } else if (boost === "bone") {
                 boost = 0;
             } else if (boost === "immunity") {
@@ -127,13 +128,13 @@
                 boost = 2;
             } else if (boost === "dental") {
                 boost = 3;
-            } else if (boost === "endurance") {
+            } else if (boost === "Endurance(Y)") {
                 boost = 4;
-            } else if (boost === "focus") {
+            } else if (boost === "Focus(Y)") {
                 boost = 5;
-            } else if (boost === "recovery") {
+            } else if (boost === "Recovery(Y)") {
                 boost = 6;
-            } else if (boost === "strength/agility") {
+            } else if (boost === "Strength and Agility(Y)") {
                 boost = 7;
             }
             return boost;
