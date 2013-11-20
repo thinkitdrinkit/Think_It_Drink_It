@@ -23,48 +23,7 @@
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
             document.getElementById("flav2_pic").src = roamingSettings.values["FlavSel_pic"];
 
-
-            /*WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var age_boost = JSON.parse(xhr.responseText);
-                age_boost.forEach(function (age_boosts) {
-                    for (var i = 0; i < age_boosts[_num4].Base[_num3].boost.length; i++) {
-                        age_data.model.boost.push({ boost_name: age_boosts[_num4].Base[_num3].boost[i].name, boost_pic: age_boosts[_num4].Base[_num3].boost[i].image });
-                    }
-                });
-            });*/
-
-            if (roamingSettings.values["Age_name"] === "Youth") {
-                var query = Age.where({
-                    Access1: 11
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-
-            } else if (roamingSettings.values["Age_name"] === "Toddler") {
-                var query = Age.where({
-                    Access: 1
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-            } else {
-                var query = Age.where({
-                    Access: 2
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-            }
+            server.boost(roamingSettings.values["Age_name"]);
         },
 
         unload: function () {
@@ -133,14 +92,7 @@
 
         clicked: function (name) {
             remove.pop_list(age_data.model.info_page5);
-
-           var query = Age.where({
-               Name: name
-           }).read().done(function (results) {
-               age_data.model.info_page5.push({ the_name: results[0].Name, the_info: results[0].Info, the_pic: results[0].Image, the_label: results[0].Label, the_price: results[0].Price })
-           }, function (err) {
-               console.log(err);
-           })
+            server.boost_sub(name);
         },
 
         release: function () {

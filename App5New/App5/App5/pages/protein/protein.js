@@ -17,15 +17,7 @@
             design.changeTextColor();
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
             document.getElementById("choosen_age").textContent = "Choose Your Protein:";
-            var query = Age.where({
-                Access: 3
-            }).read().done(function (results) {
-                for (var i = 0; i < results.length; i++) {
-                    age_data.model.the_protein.push({ b_name: results[i].Name, b_pic: results[i].Image })
-                }
-            }, function (err) {
-                console.log(err);
-            });
+            server.protein();
         },
 
         unload: function () {
@@ -43,17 +35,9 @@
     var base3 = "";
     WinJS.Namespace.define("protein_clicked", {
         clicked: function (base) {
-            remove.pop_list(age_data.model.protein_info)
-
+            remove.pop_list(age_data.model.protein_info);
             base3 = base;
-
-            var query = Age.where({
-                Name: base
-            }).read().done(function (results) {
-                age_data.model.protein_info.push({ the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image })
-            }, function (err) {
-                console.log(err);
-            })
+            server.protein_sub(base);
 
         },
         next_page_flavor: function () {         

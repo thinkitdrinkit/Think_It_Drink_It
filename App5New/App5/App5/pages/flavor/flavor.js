@@ -32,32 +32,9 @@
                 document.getElementById("choosen_base").textContent = "Would You Like A Caloric or Non-Caloric Flavor?";
             }
 
-
             document.getElementById("age_pic").src = _agePic;
             document.getElementById("base_pic").src = _basePic;
-
-            if (roamingSettings.values["Age_name"] === "Youth" || roamingSettings.values["Age_name"] === "Toddler") {
-                var query = Age.where({
-                    Access: 1 
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.flavor.push({ flavor_name: results[i].Name, flavor_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-
-            } else {
-                var query = Age.where({
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.flavor.push({ flavor_name: results[i].Name, flavor_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-            }
-            
+            server.flav(roamingSettings.values["Age_name"]);
         },
 
         unload: function () {
@@ -77,13 +54,7 @@
         clicked: function (flavor) {
             remove.pop_list(age_data.model.info_page3);
             
-            var query = Age.where({
-                Name: flavor
-            }).read().done(function (results) {
-                age_data.model.info_page3.push({info_name_flav: results[0].Name, the_info_flav: results[0].Info, base_price: results[0].Price, info_img_flav: results[0].Image})
-            }, function (err) {
-                console.log(err);
-            })
+            server.flav_sub(flavor);
         },
 
         next_page_boost: function () {

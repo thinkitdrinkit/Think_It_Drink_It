@@ -23,29 +23,7 @@
             document.getElementById("base_pic").src = roamingSettings.values["Base_pic"];
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
 
-            if (roamingSettings.values["Flav_name"] === "Caloric") {
-                var query = Age.where({
-                    Caloric: true
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name , sel_flav_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-
-            }else{
-                var query = Age.where({
-                    NonCaloric: true
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name, sel_flav_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-            }
-
+            server.flav_sel(roamingSettings.values["Flav_name"]);
         },
 
         unload: function () {
@@ -70,14 +48,7 @@
             remove.pop_list(age_data.model.info_page4);
 
             console.log(flav1);
-
-            var query = Age.where({
-                Name: flav1
-            }).read().done(function (results) {
-                age_data.model.info_page4.push({ sel_name: results[0].Name, sel_info: results[0].Info, sel_pic: results[0].Image, sel_label: results[0].Label })
-            }, function (err) {
-                console.log(err);
-            })
+            server.flav_sel_sub(flav1);
         },
 
         next_page_boost: function () {

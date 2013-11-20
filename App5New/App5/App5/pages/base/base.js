@@ -25,28 +25,7 @@
             //sending the users choosen age to the age_data namespace and then receiving a number that will 
             //be used to access the right object on the array
 
-            if (the_sel_age === "Youth" || the_sel_age === "Toddler") {
-                var query = Age.where({
-                    Access: 1
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-
-            } else {
-                var query = Age.where({
-                    Access: 2
-                }).read().done(function (results) {
-                    for (var i = 0; i < results.length; i++) {
-                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
-                    }
-                }, function (err) {
-                    console.log(err);
-                });
-            }
+            server.base(the_sel_age);
         },
 
         unload: function () {
@@ -72,14 +51,7 @@
           
             base3 = base;
 
-                var query = Age.where({
-                    Name: base
-                }).read().done(function (results) {
-                    age_data.model.info_page2.push({the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image})
-                }, function (err) {
-                    console.log(err);
-                })
-
+            server.base_sub(base);
         },
         next_page_flavor: function () {
             if (base3 === "Protein") {

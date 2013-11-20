@@ -15,31 +15,21 @@
         }
     });
 
-    var query = Age.where({
-    }).read().done(function (results) {
-        for (var i = 0; i < results.length; i++) {
-            age_data.model.age.push({ age: results[i].Name, img: results[i].Image })
-        }
-    }, function (err) {
-        console.log(err);
-    });
-  
+    //gather the infomation from the database and displays it on the sreen
+    server.home();
+   
     // the following namespace will be used to complete all click events on the home.html page
-
     var _choosen_age = "";
+
     WinJS.Namespace.define('clicked_me', {
         //the clicked function will show the photo and the more indept information of the clicked age group
         //at the bottem of the home.html page
         clicked: function (me) {
-            remove.pop_list(age_data.model.info)
             _choosen_age = me;
-            var query = Age.where({
-                Name:me
-            }).read().done(function (results) {
-                    age_data.model.info.push({ the_info: results[0].Info, info_img: results[0].Image })
-            }, function (err) {
-                console.log(err);
-            });
+
+            //gather information from from the database as the user clicks on the diffent ages
+            //and then displays that information
+            server.home_sub(me);
         },
         next_page: function () {
             WinJS.Navigation.navigate('pages/base/base.html');

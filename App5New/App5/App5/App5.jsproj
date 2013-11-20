@@ -112,6 +112,7 @@
     <Content Include="images\weightM.jpg" />
     <Content Include="images\youth.jpg" />
     <Content Include="js\ChangeApp.js" />
+    <Content Include="js\dataBaseGather.js" />
     <Content Include="js\dataStore.js" />
     <Content Include="js\default.js" />
     <Content Include="js\gatherInfo.js" />
