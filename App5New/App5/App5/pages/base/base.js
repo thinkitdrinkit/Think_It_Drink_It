@@ -14,7 +14,8 @@
             // TODO: Initialize the page here.
 
             WinJS.Binding.processAll(element, age_data.model);
-            
+            design.getBase();
+            design.changeTextColor();
             document.getElementById("choosen_age").textContent = "Choose Your Base:";
 
             var the_sel_age = roamingSettings.values["Age_name"];
@@ -23,9 +24,8 @@
 
             //sending the users choosen age to the age_data namespace and then receiving a number that will 
             //be used to access the right object on the array
-            num = age_data.get_age_num(roamingSettings.values["Age_name"]);
 
-            if (roamingSettings.values["Age_name"] === "Youth" || roamingSettings.values["Age_name"] === "Toddler") {
+            if (the_sel_age === "Youth" || the_sel_age === "Toddler") {
                 var query = Age.where({
                     Access: 1
                 }).read().done(function (results) {
@@ -64,38 +64,34 @@
         }
     });
 
-    var age3 = "";
+   
     var base3 = "";
     WinJS.Namespace.define("base_clicked", {
         clicked: function (base) {
             remove.pop_list(age_data.model.info_page2)
-            var age_num = 0;
-            var base_num = 0;
-            age3 = roamingSettings.values["Age_name"];
+          
             base3 = base;
 
-            if (base === "Protein") {
-
-            } else {
-                age_num = age_data.get_age_num(roamingSettings.values["Age_name"]);
-                base_num = age_data.get_base_num(base);
-
                 var query = Age.where({
+                    Name: base
                 }).read().done(function (results) {
-                    age_data.model.info_page2.push({the_name: results[base_num].Name, the_info: results[base_num].Info, the_img: results[base_num].Label, base_price: results[base_num].Price, the_pic: results[base_num].Image})
+                    age_data.model.info_page2.push({the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image})
                 }, function (err) {
                     console.log(err);
                 })
 
-            };
         },
         next_page_flavor: function () {
-            WinJS.Navigation.navigate('pages/flavor/flavor.html')
-           
-            roamingSettings.values["Base_name"] = base3;
-            roamingSettings.values["Base_pic"] = document.getElementById("choosen_base_carry").src;
-            roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;
-            roamingSettings.values["Base_price"] = document.getElementById("base_price").textContent;
+            if (base3 === "Protein") {
+                WinJS.Navigation.navigate('pages/protein/protein.html');
+            } else {
+                WinJS.Navigation.navigate('pages/flavor/flavor.html')
+                roamingSettings.values["Base_name"] = base3;
+                roamingSettings.values["Base_pic"] = document.getElementById("choosen_base_carry").src;
+                roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;
+                roamingSettings.values["Base_price"] = document.getElementById("base_price").textContent;
+            }
+            
         }
     })
 

@@ -17,11 +17,11 @@
    font-weight: 800; 
    margin-top: 210px;
    background-color: rgba(0,0,0,.6);
- }#base_pic{
+}#base_pic{
    border: 2px solid #000;
- }#flavor_header{
+}#flavor_header{
    margin-top: -30px;
-  }#flavor_placement{
+}#flavor_placement{
    margin-top: -15px;
    margin-left: -100px;
 }#choosen_flav_pic{
@@ -32,8 +32,8 @@
    border: 2px solid #c8060c;
    margin-right: 10px;
 }#choosen_flav_placement{
+   margin-top: -130px;
    margin-left: -100px;
-   margin-top: -120px;
    width: auto;
    height: 210px;
 }.the_choosen_flav{

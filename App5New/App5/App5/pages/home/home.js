@@ -10,6 +10,8 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Binding.processAll(element, age_data.model);
+            design.getHome();
+            design.changeTextColor();
         }
     });
 
@@ -31,12 +33,10 @@
         clicked: function (me) {
             remove.pop_list(age_data.model.info)
             _choosen_age = me;
-            var num = 0;
-            num = age_data.get_age_num(me);
-
             var query = Age.where({
+                Name:me
             }).read().done(function (results) {
-                    age_data.model.info.push({ the_info: results[num].Info, info_img: results[num].Image })
+                    age_data.model.info.push({ the_info: results[0].Info, info_img: results[0].Image })
             }, function (err) {
                 console.log(err);
             });

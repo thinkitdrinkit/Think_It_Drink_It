@@ -19,11 +19,12 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Binding.processAll(element, age_data.model);
-           
             _ageName = roamingSettings.values["Age_name"];
             _baseName = roamingSettings.values["Base_name"];
             _agePic = roamingSettings.values["Age_pic"];
             _basePic = roamingSettings.values["Base_pic"];
+            design.getFlav();
+            design.changeTextColor();
 
             if (_ageName === "Toddler" || _ageName === "Youth") {
                 document.getElementById("choosen_base").textContent = "Based on the Age You've Choosen You Must Select Non-Caloric."
@@ -31,15 +32,13 @@
                 document.getElementById("choosen_base").textContent = "Would You Like A Caloric or Non-Caloric Flavor?";
             }
 
-            _baseChoice = age_data.get_base_num(_baseName);
-            _ageChoice = age_data.get_age_num(_ageName);
-            
+
             document.getElementById("age_pic").src = _agePic;
             document.getElementById("base_pic").src = _basePic;
 
             if (roamingSettings.values["Age_name"] === "Youth" || roamingSettings.values["Age_name"] === "Toddler") {
                 var query = Age.where({
-                    Access: 1
+                    Access: 1 
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
                         age_data.model.flavor.push({ flavor_name: results[i].Name, flavor_pic: results[i].Image })
@@ -77,12 +76,11 @@
     WinJS.Namespace.define("flavor_clicked", {
         clicked: function (flavor) {
             remove.pop_list(age_data.model.info_page3);
-
-            var flav_3 = age_data.get_flav_num(flavor);
             
             var query = Age.where({
+                Name: flavor
             }).read().done(function (results) {
-                age_data.model.info_page3.push({info_name_flav: results[flav_3].Name, the_info_flav: results[flav_3].Info, base_price: results[flav_3].Price, info_img_flav: results[flav_3].Image})
+                age_data.model.info_page3.push({info_name_flav: results[0].Name, the_info_flav: results[0].Info, base_price: results[0].Price, info_img_flav: results[0].Image})
             }, function (err) {
                 console.log(err);
             })

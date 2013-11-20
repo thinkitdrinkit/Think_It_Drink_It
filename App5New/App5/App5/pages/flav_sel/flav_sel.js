@@ -2,9 +2,6 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
-    var _ageNum4 = "";
-    var _baseNum4 = "";
-    var _flavNum4 = "";
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
     var Age = thinkitdrinkitDataClient.getTable("Flavor");
@@ -15,12 +12,10 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Binding.processAll(element, age_data.model);
-           
+            design.getFlavSel();
+            design.changeTextColor();
             //the following are getting the information for the appropriate data and then changing it to numbers
             //and then storing that information inside var
-            _ageNum4 = age_data.get_age_num(roamingSettings.values["Age_name"]);
-            _baseNum4 = age_data.get_base_num(roamingSettings.values["Base_name"]);
-            _flavNum4 = age_data.get_flav_num(roamingSettings.values["Flav_name"]);
 
             document.getElementById("flav_sel_header").textContent = "Choose Your Flavor:";
 
@@ -33,7 +28,7 @@
                     Caloric: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
-                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name + "(c)", sel_flav_pic: results[i].Image })
+                        age_data.model.flavor1.push({ sel_flav_name: results[i].Name , sel_flav_pic: results[i].Image })
                     }
                 }, function (err) {
                     console.log(err);
@@ -74,11 +69,12 @@
 
             remove.pop_list(age_data.model.info_page4);
 
-            var the_flav_num = age_data.get_flav_sel_num(flav1);
+            console.log(flav1);
 
             var query = Age.where({
+                Name: flav1
             }).read().done(function (results) {
-                age_data.model.info_page4.push({ sel_name: results[the_flav_num].Name, sel_info: results[the_flav_num].Info, sel_pic: results[the_flav_num].Image, sel_label: results[the_flav_num].Label })
+                age_data.model.info_page4.push({ sel_name: results[0].Name, sel_info: results[0].Info, sel_pic: results[0].Image, sel_label: results[0].Label })
             }, function (err) {
                 console.log(err);
             })

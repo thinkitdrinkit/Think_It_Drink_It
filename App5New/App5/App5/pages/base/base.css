@@ -31,23 +31,24 @@
    position: relative;
 }.sel_base_pic_class{
    float: left;
-   width: 300px;
-   height: 350px;
+   width: 250px;
+   height: 200px;
    background-color: #fff;
    border: 2px solid #c8060c;
+   margin-right: 10px;
 }#sel_bases_placement{
    margin-top: -120px;
    margin-left: -100px;
    width: auto;
-   height: 220px;
+   height: 210px;
  }#sel_btn2{
    margin-left: 5px;
    margin-top: 40px;
    position: absolute;
 }#the_sel_bases{
-   width: 800px;
+   width: 700px;
    background-color: #fff;
-   height: 800px;
+   height: 200px;
 }#choosen_age{
    position: relative;
 }

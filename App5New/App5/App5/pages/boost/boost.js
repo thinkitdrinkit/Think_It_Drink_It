@@ -14,15 +14,14 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Binding.processAll(element, age_data.model);
+            design.getBoost();
+            design.changeTextColor();
             document.getElementById("choosen_base").textContent = "Choose Your Boost (Max of 3):";
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
             document.getElementById("base_pic").src = roamingSettings.values["Base_pic"];
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
             document.getElementById("flav2_pic").src = roamingSettings.values["FlavSel_pic"];
-
-            _num4 = age_data.get_age_num(roamingSettings.values["Age_name"]);
-            _num3 = age_data.get_base_num(roamingSettings.values["Base_name"]);
 
 
             /*WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
@@ -133,15 +132,12 @@
         },
 
         clicked: function (name) {
-           remove.pop_list(age_data.model.info_page5);
-           var the_age_num = age_data.get_age_num(roamingSettings.values["Age_name"]);
-           var the_base_num = age_data.get_base_num(roamingSettings.values["Base_name"]);
-           var the_boost_num = age_data.get_boost_num(name);
-
+            remove.pop_list(age_data.model.info_page5);
 
            var query = Age.where({
+               Name: name
            }).read().done(function (results) {
-               age_data.model.info_page5.push({ the_name: results[the_boost_num].Name, the_info: results[the_boost_num].Info, the_pic: results[the_boost_num].Image, the_label: results[the_boost_num].Label, the_price: results[the_boost_num].Price })
+               age_data.model.info_page5.push({ the_name: results[0].Name, the_info: results[0].Info, the_pic: results[0].Image, the_label: results[0].Label, the_price: results[0].Price })
            }, function (err) {
                console.log(err);
            })
