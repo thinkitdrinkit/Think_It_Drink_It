@@ -29,6 +29,7 @@
             document.getElementById("base_price").textContent = "$" + roamingSettings.values["Base_price"];
             document.getElementById("boost_price1").textContent = "$" + roamingSettings.values["Boost1_price"];
             document.getElementById("total").textContent = "$" + (parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]));
+            roamingSettings.values["total_price"] = parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]);
 
             if (roamingSettings.values["Boost2_name"] != "") {
                // document.getElementById("boost_pic2").src = get_set.set_boost2("pic");
@@ -38,7 +39,7 @@
 
                 document.getElementById("boost_price2").textContent = "$" + roamingSettings.values["Boost2_price"];
                 document.getElementById("total").textContent = "$" + (parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Boost2_price"]));
-
+                roamingSettings.values["total_price"] = parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Boost2_price"]);
                 document.getElementById("price2_boost").removeAttribute("hidden");
                 document.getElementById("boost_price2").removeAttribute("hidden");
                 document.getElementById("my_boost2").removeAttribute("hidden");
@@ -53,10 +54,10 @@
 
                 document.getElementById("boost_price3").textContent = "$" + roamingSettings.values["Boost3_price"];
                 document.getElementById("total").textContent = "$" + (parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Boost2_price"]) + parseFloat(roamingSettings.values["Boost3_price"]));
-
+                roamingSettings.values["total_price"] = parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Boost2_price"]) + parseFloat(roamingSettings.values["Boost3_price"]);
                 document.getElementById("boost_price3").removeAttribute("hidden");
                 document.getElementById("price3_boost").removeAttribute("hidden");
-
+                console.log((roamingSettings.values["total_price"] % 6) + roamingSettings.values["total_price"]);
                 document.getElementById("my_boost3").removeAttribute("hidden");
               //  document.getElementById("boost_pic3").removeAttribute("hidden");
                 var the_added = parseFloat(roamingSettings.values["Boost3_price"]) + parseFloat(roamingSettings.values["Boost2_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Base_price"]);
@@ -86,6 +87,44 @@
     WinJS.Namespace.define("FinalClick", {
 
         clicked: function () {
+            WinJS.xhr({
+                type: "POST",
+                url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                headers: { "Content-type": "application/json" },
+                password: "agave2013",
+                data: JSON.stringify({
+                        "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                        "user_name": "test",
+                        "customer_id": "0c5b7317-4d68-11e3-a29a-bc305bf5da20",
+                        "status": "SAVED",
+                        "total_price": roamingSettings.values["total_price"],
+                        "total_tax": (roamingSettings.values["total_price"] % 6),
+                        "note": "I a test note!!",
+                        "register_sale_products": [
+                           {
+                               "product_id": "50faeaa7-4d5c-11e3-a29a-bc305bf5da20",
+                               "quantity": 1,
+                               "price": roamingSettings.values["Base_price"],
+                               "tax": (roamingSettings.values["Base_price"] % 6)
+                           },
+                           {
+                               "product_id": "42315b9c-4d62-11e3-a29a-bc305bf5da20",
+                               "quantity": 1,
+                               "price": roamingSettings.values["Boost_price"],
+                               "tax": (roamingSettings.values["Boost_price"] % 6)
+                           }
+                        ]
+                }),
+            }).then(function sucess(res) { console.log("work",res.responseText) }, function error(err) {
+                console.log("fail",err.responseText)
+            })
+            // Always catch network exceptions for async methods
+
+            function onError(reason) {
+                // Details in reason.Message and ex.HResult.       
+            }
+
+
             var query = Age.where({
             }).read().done(function (results) {
               var r = parseFloat(results.length) + (Math.floor((Math.random() * 100) + 1));

@@ -41,7 +41,7 @@
 
         },
         next_page_flavor: function () {         
-                WinJS.Navigation.navigate('pages/flavor/flavor.html')
+                WinJS.Navigation.navigate('pages/boost/boost.html')
                 roamingSettings.values["Base_name"] = base3;
                 roamingSettings.values["Base_pic"] = document.getElementById("choosen_base_carry").src;
                 roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;

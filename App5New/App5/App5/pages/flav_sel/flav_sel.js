@@ -17,10 +17,16 @@
             //the following are getting the information for the appropriate data and then changing it to numbers
             //and then storing that information inside var
 
+            if(roamingSettings.values["Flav_name"] === "Caloric"){
+                document.getElementById("flav_p").textContent = "Caloric";
+            } else {
+                document.getElementById("flav_p").textContent = "Non-Caloric";
+            }
+
             document.getElementById("flav_sel_header").textContent = "Choose Your Flavor:";
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
-            document.getElementById("base_pic").src = roamingSettings.values["Base_pic"];
+            document.getElementById("base_pic_footer").src = roamingSettings.values["Base_pic"];
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
 
             server.flav_sel(roamingSettings.values["Flav_name"]);
@@ -42,13 +48,12 @@
     WinJS.Namespace.define("flav_sel_clicked", {
       
         clicked: function (flav1) {
-
-            the_choosenFlav = flav1;
+            var updated_flav1 = flav1.replace(/^\s+/, '').replace(/\s+$/, '');
 
             remove.pop_list(age_data.model.info_page4);
-
-            console.log(flav1);
-            server.flav_sel_sub(flav1);
+            the_choosenFlav = updated_flav1;
+            console.log(updated_flav1);
+            server.flav_sel_sub(updated_flav1);
         },
 
         next_page_boost: function () {

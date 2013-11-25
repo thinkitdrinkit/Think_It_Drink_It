@@ -4,12 +4,13 @@
 }#age_pic{
    border: 2px solid #000;
    margin-left: 3px;
-   margin-top: 0px;
+   float: left;
  }.base_pic_class{
    width: 300px;
    height: 250px;
    position: absolute;
    z-index: -1;
+   margin-right: 10px;
 }#bases_placement{
    margin-top: -15px;
    margin-left: -100px;
@@ -35,7 +36,6 @@
    height: 200px;
    background-color: #fff;
    border: 2px solid #c8060c;
-   margin-right: 10px;
 }#sel_bases_placement{
    margin-top: -120px;
    margin-left: -100px;
@@ -51,4 +51,14 @@
    height: 200px;
 }#choosen_age{
    position: relative;
+}#age_p{
+     position: absolute;
+     color: #fff;
+     font-weight: 700;
+     height: 20px;
+     background-color: rgba(0,0,0,.6);
+     width: 81px;
+     margin-left: 5px;
+     margin-top: 62px;
+     font-size: 12px;
 }

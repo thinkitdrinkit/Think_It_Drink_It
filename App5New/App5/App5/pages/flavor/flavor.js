@@ -33,7 +33,7 @@
             }
 
             document.getElementById("age_pic").src = _agePic;
-            document.getElementById("base_pic").src = _basePic;
+            document.getElementById("base_pic_footer").src = _basePic;
             server.flav(roamingSettings.values["Age_name"]);
         },
 
@@ -53,8 +53,8 @@
     WinJS.Namespace.define("flavor_clicked", {
         clicked: function (flavor) {
             remove.pop_list(age_data.model.info_page3);
-            
-            server.flav_sub(flavor);
+            var updated_flavor = flavor.replace(/^\s+/, '').replace(/\s+$/, '');
+            server.flav_sub(updated_flavor);
         },
 
         next_page_boost: function () {

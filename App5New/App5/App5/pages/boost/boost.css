@@ -32,6 +32,7 @@
     background-color: rgba(0,0,0,.6);
 }#flav2_pic{
    border: 2px solid #000;
+   margin-left: 10px;
 }#boost_list_placement{
    margin-top: -15px;
    margin-left: -100px;
@@ -50,39 +51,51 @@
    background-color: #fff;
    height: 200px;
 }#choosen_boost_info_placement{
-      margin-left: -100px;
-      width: auto;
-      height: 210px;
+   margin-left: -100px;
+   width: auto;
+   height: 210px;
 }#sel_btn3{
-      margin-left: 5px;
-      margin-top: 10px;
-      position: absolute;
+   margin-left: 5px;
+   margin-top: 10px;
+   position: absolute;
 }#choosen_boost_area_placement{
-     margin-left: 630px;
-     margin-top: -200px;
-     width: auto;
-     height: 120px;
+   margin-left: 630px;
+   margin-top: -200px;
+   width: auto;
+   height: 120px;
 }#area_img{
-     width: 100px;
-     height: 100px;
-     position: absolute;
-     z-index: -1;
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   z-index: -1;
 }.the_boost_area{
-    width: 100px;
-    height: 100px;
-    float: left;
-    border: 2px solid #0945e9;
+   width: 100px;
+   height: 100px;
+   float: left;
+   border: 2px solid #0945e9;
  }#btn_right{
-    float: right;
-    margin-left: 635px;
-    position: absolute;
+   float: right;
+   margin-left: 635px;
+   position: absolute;
 }.area_img_class{
-    margin-left: 1px;
-    border: 2px solid #0945e9;
+   margin-left: 1px;
+   border: 2px solid #0945e9;
 }#the_test{
-     margin-left: 630px;
-     margin-top: -170px;
-     margin-bottom: 5px;
+   margin-left: 630px;
+   margin-top: -170px;
+   margin-bottom: 5px;
 }#choosen_info{
-     font-size: 12px;
+   font-size: 12px;
+}#flav2_div{
+     float: left;
+}#flav2_p{
+   position: absolute;
+   color: #fff;
+   font-weight: 800;
+   height: 20px;
+   background-color: rgba(0,0,0,.6);
+   width: 81px;
+   margin-left: 11px;
+   margin-top: 62px;
+   font-size: 12px;
  }

@@ -16,10 +16,17 @@
             WinJS.Binding.processAll(element, age_data.model);
             design.getBoost();
             design.changeTextColor();
+
+            if (roamingSettings.values["Flav_name"] === "Caloric") {
+                document.getElementById("flav_p").textContent = "Caloric";
+            } else {
+                document.getElementById("flav_p").textContent = "Non-Caloric";
+            }
+
             document.getElementById("choosen_base").textContent = "Choose Your Boost (Max of 3):";
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
-            document.getElementById("base_pic").src = roamingSettings.values["Base_pic"];
+            document.getElementById("base_pic_footer").src = roamingSettings.values["Base_pic"];
             document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
             document.getElementById("flav2_pic").src = roamingSettings.values["FlavSel_pic"];
 
@@ -92,7 +99,8 @@
 
         clicked: function (name) {
             remove.pop_list(age_data.model.info_page5);
-            server.boost_sub(name);
+            var updated_name = name.replace(/^\s+/, '').replace(/\s+$/, '');
+            server.boost_sub(updated_name);
         },
 
         release: function () {

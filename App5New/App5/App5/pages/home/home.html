@@ -28,10 +28,10 @@
         <section id="home_content" aria-label="Main content" role="main">
 
             <div class="users_age_template" data-win-control="WinJS.Binding.Template">
-               <div id="age_display">
-               <img class="age_bg" data-win-bind="src: img" />
-                <h2 onclick="clicked_me.clicked(event.srcElement.textContent);" id="user_age" data-win-bind="textContent: age"></h2>
-            </div>
+                <div onclick="clicked_me.clicked(event.srcElement.innerText);" id="age_display">
+                    <img class="age_bg" data-win-bind="src: img" />
+                    <h2 id="user_age" data-win-bind="textContent: age"></h2>
+                </div>
             </div><!-- ends user_age_template -->
 
             <div id="age_template_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: age.dataSource" data-win-options="{

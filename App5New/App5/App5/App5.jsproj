@@ -150,9 +150,6 @@
     <Content Include="services\mobile services\thinkitdrinkitData\service.js">
       <ConnectedServiceReference>thinkitdrinkitData</ConnectedServiceReference>
     </Content>
-    <Content Include="services\mobile services\thinkitdrinkit\service.js">
-      <ConnectedServiceReference>thinkitdrinkit</ConnectedServiceReference>
-    </Content>
     <None Include="App5_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

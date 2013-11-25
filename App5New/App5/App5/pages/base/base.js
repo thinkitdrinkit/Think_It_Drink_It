@@ -48,10 +48,12 @@
     WinJS.Namespace.define("base_clicked", {
         clicked: function (base) {
             remove.pop_list(age_data.model.info_page2)
-          
-            base3 = base;
 
-            server.base_sub(base);
+            var updated_base = base.replace(/^\s+/, '').replace(/\s+$/, '');
+
+            base3 = updated_base;
+            console.log(updated_base);
+            server.base_sub(updated_base);
         },
         next_page_flavor: function () {
             if (base3 === "Protein") {

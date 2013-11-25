@@ -10,10 +10,6 @@
     <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
 
-    <!-- thinkitdrinkit references -->
-    <script src="/MobileServicesJavaScriptClient/MobileServices.js"></script>
-    <script src="/services/mobile services/thinkitdrinkit/service.js"></script>
-
     <!-- thinkitdrinkitData references -->
     <script src="/MobileServicesJavaScriptClient/MobileServices.js"></script>
     <script src="/services/mobile services/thinkitdrinkitData/service.js"></script>
@@ -36,11 +32,17 @@
 
     
              <!-- BEGINTEMPLATE: Template code for an app bar -->
-    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="">
+    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top' }">
          <button 
             data-win-control="WinJS.UI.AppBarCommand" 
-            data-win-options="{id:'cmdTopMixes',label:'Top Mixes',icon:'placeholder',
-                section:'selection',tooltip:'See The Mixes People are Loving'}">
+            data-win-options="{id:'cmdTopMixes',label:'Most Popular Mixes',icon:'favorite',
+                section:'section',tooltip:'See The Mixes People are Loving'}">
+        </button>
+
+          <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMoreLogin',label:'Login',icon:'contact',
+                section:'selection',tooltip:'Login to your account'}">
         </button>
 
         <button 
@@ -48,11 +50,14 @@
             data-win-options="{id:'cmdSignUp',label:'Sign-Up',icon:'people',
                 section:'selection',tooltip:'Join The Fun'}">
         </button>
+
+         <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMoreInfo',label:'Learn More',icon:'list',
+                section:'selection',tooltip:'Learn More'}">
+        </button>
+    
     </div>
     <!-- ENDTEMPLATE -->
-
-    <div id="appbar" data-win-control="WinJS.UI.AppBar">
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmdsignUp', label:'Sign-Up', icon:'people', tooltip:'Join The Fun'}" type="button"></button>
-    </div> 
 </body>
 </html>

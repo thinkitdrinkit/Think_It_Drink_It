@@ -24,12 +24,13 @@
     WinJS.Namespace.define('clicked_me', {
         //the clicked function will show the photo and the more indept information of the clicked age group
         //at the bottem of the home.html page
-        clicked: function (me) {
-            _choosen_age = me;
-
+        clicked: function (me) {          
+            var updated_answer = me.replace(/^\s+/, '').replace(/\s+$/, '');
+            _choosen_age = updated_answer;
+            console.log(updated_answer);
             //gather information from from the database as the user clicks on the diffent ages
             //and then displays that information
-            server.home_sub(me);
+            server.home_sub(updated_answer);
         },
         next_page: function () {
             WinJS.Navigation.navigate('pages/base/base.html');

@@ -22,9 +22,9 @@
         <section aria-label="Main content" role="main">
 
             <div id="boost_list" class="boost_list_class" data-win-control="WinJS.Binding.Template">
-                <div id="boost_list_id" class="the_boost_list">
+                <div id="boost_list_id" class="the_boost_list" onclick="boost_clicked.clicked(event.srcElement.innerText);">
                     <img class="boost_bg_img_class" id="boost_bg_img" data-win-bind="src: boost_pic" />
-                    <h2 onclick="boost_clicked.clicked(event.srcElement.textContent)" id="boost_name" class="boost_name_class" data-win-bind="textContent: boost_name"></h2>
+                    <h2 id="boost_name" class="boost_name_class" data-win-bind="textContent: boost_name"></h2>
                 </div>
             </div>
 
@@ -61,10 +61,22 @@
             </div>
         </section>
           <footer id="main_footer">
-              <img id="age_pic" src="#" onclick="WinJS.Navigation.back(4)" width="80" height="80" />
-              <img id="base_pic" src="#" width="80" onclick="WinJS.Navigation.back(3)" height="80" />
-              <img id="flav1_pic" src="#" width="80" onclick="WinJS.Navigation.back(2)" height="80" />
-              <img id="flav2_pic" src="#" width="80" onclick="WinJS.Navigation.back(1)" height="80" />
+              <div id="age_div">
+                  <p id="age_p">Age</p>
+                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(4)" src="#" width="80" height="80" />
+              </div>
+             <div id="base_div">
+                 <p id="base_p">Base</p>
+                <img id="base_pic_footer" onclick="WinJS.Navigation.back(3)" src="#" width="80" height="80" />
+             </div>
+             <div id="flav_div">
+                  <p id="flav_p"></p>
+                  <img id="flav1_pic" src="#" onclick="WinJS.Navigation.back(2)" width="80" height="80" />
+              </div>         
+              <div id="flav2_div">
+                  <p id="flav2_p">Flavor</p>
+                  <img id="flav2_pic" src="#" width="80" onclick="WinJS.Navigation.back(1)" height="80" />
+              </div>                      
               <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->
         </footer>
     </div>

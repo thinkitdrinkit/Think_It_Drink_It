@@ -3,6 +3,7 @@
     margin-right: 120px;
 }#flav1_pic{
     border: 2px solid #000;
+    margin-left: 8px;
 }.flav_sel_pic_class{
     width: 300px;
     height: 250px;
@@ -30,7 +31,6 @@
    height: 200px;
    background-color: #fff;
    border: 2px solid #c8060c;
-   margin-right: 10px;
 }#the_flav_sel_sel{
    width: 700px;
    background-color: #fff;
@@ -40,8 +40,20 @@
    margin-left: -100px;
    width: auto;
    height: 220px;
- }}#sel_btn4{
+ }#sel_btn4{
    margin-left: 5px;
    margin-top: 10px;
    position: absolute;
-  }
+}#flav_div{
+   float: left;
+}#flav_p{
+   position: absolute;
+   color: #fff;
+   font-weight: 800;
+   height: 20px;
+   background-color: rgba(0,0,0,.6);
+   width: 81px;
+   margin-left: 10px;
+   margin-top: 62px;
+   font-size: 12px;
+}
