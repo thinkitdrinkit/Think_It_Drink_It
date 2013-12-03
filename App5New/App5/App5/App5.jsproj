@@ -147,6 +147,15 @@
     <Content Include="pages\protein\protein.css" />
     <Content Include="pages\protein\protein.html" />
     <Content Include="pages\protein\protein.js" />
+    <Content Include="pages\signup\signup.css" />
+    <Content Include="pages\signup\signup.html" />
+    <Content Include="pages\signup\signup.js" />
+    <Content Include="pages\thankyou\thankyou.css" />
+    <Content Include="pages\thankyou\thankyou.html" />
+    <Content Include="pages\thankyou\thankyou.js" />
+    <Content Include="pages\welcome\welcome.css" />
+    <Content Include="pages\welcome\welcome.html" />
+    <Content Include="pages\welcome\welcome.js" />
     <Content Include="services\mobile services\thinkitdrinkitData\service.js">
       <ConnectedServiceReference>thinkitdrinkitData</ConnectedServiceReference>
     </Content>

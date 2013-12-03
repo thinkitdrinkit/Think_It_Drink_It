@@ -46,6 +46,7 @@
                 roamingSettings.values["Base_pic"] = document.getElementById("choosen_base_carry").src;
                 roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;
                 roamingSettings.values["Base_price"] = document.getElementById("base_price").textContent;
+                roamingSettings.values["Base_Vend"] = document.getElementById("p_vend").textContent;
         }
     })
 })();

@@ -48,6 +48,31 @@
         changeTextColor: function () {
             document.getElementById("footer_company_name").style.color = j;
             document.getElementById("company_name").style.color = j;
+        },
+        getThanks: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("yes_btn").style.backgroundColor = i;
+            document.getElementById("no_btn").style.backgroundColor = i;
+            document.getElementById("yes_btn").style.color = j;
+            document.getElementById("no_btn").style.color = j;
+            document.getElementById("yes_btn").style.borderColor = i;
+            document.getElementById("no_btn").style.borderColor = i;
+        },
+        getSignUp: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("pass").style.borderColor = i;
+            document.getElementById("phone").style.borderColor = i;
+            document.getElementById("Fname").style.borderColor = i;
+            document.getElementById("Lname").style.borderColor = i;
+            document.getElementById("email").style.borderColor = i;
+            document.getElementById("cPass").style.borderColor = i;
+            document.getElementById("sign_btn").style.backgroundColor = i;
+            document.getElementById("sign_btn").style.borderColor = i;
+            document.getElementById("zip").style.borderColor = i;
+            document.getElementById("sign_btn").style.color = j;
+        },
+        getWelcome: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
         }
 
     })

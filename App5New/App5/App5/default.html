@@ -48,14 +48,21 @@
         <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSignUp',label:'Sign-Up',icon:'people',
-                section:'selection',tooltip:'Join The Fun'}">
+                section:'selection',tooltip:'Join The Fun'}" onclick="WinJS.Navigation.navigate('pages/signup/signup.html')">
         </button>
 
          <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdMoreInfo',label:'Learn More',icon:'list',
-                section:'selection',tooltip:'Learn More'}">
+                section:'selection',tooltip:'Learn More'}" onclick="">
         </button>
+
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMorePurchase',label:'Make Purchase',icon:'shop',
+                section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/home/home.html');">
+        </button>
+    
     
     </div>
     <!-- ENDTEMPLATE -->

@@ -46,9 +46,10 @@
 }input{
   height: 25px;
 }#the_name{
-  float: right;
-  margin-right: 1100px;
-  margin-top: -105px;
+  float: left;
+  margin-top: 110px;
+  margin-left: -40px;
+  position: absolute;
 }
  #the_name li{
   list-style: none;

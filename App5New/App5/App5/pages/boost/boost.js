@@ -23,6 +23,11 @@
                 document.getElementById("flav_p").textContent = "Non-Caloric";
             }
 
+            if (roamingSettings.values["Base_name"] === "Choco Whey Protein" || roamingSettings.values["Base_name"] === "Vani Whey Protein" || roamingSettings.values["Base_name"] === "Vani Pea Whey Protein") {
+                document.getElementById("flav_div").setAttribute("hidden", true)
+                document.getElementById("flav2_div").setAttribute("hidden", true)
+            }
+
             document.getElementById("choosen_base").textContent = "Choose Your Boost (Max of 3):";
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
@@ -49,7 +54,7 @@
 
     WinJS.Namespace.define("boost_clicked", {
        
-        clicked1: function (name, img, price) {
+        clicked1: function (name, img, price, vend) {
             document.getElementById("btn_right").removeAttribute("hidden");
             if (age_data.model.the_boost_sel.length < 3) {
 
@@ -62,6 +67,7 @@
                     roamingSettings.values["Boost1_pic"] = img;
                     roamingSettings.values["Boost1_info"] =  null;
                     roamingSettings.values["Boost1_price"] = price;
+                    roamingSettings.values["Boost1_vend"] = vend;
 
                     document.getElementById("area_img1").src = roamingSettings.values["Boost1_pic"];
                     document.getElementById("area_img1").removeAttribute("hidden");
@@ -72,6 +78,7 @@
                     roamingSettings.values["Boost2_pic"] = img;
                     roamingSettings.values["Boost2_info"] = null;
                     roamingSettings.values["Boost2_price"] = price;
+                    roamingSettings.values["Boost2_vend"] = vend;
 
                     document.getElementById("area_img2").src = roamingSettings.values["Boost2_pic"];
                     document.getElementById("area_img2").removeAttribute("hidden");
@@ -80,6 +87,7 @@
                     roamingSettings.values["Boost3_pic"] = img;
                     roamingSettings.values["Boost3_info"] = null;
                     roamingSettings.values["Boost3_price"] = price;
+                    roamingSettings.values["Boost3_vend"] = vend;
                     document.getElementById("area_img3").src = roamingSettings.values["Boost3_pic"];
                     document.getElementById("area_img3").removeAttribute("hidden");
                 }
@@ -108,18 +116,21 @@
             if (age_data.model.the_boost_sel.length === 1) {
                 roamingSettings.values["Boost1_name"] = "";
                 roamingSettings.values["Boost1_pic"] = "";
+                roamingSettings.values["Boost1_vend"] = "";
                 roamingSettings.values["Boost1_info"] = null;
                 roamingSettings.values["Boost1_price"] = null;
                 document.getElementById("area_img1").setAttribute("hidden", true);
             } else if (age_data.model.the_boost_sel.length === 2) {
                 roamingSettings.values["Boost2_name"] = "";
                 roamingSettings.values["Boost2_pic"] = "";
+                roamingSettings.values["Boost2_vend"] = "";
                 roamingSettings.values["Boost2_info"] = null;
                 roamingSettings.values["Boost2_price"] = null;
                 document.getElementById("area_img2").setAttribute("hidden", true);
             } else if (age_data.model.the_boost_sel.length === 3) {
                 roamingSettings.values["Boost3_name"] = "";
                 roamingSettings.values["Boost3_pic"] = "";
+                roamingSettings.values["Boost3_vend"] = "";
                 roamingSettings.values["Boost3_info"] = null;
                 roamingSettings.values["Boost3_price"] = null;
                 document.getElementById("area_img3").setAttribute("hidden", true);

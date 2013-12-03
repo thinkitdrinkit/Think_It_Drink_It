@@ -61,6 +61,7 @@
 
             roamingSettings.values["FlavSel_name"] = the_choosenFlav;
             roamingSettings.values["FlavSel_pic"] = document.getElementById("hidden_flav_pic").src;
+            roamingSettings.values["FlavSel_vend"] = document.getElementById("f_vend").textContent;
             roamingSettings.values["FlavSel_info"] = null;
             roamingSettings.values["FlavSel_price"] = null;
         }

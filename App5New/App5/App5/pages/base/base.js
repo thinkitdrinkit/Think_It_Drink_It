@@ -52,8 +52,9 @@
             var updated_base = base.replace(/^\s+/, '').replace(/\s+$/, '');
 
             base3 = updated_base;
-            console.log(updated_base);
+           
             server.base_sub(updated_base);
+            console.log(document.getElementById("b_vend").textContent);
         },
         next_page_flavor: function () {
             if (base3 === "Protein") {
@@ -61,6 +62,7 @@
             } else {
                 WinJS.Navigation.navigate('pages/flavor/flavor.html')
                 roamingSettings.values["Base_name"] = base3;
+                roamingSettings.values["Base_Vend"] = document.getElementById("b_vend").textContent;
                 roamingSettings.values["Base_pic"] = document.getElementById("choosen_base_carry").src;
                 roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;
                 roamingSettings.values["Base_price"] = document.getElementById("base_price").textContent;

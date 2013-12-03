@@ -12,11 +12,16 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             // TODO: Initialize the page here.
-
             design.getFinal();
             design.changeTextColor();
+
             document.getElementById("price_base").textContent = roamingSettings.values["Base_name"] + " base price:";
             document.getElementById("price1_boost").textContent = roamingSettings.values["Boost1_name"] + " boost price:";
+
+            if (roamingSettings.values["Base_name"] === "Choco Whey Protein" || roamingSettings.values["Base_name"] === "Vani Whey Protein" || roamingSettings.values["Base_name"] === "Vani Pea Whey Protein") {
+                document.getElementById("my_flav").setAttribute("hidden", true);
+                document.getElementById("the_name").style.marginTop = "160px";
+            }
 
             document.getElementById("my_base_img").src = roamingSettings.values["Base_pic"];
             document.getElementById("my_flav_img").src = roamingSettings.values["flavSel_pic"];
@@ -45,8 +50,7 @@
                 document.getElementById("my_boost2").removeAttribute("hidden");
             }
 
-            if (roamingSettings.values["Boost3_name"] != "") {
-                // document.getElementById("boost_pic3").src = get_set.set_boost3("pic");
+            if (roamingSettings.values  ["Boost3_name"] != "") {
               
                 document.getElementById("my_boost3_img").src = roamingSettings.values["Boost3_pic"];
                 document.getElementById("my_boost3_name").textContent = "Boost: " + roamingSettings.values["Boost3_name"];
@@ -57,7 +61,6 @@
                 roamingSettings.values["total_price"] = parseFloat(roamingSettings.values["Base_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Boost2_price"]) + parseFloat(roamingSettings.values["Boost3_price"]);
                 document.getElementById("boost_price3").removeAttribute("hidden");
                 document.getElementById("price3_boost").removeAttribute("hidden");
-                console.log((roamingSettings.values["total_price"] % 6) + roamingSettings.values["total_price"]);
                 document.getElementById("my_boost3").removeAttribute("hidden");
               //  document.getElementById("boost_pic3").removeAttribute("hidden");
                 var the_added = parseFloat(roamingSettings.values["Boost3_price"]) + parseFloat(roamingSettings.values["Boost2_price"]) + parseFloat(roamingSettings.values["Boost1_price"]) + parseFloat(roamingSettings.values["Base_price"]);
@@ -76,6 +79,7 @@
             roamingSettings.values["Boost3_pic"] = null;
             roamingSettings.values["Boost3_info"] = null;
             roamingSettings.values["Boost3_price"] = null;
+            roamingSettings.values["I_ordered"] = "yes";
         },
 
         updateLayout: function (element) {
@@ -84,40 +88,13 @@
             // TODO: Respond to changes in layout.
         }
     });
+
+    //storing the invoice number that is being created by the vend whenever a user hits the submit btn
+
     WinJS.Namespace.define("FinalClick", {
 
         clicked: function () {
-            WinJS.xhr({
-                type: "POST",
-                url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
-                headers: { "Content-type": "application/json" },
-                password: "agave2013",
-                data: JSON.stringify({
-                        "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
-                        "user_name": "test",
-                        "customer_id": "0c5b7317-4d68-11e3-a29a-bc305bf5da20",
-                        "status": "SAVED",
-                        "total_price": roamingSettings.values["total_price"],
-                        "total_tax": (roamingSettings.values["total_price"] % 6),
-                        "note": "I a test note!!",
-                        "register_sale_products": [
-                           {
-                               "product_id": "50faeaa7-4d5c-11e3-a29a-bc305bf5da20",
-                               "quantity": 1,
-                               "price": roamingSettings.values["Base_price"],
-                               "tax": (roamingSettings.values["Base_price"] % 6)
-                           },
-                           {
-                               "product_id": "42315b9c-4d62-11e3-a29a-bc305bf5da20",
-                               "quantity": 1,
-                               "price": roamingSettings.values["Boost_price"],
-                               "tax": (roamingSettings.values["Boost_price"] % 6)
-                           }
-                        ]
-                }),
-            }).then(function sucess(res) { console.log("work",res.responseText) }, function error(err) {
-                console.log("fail",err.responseText)
-            })
+            
             // Always catch network exceptions for async methods
 
             function onError(reason) {
@@ -127,7 +104,6 @@
 
             var query = Age.where({
             }).read().done(function (results) {
-              var r = parseFloat(results.length) + (Math.floor((Math.random() * 100) + 1));
 
                 function my_curr_date() {
                     var currentDate = new Date()
@@ -136,7 +112,6 @@
                     var year = currentDate.getFullYear();
                     var my_date = month + "-" + day + "-" + year;
                     return my_date;
-
                 }
                 function my_curr_time() {
                     var d = new Date(); 
@@ -157,112 +132,329 @@
                 }
                
                 if (roamingSettings.values["Boost2_name"] != "" && roamingSettings.values["Boost3_name"] === "") {
-                    if (document.getElementById("first_name").value === "") {
-                        Age.insert({
-                            Name: "Guest",
-                            Base: roamingSettings.values["Base_name"],
-                            Age: roamingSettings.values["Age_name"],
-                            Boost1: roamingSettings.values["Boost1_name"],
-                            Boost2: roamingSettings.values["Boost2_name"],
-                            TotalPrice: document.getElementById("total").textContent,
-                            OrderNumber: r,
-                            PurchaseDate: my_curr_date(),
-                            TimePurchase: my_curr_time()
-                        }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                        }), function (err) {
-                            console.log(err);
-                        }
+                    if (roamingSettings.values["Base_name"] === "Choco Whey Protein" || roamingSettings.values["Base_name"] === "Vani Whey Protein" || roamingSettings.values["Base_name"] === "Vani Pea Whey Protein") {
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost2_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost2_price"],
+                                       "tax": (roamingSettings.values["Boost2_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
                     } else {
-                        Age.insert({
-                            Name: document.getElementById("first_name").value + " " + document.getElementById("last_name").value,
-                            Base: roamingSettings.values["Base_name"],
-                            Age: roamingSettings.values["Age_name"],
-                            Boost1: roamingSettings.values["Boost1_name"],
-                            Boost2: roamingSettings.values["Boost2_name"],
-                            TotalPrice: document.getElementById("total").textContent,
-                            OrderNumber: r,
-                            PurchaseDate: my_curr_date(),
-                            TimePurchase: my_curr_time()
-                        }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                        }), function (err) {
-                            console.log(err);
-                        }
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["FlavSel_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["FlavSel_price"],
+                                       "tax": (roamingSettings.values["FlavSel_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost2_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost2_price"],
+                                       "tax": (roamingSettings.values["Boost2_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
+                    }
+
+                    Age.insert({
+                        Name: "Guest",
+                        Base: roamingSettings.values["Base_name"],
+                        Age: roamingSettings.values["Age_name"],
+                        Boost1: roamingSettings.values["Boost1_name"],
+                        Boost2: roamingSettings.values["Boost2_name"],
+                        TotalPrice: document.getElementById("total").textContent,
+                        OrderNumber: (parseFloat(roamingSettings.values["Invoice_number"])+1),
+                        PurchaseDate: my_curr_date(),
+                        TimePurchase: my_curr_time()
+                    }).done(function (result) {
+                        WinJS.Navigation.navigate('pages/thankyou/thankyou.html');
+                    }), function (err) {
+                        console.log(err);
                     }
                 } else if (roamingSettings.values["Boost3_name"] != "") {
-                    if (document.getElementById("first_name").value === "") {
-
-                        Age.insert({
-                            Name: "Guest",
-                            Base: roamingSettings.values["Base_name"],
-                            Age: roamingSettings.values["Age_name"],
-                            Boost1: roamingSettings.values["Boost1_name"],
-                            Boost2: roamingSettings.values["Boost2_name"],
-                            Boost3: roamingSettings.values["Boost3_name"],
-                            TotalPrice: document.getElementById("total").textContent,
-                            PurchaseDate: my_curr_date(),
-                            OrderNumber: r,
-                            TimePurchase: my_curr_time()
-                        }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                            //window.print(false);
-                        }), function (err) {
-                            console.log(err);
-                        }
+                    if (roamingSettings.values["Base_name"] === "Choco Whey Protein" || roamingSettings.values["Base_name"] === "Vani Whey Protein" || roamingSettings.values["Base_name"] === "Vani Pea Whey Protein") {
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost2_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost2_price"],
+                                       "tax": (roamingSettings.values["Boost2_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost3_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost3_price"],
+                                       "tax": (roamingSettings.values["Boost3_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
                     } else {
-                        Age.insert({
-                            Name: document.getElementById("first_name").value + " " + document.getElementById("last_name").value,
-                            Base: roamingSettings.values["Base_name"],
-                            Age: roamingSettings.values["Age_name"],
-                            Boost1: roamingSettings.values["Boost1_name"],
-                            Boost2: roamingSettings.values["Boost2_name"],
-                            Boost3: roamingSettings.values["Boost3_name"],
-                            TotalPrice: document.getElementById("total").textContent,
-                            OrderNumber: r,
-                            PurchaseDate: my_curr_date(),
-                            TimePurchase: my_curr_time()
-                        }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                           // window.print(false);
-                        }), function (err) {
-                            console.log(err);
-                        }
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["FlavSel_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["FlavSel_price"],
+                                       "tax": (roamingSettings.values["FlavSel_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost2_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost2_price"],
+                                       "tax": (roamingSettings.values["Boost2_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost3_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost3_price"],
+                                       "tax": (roamingSettings.values["Boost3_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
+                    }
+
+                    Age.insert({
+                        Name: "Guest",
+                        Base: roamingSettings.values["Base_name"],
+                        Age: roamingSettings.values["Age_name"],
+                        Boost1: roamingSettings.values["Boost1_name"],
+                        Boost2: roamingSettings.values["Boost2_name"],
+                        Boost3: roamingSettings.values["Boost3_name"],
+                        TotalPrice: document.getElementById("total").textContent,
+                        OrderNumber: (parseFloat(roamingSettings.values["Invoice_number"]) + 1),
+                        PurchaseDate: my_curr_date(),
+                        TimePurchase: my_curr_time()
+                    }).done(function (result) {
+                        WinJS.Navigation.navigate('pages/thankyou/thankyou.html');
+                    }), function (err) {
+                        console.log(err);
                     }
                 } else {
-                    if (document.getElementById("first_name").value === "") {
+                    if (roamingSettings.values["Base_name"] === "Choco Whey Protein" || roamingSettings.values["Base_name"] === "Vani Whey Protein" || roamingSettings.values["Base_name"] === "Vani Pea Whey Protein") {
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
+                    } else {
+                        WinJS.xhr({
+                            type: "POST",
+                            url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
+                            headers: { "Content-type": "application/json" },
+                            password: "agave2013",
+                            data: JSON.stringify({
+                                "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
+                                "user_name": "test",
+                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "status": "SAVED",
+                                "total_price": roamingSettings.values["total_price"],
+                                "total_tax": (roamingSettings.values["total_price"] % 6),
+                                "note": "I a test note!!",
+                                /*"register_sale_products": [
+                                   {
+                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Base_price"],
+                                       "tax": (roamingSettings.values["Base_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["FlavSel_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["FlavSel_price"],
+                                       "tax": (roamingSettings.values["FlavSel_price"] % 6)
+                                   },
+                                   {
+                                       "product_id": roamingSettings.values["Boost1_vend"],
+                                       "quantity": 1,
+                                       "price": roamingSettings.values["Boost1_price"],
+                                       "tax": (roamingSettings.values["Boost1_price"] % 6)
+                                   }
+                                ]*/
+                            }),
+                        }).then(function sucess(res) {
+                            roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
+                            console.log(roamingSettings.values["Invoice_number"]);
+                            roamingSettings.values["I_ordered"] = "yes";
+                        }, function error(err) {
+                            console.log("fail", err.responseText)
+                        });
+                    }
                         Age.insert({
                             Name: "Guest",
                             Base: roamingSettings.values["Base_name"],
                             Age: roamingSettings.values["Age_name"],
                             Boost1: roamingSettings.values["Boost1_name"],
                             TotalPrice: document.getElementById("total").textContent,
-                            OrderNumber: r,
+                            OrderNumber: (parseFloat(roamingSettings.values["Invoice_number"]) + 1),
                             PurchaseDate: my_curr_date(),
                             TimePurchase: my_curr_time()
                         }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                        }), function (err) {
-                            console.log(err);
-                        }
-                    } else {
-                        Age.insert({
-                            Name: document.getElementById("first_name").value + " " + document.getElementById("last_name").value,
-                            Base: roamingSettings.values["Base_name"],
-                            Age: roamingSettings.values["Age_name"],
-                            Boost1: roamingSettings.values["Boost1_name"],
-                            TotalPrice: document.getElementById("total").textContent,
-                            OrderNumber: r,
-                            PurchaseDate: my_curr_date(),
-                            TimePurchase: my_curr_time()
-                        }).done(function (result) {
-                            WinJS.Navigation.back(5);
-                            //window.print(false);
+                            WinJS.Navigation.navigate('pages/thankyou/thankyou.html');
                         }), function (err) {
                             console.log(err);
                         }
                     }
-                }
             }, function (err) {
                 console.log(err);
             });

@@ -35,7 +35,7 @@
                     Access: 1
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
-                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image})
                     }
                 }, function (err) {
                     console.log(err);
@@ -46,7 +46,7 @@
                     Access: 2
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
-                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image})
                     }
                 }, function (err) {
                     console.log(err);
@@ -59,7 +59,7 @@
             var query = Age.where({
                 Name: name
             }).read().done(function (results) {
-                age_data.model.info_page2.push({ the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image })
+                age_data.model.info_page2.push({ the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image, b_vend: results[0].VendID })
             }, function (err) {
                 console.log(err);
             })
@@ -82,7 +82,7 @@
             var query = Age.where({
                 Name: name
             }).read().done(function (results) {
-                age_data.model.protein_info.push({ the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image })
+                age_data.model.protein_info.push({ the_name: results[0].Name, the_info: results[0].Info, the_img: results[0].Label, base_price: results[0].Price, the_pic: results[0].Image, p_vend: results[0].VendID })
             }, function (err) {
                 console.log(err);
             })
@@ -153,7 +153,7 @@
             var query = Age.where({
                 Name: name
             }).read().done(function (results) {
-                age_data.model.info_page4.push({ sel_name: results[0].Name, sel_info: results[0].Info, sel_pic: results[0].Image, sel_label: results[0].Label })
+                age_data.model.info_page4.push({ sel_name: results[0].Name, sel_info: results[0].Info, sel_pic: results[0].Image, sel_label: results[0].Label, f_vend: results[0].VendID })
             }, function (err) {
                 console.log(err);
             })
@@ -199,7 +199,7 @@
             var query = Age.where({
                 Name: name
             }).read().done(function (results) {
-                age_data.model.info_page5.push({ the_name: results[0].Name, the_info: results[0].Info, the_pic: results[0].Image, the_label: results[0].Label, the_price: results[0].Price })
+                age_data.model.info_page5.push({ the_name: results[0].Name, the_info: results[0].Info, the_pic: results[0].Image, the_label: results[0].Label, the_price: results[0].Price, bo_vend: results[0].VendID })
             }, function (err) {
                 console.log(err);
             })

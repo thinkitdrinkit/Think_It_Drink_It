@@ -12,6 +12,7 @@
             WinJS.Binding.processAll(element, age_data.model);
             design.getHome();
             design.changeTextColor();
+            roamingSettings.values["I_ordered"] = "no";
         }
     });
 

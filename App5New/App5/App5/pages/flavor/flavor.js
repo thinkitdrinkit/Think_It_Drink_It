@@ -26,6 +26,8 @@
             design.getFlav();
             design.changeTextColor();
 
+            //console.log(roamingSettings.values["Base_Vend"]);
+
             if (_ageName === "Toddler" || _ageName === "Youth") {
                 document.getElementById("choosen_base").textContent = "Based on the Age You've Choosen You Must Select Non-Caloric."
             } else {

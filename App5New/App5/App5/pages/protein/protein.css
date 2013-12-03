@@ -1,4 +1,18 @@
 ﻿.protein section[role=main] {
     margin-left: 120px;
     margin-right: 120px;
-}
+}#age_p{
+     position: absolute;
+     color: #fff;
+     font-weight: 700;
+     height: 20px;
+     background-color: rgba(0,0,0,.6);
+     width: 81px;
+     margin-left: 5px;
+     margin-top: 62px;
+     font-size: 12px;
+}#age_pic{
+   border: 2px solid #000;
+   margin-left: 3px;
+   float: left;
+ }
