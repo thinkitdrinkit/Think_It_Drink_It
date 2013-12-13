@@ -17,7 +17,7 @@
                 //this changes the theme color of th entire app
                 //it accepts some colors written as a string and all in hex
                 //www.html-color-codes.info is a good website to obtain hex color values
-                design.colorChange("skyblue", "white");
+                design.colorChange("#68AFC2", "white");
                 //This is the normal(default) app color in hex #BA5EB7
 
             } else {

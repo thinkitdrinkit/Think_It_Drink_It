@@ -5,6 +5,7 @@
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
     var Age = thinkitdrinkitDataClient.getTable("Flavor");
+    var keepInfo = true;
 
     WinJS.UI.Pages.define("/pages/flav_sel/flav_sel.html", {
         // This function is called whenever a user navigates to this page. It
@@ -14,6 +15,11 @@
             WinJS.Binding.processAll(element, age_data.model);
             design.getFlavSel();
             design.changeTextColor();
+
+            document.getElementById("age_p").textContent = "Age: " + roamingSettings.values["Age_name"];
+            document.getElementById("base_p").textContent = "Base: " + roamingSettings.values["Base_name"];
+           
+
             //the following are getting the information for the appropriate data and then changing it to numbers
             //and then storing that information inside var
 
@@ -34,8 +40,11 @@
 
         unload: function () {
             // TODO: Respond to navigations away from this page.
-            remove.pop_list(age_data.model.flavor1);
-            remove.pop_list(age_data.model.info_page4);
+                remove.pop_list(age_data.model.flavor1);
+            
+            if (!keepInfo) {
+                remove.pop_list(age_data.model.info_page4);
+            }
         },
 
         updateLayout: function (element) {
@@ -52,7 +61,6 @@
 
             remove.pop_list(age_data.model.info_page4);
             the_choosenFlav = updated_flav1;
-            console.log(updated_flav1);
             server.flav_sel_sub(updated_flav1);
         },
 
@@ -64,6 +72,13 @@
             roamingSettings.values["FlavSel_vend"] = document.getElementById("f_vend").textContent;
             roamingSettings.values["FlavSel_info"] = null;
             roamingSettings.values["FlavSel_price"] = null;
+            keepInfo = false;
+        },
+        more_info: function (clicked) {
+            roamingSettings.values["Item_choosen"] = clicked;
+            roamingSettings.values["Clicked_cat"] = "Flavor"
+            WinJS.Navigation.navigate('pages/item_info/item_info.html');
+            keepInfo = true;
         }
 
     })

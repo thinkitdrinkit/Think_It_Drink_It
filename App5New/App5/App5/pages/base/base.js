@@ -6,7 +6,7 @@
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
     var Age = thinkitdrinkitDataClient.getTable("Base");
-
+    var keepInfo = false;
     WinJS.UI.Pages.define("/pages/base/base.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
@@ -17,7 +17,7 @@
             design.getBase();
             design.changeTextColor();
             document.getElementById("choosen_age").textContent = "Choose Your Base:";
-
+            document.getElementById("age_p").textContent = "Age: " + roamingSettings.values["Age_name"];
             var the_sel_age = roamingSettings.values["Age_name"];
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
@@ -30,10 +30,11 @@
 
         unload: function () {
             // TODO: Respond to navigations away from this page.
-
-            //using the removeInfo.js file to delete the last object of the array as long as an item exists
             remove.pop_list(age_data.model.base)
-            remove.pop_list(age_data.model.info_page2)
+            //using the removeInfo.js file to delete the last object of the array as long as an item exists
+            if (!keepInfo) {
+                remove.pop_list(age_data.model.info_page2)
+            }        
         },
 
         updateLayout: function (element) {
@@ -54,9 +55,9 @@
             base3 = updated_base;
            
             server.base_sub(updated_base);
-            console.log(document.getElementById("b_vend").textContent);
         },
         next_page_flavor: function () {
+            keepInfo = false;
             if (base3 === "Protein") {
                 WinJS.Navigation.navigate('pages/protein/protein.html');
             } else {
@@ -67,7 +68,12 @@
                 roamingSettings.values["Base_info"] = document.getElementById("sel_base_info").textContent;
                 roamingSettings.values["Base_price"] = document.getElementById("base_price").textContent;
             }
-            
+        },
+        more_info: function (clicked) {
+            roamingSettings.values["Item_choosen"] = clicked;
+            roamingSettings.values["Clicked_cat"] = "Base"
+            WinJS.Navigation.navigate('pages/item_info/item_info.html');
+            keepInfo = true;
         }
     })
 

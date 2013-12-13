@@ -41,9 +41,9 @@
    margin-left: -100px;
    width: auto;
    height: 210px;
- }#sel_btn2{
+ }#sel_btn2, #info_btn2{
    margin-left: 5px;
-   margin-top: 40px;
+   margin-top: 10px;
    position: absolute;
 }#the_sel_bases{
    width: 700px;
@@ -52,13 +52,15 @@
 }#choosen_age{
    position: relative;
 }#age_p{
-     position: absolute;
-     color: #fff;
-     font-weight: 700;
-     height: 20px;
-     background-color: rgba(0,0,0,.6);
-     width: 81px;
-     margin-left: 5px;
-     margin-top: 62px;
-     font-size: 12px;
-}
+   position: absolute;
+   color: #fff;
+   font-weight: 700;
+   height: 35px;
+   background-color: rgba(0,0,0,.6);
+   width: 81px;
+   margin-left: 5px;
+   margin-top: 47px;
+   font-size: 12px;
+}#info_btn2{
+   margin-left: 110px;
+ }

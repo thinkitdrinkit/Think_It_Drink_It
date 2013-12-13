@@ -2,6 +2,7 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
+
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
 
@@ -33,17 +34,13 @@
                     return ok;
                 },
                 finalClick: function () {
-                    if (roamingSettings.values["I_ordered"] === "yes") {
-                        Age1.update({
-                            OrderNumber: (parseFloat(roamingSettings.values["Invoice_number"]) + 1),
-                            Name: document.getElementById("Fname").value
-                        })
-                    }
+                   
                     roamingSettings.values["Sign_first"] = document.getElementById("Fname").value;
                     roamingSettings.values["Sign_last"] = document.getElementById("Lname").value;
                     roamingSettings.values["Sign_email"] = document.getElementById("email").value;
                     roamingSettings.values["Sign_phone"] = document.getElementById("phone").value;
-                    roamingSettings.values["Zip_number"] = document.getElementById("zip").value;                   
+                    roamingSettings.values["Zip_number"] = document.getElementById("zip").value;
+
                     if (ok) {
                         WinJS.xhr({
                             type: "POST",
@@ -70,6 +67,13 @@
                                 // Password:roamingSettings.values["pass"],
                                 //VendId: (parseFloat(roamingSettings.values["Invoice_number"]) + 1)
                             }).done(function (result) {
+                                if (roamingSettings.values["I_ordered"] === "yes") {
+                                    Age1.update({
+                                        id: roamingSettings.values["the_id"],
+                                        Name: document.getElementById("Fname").value,
+                                        VendID: JSON.parse(res.responseText).customer.customer_code
+                                    })
+                                }
                                 document.getElementById("Fname").value =  "";
                                 document.getElementById("Lname").value = "";
                                 document.getElementById("email").value = "";

@@ -28,11 +28,18 @@
     <header id="main_header">
         <h1 id="company_name">ThinkitDrinkit</h1>
     </header>
-    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
+    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/launch_page/launch_page.html'}"></div>
 
     
              <!-- BEGINTEMPLATE: Template code for an app bar -->
     <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top' }">
+
+        <button 
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMorePurchase',label:'Home',icon:'home',
+                section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/launch_page/launch_page.html');">
+        </button>
+
          <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdTopMixes',label:'Most Popular Mixes',icon:'favorite',
@@ -54,7 +61,7 @@
          <button 
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdMoreInfo',label:'Learn More',icon:'list',
-                section:'selection',tooltip:'Learn More'}" onclick="">
+                section:'selection',tooltip:'Learn More'}" onclick="WinJS.Navigation.navigate('pages/info_home/info_home.html')">
         </button>
 
         <button 
@@ -62,7 +69,6 @@
             data-win-options="{id:'cmdMorePurchase',label:'Make Purchase',icon:'shop',
                 section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/home/home.html');">
         </button>
-    
     
     </div>
     <!-- ENDTEMPLATE -->

@@ -28,7 +28,6 @@
         clicked: function (me) {          
             var updated_answer = me.replace(/^\s+/, '').replace(/\s+$/, '');
             _choosen_age = updated_answer;
-            console.log(updated_answer);
             //gather information from from the database as the user clicks on the diffent ages
             //and then displays that information
             server.home_sub(updated_answer);
@@ -41,6 +40,12 @@
             roamingSettings.values["Age_pic"] = document.getElementById("sel_age_pic").src;
             roamingSettings.values["Age_info"] = null;
             roamingSettings.values["Age_price"] = null;
+        },
+        more_info: function (clicked) {
+            var updated_answer = clicked.replace(/^\s+/, '').replace(/\s+$/, '');
+            roamingSettings.values["Item_choosen"] = updated_answer;
+            roamingSettings.values["Clicked_cat"] = "Age"
+            WinJS.Navigation.navigate('pages/item_info/item_info.html');
         }
     })
     

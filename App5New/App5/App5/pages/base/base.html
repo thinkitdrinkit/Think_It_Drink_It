@@ -42,6 +42,7 @@
                    <p id="sel_base_info" class="sel_base_info_class" data-win-bind="textContent: the_info"></p>
                    <p id="b_vend" data-win-bind="textContent: b_vend"></p>
                    <button id="sel_btn2" onclick="base_clicked.next_page_flavor()" name="sel_btn2" type="submit">Select Base</button>
+                   <button id="info_btn2" name="sel_btn" onclick="base_clicked.more_info(document.getElementById('sel_base_name').textContent)" type="submit">More Info</button>
                </div>
            </div>
             <div id="sel_bases_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_page2.dataSource" data-win-options="{
@@ -52,7 +53,7 @@
           <footer id="main_footer">
               <div id="age_div">
                   <p id="age_p">Age</p>
-                <img id="age_pic" alt="This is a test" onclick="WinJS.Navigation.back(1)" src="#" width="80" height="80" />
+                  <img id="age_pic" alt="This is a test" onclick="WinJS.Navigation.back(1)" src="#" width="80" height="80" />
               </div>
            <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->
         </footer>

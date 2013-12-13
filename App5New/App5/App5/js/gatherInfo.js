@@ -29,6 +29,18 @@
             the_protein: new WinJS.Binding.List([
             ]),
             protein_info: new WinJS.Binding.List([
+            ]),
+            info_home_bases: new WinJS.Binding.List([
+            ]),
+            info_home_boost: new WinJS.Binding.List([
+            ]),
+            info_home_flav: new WinJS.Binding.List([
+            ]),
+            whole_cat: new WinJS.Binding.List([
+            ]),
+            info_home_ages: new WinJS.Binding.List([
+            ]),
+            item_info: new WinJS.Binding.List([
             ])
         })
     })

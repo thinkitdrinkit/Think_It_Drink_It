@@ -1,15 +1,15 @@
 ﻿.flavor section[role=main] {
-    margin-left: 120px;
-    margin-right: 120px;
+   margin-left: 120px;
+   margin-right: 120px;
 }.flav_pic_class{
-    width: 300px;
-    height: 250px;
-    position: absolute;
-    z-index: -1;
+   width: 300px;
+   height: 250px;
+   position: absolute;
+   z-index: -1;
 }.the_flavors{
-    width: 300px;
-    height: 250px;
-    border: 2px solid #c8060c;
+   width: 300px;
+   height: 250px;
+   border: 2px solid #c8060c;
 }.flav_name_class{
    width: auto;
    height: 40px;
@@ -48,10 +48,10 @@
    position: absolute;
    color: #fff;
    font-weight: 700;
-   height: 20px;
+   height: 35px;
    background-color: rgba(0,0,0,.6);
    width: 81px;
    margin-left: 10px;
-   margin-top: 62px;
+   margin-top: 47px;
    font-size: 12px;
 }

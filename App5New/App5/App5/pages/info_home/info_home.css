@@ -1,0 +1,50 @@
+﻿.info_home section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#info1_bases, #info1_boost, #info1_flav, #info1_age{
+    float: left;
+    width: 160px;
+    height: 160px;
+    border: 2px solid;
+}#info1_bases img, #info1_boost img, #info1_flav img, #info1_age img{
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    z-index: -1;
+}#info1_bases h2, #info1_boost h2, #info1_flav h2, #info1_age h2{
+    font-size: 13px;
+    width: 160px;
+    height: 35px;
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+    font-weight: bold;
+    margin-top: 125px;
+}#base_section, #boost_section, #flav_section, #age_section{
+   float: left;
+   margin-right: 50px;
+}#info_boost_id, #info_base_id, #info_flav_id, #info_age_id{
+   cursor: pointer;
+   width: 300px;
+   height:70px;
+   background-color: blue;
+   color: #fff;
+   padding: 2px;
+   padding-bottom: 10px;
+   font-weight: 400;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+   margin-left: 6px;
+   margin-bottom: -1px;
+   background-image: linear-gradient(#68AFC2, #fff);
+   border: 2px solid #68AFC2;
+}#info_age_placement{
+   margin-left: -90px;
+}#info_age_id{
+   margin-left: -85px;
+}#info_home_header{
+   margin-top: -30px;
+   margin-right: 75px;
+}#info_boost_id:active, #info_base_id:active, #info_flav_id:active, #info_age_id:active{
+     box-shadow: 4px 4px 4px #e8e8e8;
+     /*box-sizing: border-box;*/
+}

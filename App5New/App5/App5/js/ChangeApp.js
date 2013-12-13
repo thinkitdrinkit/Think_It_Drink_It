@@ -73,6 +73,33 @@
         },
         getWelcome: function () {
             document.getElementById("main_footer").style.backgroundColor = i;
+        },
+        getInfoHome: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("info1_bases").style.borderColor = i;
+            document.getElementById("info1_boost").style.borderColor = i;
+            document.getElementById("info1_flav").style.borderColor = i;
+            document.getElementById("info1_age").style.borderColor = i;
+            document.getElementById("info_age_id").style.backgroundColor = i;
+            document.getElementById("info_boost_id").style.backgroundColor = i;
+            document.getElementById("info_base_id").style.backgroundColor = i;
+            document.getElementById("info_boost_id").style.backgroundColor = i;
+            document.getElementById("info_flav_id").style.backgroundColor = i;
+        },
+        all_products: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("all_info1").style.borderColor = i;
+        },
+        item_info: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("item_info_pic").style.borderColor = i;
+        },
+        launch: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("make_drink").style.borderColor = i;
+            document.getElementById("learn_more").style.borderColor = i;
+            document.getElementById("sign_up").style.borderColor = i;
+            document.getElementById("main_header").style.backgroundColor = i;
         }
 
     })

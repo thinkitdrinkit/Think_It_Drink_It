@@ -140,19 +140,19 @@
                             password: "agave2013",
                             data: JSON.stringify({
                                 "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
-                                "user_name": "test",
-                                "customer_id": "40485247-5b74-11e3-a29a-bc305bf5da20",
+                                "user_name": "",
+                                "customer_id": "",
                                 "status": "SAVED",
                                 "total_price": roamingSettings.values["total_price"],
                                 "total_tax": (roamingSettings.values["total_price"] % 6),
                                 "note": "I a test note!!",
-                                /*"register_sale_products": [
+                                "register_sale_products": [
                                    {
-                                       "product_id":  roamingSettings.values["Base_Vend"],
+                                       "product_id": "22bdf6c1-5c38-11e3-a29a-bc305bf5da20",
                                        "quantity": 1,
                                        "price": roamingSettings.values["Base_price"],
                                        "tax": (roamingSettings.values["Base_price"] % 6)
-                                   },
+                                   }/*,
                                    {
                                        "product_id": roamingSettings.values["Boost1_vend"],
                                        "quantity": 1,
@@ -164,8 +164,8 @@
                                        "quantity": 1,
                                        "price": roamingSettings.values["Boost2_price"],
                                        "tax": (roamingSettings.values["Boost2_price"] % 6)
-                                   }
-                                ]*/
+                                   }*/
+                                ]
                             }),
                         }).then(function sucess(res) {
                             roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
@@ -283,7 +283,6 @@
                             }),
                         }).then(function sucess(res) {
                             roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
-                            console.log(roamingSettings.values["Invoice_number"]);
                             roamingSettings.values["I_ordered"] = "yes";
                         }, function error(err) {
                             console.log("fail", err.responseText)

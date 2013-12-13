@@ -25,7 +25,8 @@
             _basePic = roamingSettings.values["Base_pic"];
             design.getFlav();
             design.changeTextColor();
-
+            document.getElementById("age_p").textContent = "Age: " + roamingSettings.values["Age_name"];
+            document.getElementById("base_p").textContent = "Base: " + roamingSettings.values["Base_name"];
             //console.log(roamingSettings.values["Base_Vend"]);
 
             if (_ageName === "Toddler" || _ageName === "Youth") {

@@ -54,7 +54,7 @@
    margin-left: -100px;
    width: auto;
    height: 210px;
-}#sel_btn3{
+}#sel_btn3, #info_btn3{
    margin-left: 5px;
    margin-top: 10px;
    position: absolute;
@@ -91,26 +91,38 @@
 }#flav2_p{
    position: absolute;
    color: #fff;
-   font-weight: 800;
-   height: 20px;
+   font-weight: 700;
+   height: 35px;
    background-color: rgba(0,0,0,.6);
    width: 81px;
    margin-left: 11px;
-   margin-top: 62px;
+   margin-top: 47px;
    font-size: 12px;
  }#base_p{
    position: absolute;
    color: #fff;
    font-weight: 700;
-   height: 20px;
+   height: 35px;
    background-color: rgba(0,0,0,.6);
    width: 81px;
-   margin-left: 10px;
-   margin-top: 62px;
+   margin-left: 11px;
+   margin-top: 47px;
    font-size: 12px;
 }#base_pic_footer{
    border: 2px solid #000;
    margin-left: 8px;
 }#base_div{
-     float: left;
- }
+  float: left;
+}#info_btn3{
+  margin-left: 110px;
+}#age_p{
+   position: absolute;
+   color: #fff;
+   font-weight: 700;
+   height: 35px;
+   background-color: rgba(0,0,0,.6);
+   width: 81px;
+   margin-left: 5px;
+   margin-top: 47px;
+   font-size: 12px;
+}
