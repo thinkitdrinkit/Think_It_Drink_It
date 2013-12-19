@@ -9,10 +9,35 @@
     <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
 
+
     <link href="signup.css" rel="stylesheet" />
     <script src="signup.js"></script>
 </head>
 <body>
+
+    <div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        // init the FB JS SDK
+        FB.init({
+            appId: 'YOUR_APP_ID',                        // App ID from the app dashboard
+            status: true,                                 // Check Facebook Login status
+            xfbml: true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
     <div class="signup fragment">
         <header aria-label="Header content" role="banner">
            <!-- <button data-win-control="WinJS.UI.BackButton"></button> -->
@@ -39,7 +64,13 @@
                    <li><input onkeyup="Clicked.CheckOnType()" type="password" name="cPass" id="cPass" /></li>
                </ul>
            </form>
+           
             <button id="sign_btn" onclick="Clicked.finalClick()">Submit</button>
+            <section id="the_reasons">
+                <img src="#" height="150" width="150" />
+                <img src="#" height="150" width="150" />
+                <img src="#" height="150" width="150" />
+            </section>
         </section>
          <footer id="main_footer">
            <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->

@@ -13,7 +13,7 @@
      margin-top: 0px;
      z-index: -1;
 }#age_display{
-     width: 300                                                                                                                         px;
+     width: 300px;
      height: 289px;
      border: 3px solid  #c8060c;
 }#user_age{ 
@@ -53,12 +53,18 @@
     border: 2px solid #c8060c;
  }#sel_btn, #info_btn{
     margin-left: 5px;
-    margin-top: 60px;
+    margin-top: 30px;
     position: absolute;
-} #info_btn{
+    height:60px;
+    background-color: #FF7C00;
+} #sel_btn{
     margin-left: 110px;
 }#sel_age_name{
    margin-bottom: 0;
+   font-weight: bold;
+   padding-left: 100px;
 }#info_text{
    font-size: 14px;
-}
+}#sel_age_pic{
+     margin-right: 5px;
+ }

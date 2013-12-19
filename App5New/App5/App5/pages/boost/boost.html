@@ -16,7 +16,7 @@
     <div class="boost fragment">
         <header id="boost_header" aria-label="Header content" role="banner">          
             <button data-win-control="WinJS.UI.BackButton"></button>
-            <h1 class="titlearea win-type-ellipsis" id="choosen_base">Welcome to boost</h1>
+            <h1 class="titlearea win-type-ellipsis" id="choosen_base">Choose Your Boost (You Have Choosen <span id="the_num">0</span> of up to 3 boosts).</h1>
              <p class="titlearea win-type-ellipsis" id="overError"></p>
         </header>
         <section aria-label="Main content" role="main">
@@ -41,8 +41,8 @@
                     <p id="choosen_price" hidden="" data-win-bind="textContent: the_price"></p>
                     <p id="choosen_info" class="choosen_info_class" data-win-bind="textContent: the_info"></p>
                     <p id="bo_vend" hidden="" data-win-bind="textContent: bo_vend"></p>
-                    <button id="sel_btn3" onclick="boost_clicked.clicked1( document.getElementById('choosen_name').textContent, document.getElementById('choosen_img').src, document.getElementById('choosen_price').textContent, document.getElementById('bo_vend').TextContent)" name="sel_btn2" type="submit">Select Base</button>
-                     <button id="info_btn3" name="sel_btn" onclick="boost_clicked.more_info(document.getElementById('choosen_name').textContent)" type="submit">More Info</button>
+                    <button id="info_btn3" name="sel_btn" onclick="boost_clicked.more_info(document.getElementById('choosen_name').textContent)" type="submit">More Info</button>
+                    <button id="sel_btn3" onclick="boost_clicked.clicked1( document.getElementById('choosen_name').textContent, document.getElementById('choosen_img').src, document.getElementById('choosen_price').textContent, document.getElementById('bo_vend').TextContent)" name="sel_btn2" type="submit">Choose This Boost</button>
                 </div>
             </div>
 
@@ -58,9 +58,10 @@
               </div>
 
               <div id="btn_right" hidden="">
-                <button id="sel_btn10" onclick=" WinJS.Navigation.navigate('pages/final/final.html')" name="sel_btn10" type="submit">Continue</button>
-                <button onclick="boost_clicked.release()" id="del_btn10" name="del_btn10" type="reset">Remove Last</button>
-            </div>
+                 <button id="sel_btn10" onclick=" WinJS.Navigation.navigate('pages/final/final.html')" name="sel_btn10" type="submit">Checkout</button>
+                 <button onclick="boost_clicked.release()" id="del_btn10" name="del_btn10" type="reset">Remove Last</button>
+                 <p style="font-size: 20px" id="hidden_p">You have choosen <span id="the_number"></span> of up to 3 boosts.</p>
+              </div>
         </section>
           <footer id="main_footer">
               <div id="age_div">

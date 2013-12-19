@@ -15,4 +15,11 @@
 }#sign_form ul li label{
     font-size: 20px;
     font-weight: 500;
+}#the_reasons{
+     float: right;
+     margin-right: 300px;
+     margin-top: -400px;
+}#the_reasons img{
+    float: left;
+
 }

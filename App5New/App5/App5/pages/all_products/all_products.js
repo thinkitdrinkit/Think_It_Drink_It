@@ -16,9 +16,9 @@
             design.changeTextColor();
             server.more_info(roamingSettings.values["Clicked_cat"]);
             if (roamingSettings.values["Clicked_cat"] === "Boost") {
-                document.getElementById("info_title").textContent = "This is a list of all of our " + roamingSettings.values["Clicked_cat"] + ".";
+                document.getElementById("info_title").textContent = "This is a list of all of our " + roamingSettings.values["Clicked_cat"] + "s.";
             } else {
-                document.getElementById("info_title").textContent = "This is a list of all of our " + roamingSettings.values["Clicked_cat"] + "'s.";
+                document.getElementById("info_title").textContent = "This is a list of all of our " + roamingSettings.values["Clicked_cat"] + "s.";
             }
         },
 

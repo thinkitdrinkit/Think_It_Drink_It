@@ -31,7 +31,7 @@
     margin-top: 210px;
     background-color: rgba(0,0,0,.6);
 }#flav2_pic{
-   border: 2px solid #000;
+   border: 2px solid #fff;
    margin-left: 10px;
 }#boost_list_placement{
    margin-top: -15px;
@@ -58,6 +58,7 @@
    margin-left: 5px;
    margin-top: 10px;
    position: absolute;
+   background-color: #FF7C00;
 }#choosen_boost_area_placement{
    margin-left: 630px;
    margin-top: -200px;
@@ -79,7 +80,7 @@
    position: absolute;
 }.area_img_class{
    margin-left: 1px;
-   border: 2px solid #0945e9;
+   border: 2px solid #FF7C00;
 }#the_test{
    margin-left: 630px;
    margin-top: -170px;
@@ -109,12 +110,14 @@
    margin-top: 47px;
    font-size: 12px;
 }#base_pic_footer{
-   border: 2px solid #000;
+   border: 2px solid #fff;
    margin-left: 8px;
 }#base_div{
   float: left;
-}#info_btn3{
+}#sel_btn3{
   margin-left: 110px;
+  height:60px;
+  background-color: #FF7C00;
 }#age_p{
    position: absolute;
    color: #fff;
@@ -125,4 +128,17 @@
    margin-left: 5px;
    margin-top: 47px;
    font-size: 12px;
+}#info_btn3{
+     margin-right: 5px;
+     height:60px;
+     background-color: #FF7C00;
+ }#hidden_p{
+    margin-top: 0;
+}#the_number,#the_num{
+     color: #FF7C00;
+     font-weight: bold;
+ }#choosen_name{
+      font-weight: bold;
+}#sel_btn10{
+    background-color: #FF7C00;
 }

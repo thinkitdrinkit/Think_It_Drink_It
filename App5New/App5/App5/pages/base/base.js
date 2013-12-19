@@ -6,7 +6,7 @@
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
     var Age = thinkitdrinkitDataClient.getTable("Base");
-    var keepInfo = false;
+    var keepInfo = true;
     WinJS.UI.Pages.define("/pages/base/base.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.

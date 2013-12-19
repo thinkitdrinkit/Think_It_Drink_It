@@ -2,7 +2,7 @@
    margin-left: 120px;
    margin-right: 120px;
 }#age_pic{
-   border: 2px solid #000;
+   border: 2px solid #fff;
    margin-left: 3px;
    float: left;
  }.base_pic_class{
@@ -36,6 +36,7 @@
    height: 200px;
    background-color: #fff;
    border: 2px solid #c8060c;
+   margin-right: 5px;
 }#sel_bases_placement{
    margin-top: -120px;
    margin-left: -100px;
@@ -45,6 +46,8 @@
    margin-left: 5px;
    margin-top: 10px;
    position: absolute;
+   background-color: #FF7C00;
+   height:60px;
 }#the_sel_bases{
    width: 700px;
    background-color: #fff;
@@ -61,6 +64,8 @@
    margin-left: 5px;
    margin-top: 47px;
    font-size: 12px;
-}#info_btn2{
+}#sel_btn2{
    margin-left: 110px;
- }
+}#sel_base_name{
+    font-weight: bold;
+}

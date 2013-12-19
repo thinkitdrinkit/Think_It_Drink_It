@@ -30,9 +30,9 @@
 
             var Age = thinkitdrinkitDataClient.getTable("Base");
 
-            if (the_sel_age === "Youth" || the_sel_age === "Toddler") {
+            if (the_sel_age === "Toddler") {
                 var query = Age.where({
-                    Access: 1
+                    AccessT: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
                         age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image})
@@ -41,12 +41,42 @@
                     console.log(err);
                 });
 
-            } else {
+            } else if (the_sel_age === "Youth") {
                 var query = Age.where({
-                    Access: 2
+                    AccessY: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
-                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image})
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else if (the_sel_age === "Teen") {
+                var query = Age.where({
+                    AccessTT: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else if (the_sel_age === "Adult") {
+                var query = Age.where({
+                    AccessA: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else if (the_sel_age === "Senior") {
+                var query = Age.where({
+                    AccessS: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.base.push({ b_name: results[i].Name, b_pic: results[i].Image })
                     }
                 }, function (err) {
                     console.log(err);
@@ -160,9 +190,9 @@
         },
         boost: function (name) {
             var Age = thinkitdrinkitDataClient.getTable("Boost");
-            if (name === "Youth") {
+            if (name === "Toddler") {
                 var query = Age.where({
-                    Access1: 11
+                    AccessT: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
                         age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
@@ -170,10 +200,10 @@
                 }, function (err) {
                     console.log(err);
                 });
-                2
-            } else if (name === "Toddler") {
+
+            } else if (name === "Youth") {
                 var query = Age.where({
-                    Access: 1
+                    AccessY: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
                         age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
@@ -181,9 +211,29 @@
                 }, function (err) {
                     console.log(err);
                 });
-            } else {
+            } else if (name === "Teen"){
                 var query = Age.where({
-                    Access: 2
+                    AccessTT: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else if (name === "Adult") {
+                var query = Age.where({
+                    AccessA: true
+                }).read().done(function (results) {
+                    for (var i = 0; i < results.length; i++) {
+                        age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
+                    }
+                }, function (err) {
+                    console.log(err);
+                });
+            } else if (name === "Senior") {
+                var query = Age.where({
+                    AccessS: true
                 }).read().done(function (results) {
                     for (var i = 0; i < results.length; i++) {
                         age_data.model.boost.push({ boost_name: results[i].Name, boost_pic: results[i].Image })
@@ -195,7 +245,6 @@
         },
         boost_sub: function (name) {
             var Age = thinkitdrinkitDataClient.getTable("Boost");
-
             var query = Age.where({
                 Name: name
             }).read().done(function (results) {

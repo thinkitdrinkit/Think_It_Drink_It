@@ -18,7 +18,7 @@
    margin-top: 210px;
    background-color: rgba(0,0,0,.6);
 }#base_pic_footer{
-   border: 2px solid #000;
+   border: 2px solid #fff;
    margin-left: 8px;
 }#flavor_header{
    margin-top: -30px;
@@ -54,4 +54,10 @@
    margin-left: 10px;
    margin-top: 47px;
    font-size: 12px;
+}#sel_btn9{
+   margin-left: 5px;
+   margin-top: 10px;
+   position: absolute;
+   background-color: #FF7C00;
+   height:60px;
 }

@@ -45,7 +45,6 @@
                 document.getElementById("flav2_div").setAttribute("hidden", true)
             }
 
-            document.getElementById("choosen_base").textContent = "Choose Your Boost (Max of 3):";
 
             document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
             document.getElementById("base_pic_footer").src = roamingSettings.values["Base_pic"];
@@ -82,7 +81,8 @@
        
 
                 if (age_data.model.the_boost_sel.length === 1) {
-
+                    document.getElementById("the_number").textContent = age_data.model.the_boost_sel.length;
+                    document.getElementById("the_num").textContent = age_data.model.the_boost_sel.length;
                     roamingSettings.values["Boost1_name"] = name;
                     roamingSettings.values["Boost1_pic"] = img;
                     roamingSettings.values["Boost1_info"] =  null;
@@ -93,6 +93,8 @@
                     document.getElementById("area_img1").removeAttribute("hidden");
                     document.getElementById("the_test");
                 } else if (age_data.model.the_boost_sel.length === 2) {
+                    document.getElementById("the_number").textContent = age_data.model.the_boost_sel.length;
+                    document.getElementById("the_num").textContent = age_data.model.the_boost_sel.length;
                     boost2Active = true;
                     roamingSettings.values["Boost2_name"] = name;
                     roamingSettings.values["Boost2_pic"] = img;
@@ -103,6 +105,8 @@
                     document.getElementById("area_img2").src = roamingSettings.values["Boost2_pic"];
                     document.getElementById("area_img2").removeAttribute("hidden");
                 } else if (age_data.model.the_boost_sel.length === 3) {
+                    document.getElementById("the_number").textContent = age_data.model.the_boost_sel.length;
+                    document.getElementById("the_num").textContent = age_data.model.the_boost_sel.length;
                     boost3Active = true;
                     roamingSettings.values["Boost3_name"] = name;
                     roamingSettings.values["Boost3_pic"] = img;
@@ -114,7 +118,7 @@
                 }
               
             } else {
-                document.getElementById("overError").textContent = " Sorry You May Only Choose 3 Boost, If You Want To Change Boost Please Click the Remove Last Button";
+                document.getElementById("overError").textContent = " Sorry, You May Only Choose 3 Boosts. If You Want To Change Boosts, Please Click the Remove Last Button";
                 document.getElementById("overError").style.color = "red";
                 document.getElementById("overError").style.fontSize = "30px";
                 document.getElementById("overError").style.marginTop = "100px";
@@ -136,7 +140,6 @@
         },
 
         release: function () {
-
             if (age_data.model.the_boost_sel.length === 1) {
                 roamingSettings.values["Boost1_name"] = "";
                 roamingSettings.values["Boost1_pic"] = "";
@@ -162,7 +165,8 @@
            
             age_data.model.the_boost_sel.pop();
             document.getElementById("overError").textContent = "";
-
+            document.getElementById("the_number").textContent = age_data.model.the_boost_sel.length;
+            document.getElementById("the_num").textContent = age_data.model.the_boost_sel.length;
             if (age_data.model.the_boost_sel.length > 0) {
                 document.getElementById("btn_right").removeAttribute("hidden");
             } else if (age_data.model.the_boost_sel.length <= 0) {
@@ -172,7 +176,7 @@
         more_info: function (clicked) {
             roamingSettings.values["Item_choosen"] = clicked;
             roamingSettings.values["Clicked_cat"] = "Boost"
-            WianJS.Navigation.navigate('pages/item_info/item_info.html');
+            WinJS.Navigation.navigate('pages/item_info/item_info.html');
             keepInfo = true;
         }
     })
