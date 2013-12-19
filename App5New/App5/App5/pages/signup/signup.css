@@ -17,9 +17,12 @@
     font-weight: 500;
 }#the_reasons{
      float: right;
-     margin-right: 300px;
+     margin-right: 500px;
      margin-top: -400px;
-}#the_reasons img{
-    float: left;
-
+}#the_reasons img {
+    margin: 5px;
+    //float: left;
+    text-align: right;
+    display: -ms-grid;
+    //position: absolute: ;
 }
