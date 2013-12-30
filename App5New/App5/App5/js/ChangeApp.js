@@ -100,6 +100,13 @@
             document.getElementById("learn_more").style.borderColor = i;
             document.getElementById("sign_up").style.borderColor = i;
             document.getElementById("main_header").style.backgroundColor = i;
+        },
+        login: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
+            document.getElementById("login_btn").style.backgroundColor = i;
+        },
+        login_home: function () {
+            document.getElementById("main_footer").style.backgroundColor = i;
         }
 
     })

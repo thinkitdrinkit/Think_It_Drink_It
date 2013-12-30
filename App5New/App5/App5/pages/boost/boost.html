@@ -5,9 +5,9 @@
     <title>boost</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
 
     <link href="boost.css" rel="stylesheet" />
     <script src="boost.js"></script>
@@ -40,9 +40,9 @@
                     <h2 id="choosen_name" class="choosen_name_class" data-win-bind="textContent: the_name"></h2>
                     <p id="choosen_price" hidden="" data-win-bind="textContent: the_price"></p>
                     <p id="choosen_info" class="choosen_info_class" data-win-bind="textContent: the_info"></p>
-                    <p id="bo_vend" hidden="" data-win-bind="textContent: bo_vend"></p>
+                    <p id="bo_vend"  hidden="" data-win-bind="textContent: bo_vend"></p>
                     <button id="info_btn3" name="sel_btn" onclick="boost_clicked.more_info(document.getElementById('choosen_name').textContent)" type="submit">More Info</button>
-                    <button id="sel_btn3" onclick="boost_clicked.clicked1( document.getElementById('choosen_name').textContent, document.getElementById('choosen_img').src, document.getElementById('choosen_price').textContent, document.getElementById('bo_vend').TextContent)" name="sel_btn2" type="submit">Choose This Boost</button>
+                    <button id="sel_btn3" onclick="boost_clicked.clicked1( document.getElementById('choosen_name').textContent, document.getElementById('choosen_img').src, document.getElementById('choosen_price').textContent, document.getElementById('bo_vend').textContent)" name="sel_btn2" type="submit">Choose This Boost</button>
                 </div>
             </div>
 
@@ -66,20 +66,21 @@
           <footer id="main_footer">
               <div id="age_div">
                   <p id="age_p">Age</p>
-                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(4)" src="#" width="80" height="80" />
+                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(4)" src="#" width="115" height="90" />
               </div>
              <div id="base_div">
                  <p id="base_p">Base</p>
-                <img id="base_pic_footer" onclick="WinJS.Navigation.back(3)" src="#" width="80" height="80" />
+                <img id="base_pic_footer" onclick="WinJS.Navigation.back(3)" src="#" width="115" height="90" />
              </div>
              <div id="flav_div">
                   <p id="flav_p"></p>
-                  <img id="flav1_pic" src="#" onclick="WinJS.Navigation.back(2)" width="80" height="80" />
+                  <img id="flav1_pic" src="#" onclick="WinJS.Navigation.back(2)" width="115" height="90" />
               </div>         
               <div id="flav2_div">
                   <p id="flav2_p">Flavor</p>
-                  <img id="flav2_pic" src="#" width="80" onclick="WinJS.Navigation.back(1)" height="80" />
+                  <img id="flav2_pic" src="#" width="115" onclick="WinJS.Navigation.back(1)" height="90" />
               </div>                      
+              <h2 id="where_you_are4">You have chosen your age, base, and a <span id="cal_co"></span> flavor. You have 1 step left.</h2>
               <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->
         </footer>
     </div>

@@ -41,6 +41,8 @@
             info_home_ages: new WinJS.Binding.List([
             ]),
             item_info: new WinJS.Binding.List([
+            ]),
+            login_user_past: new WinJS.Binding.List([
             ])
         })
     })

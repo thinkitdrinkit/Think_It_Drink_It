@@ -25,9 +25,13 @@
 
             if(roamingSettings.values["Flav_name"] === "Caloric"){
                 document.getElementById("flav_p").textContent = "Caloric";
+                document.getElementById("cal_co").textContent = "caloric";
             } else {
                 document.getElementById("flav_p").textContent = "Non-Caloric";
+                document.getElementById("cal_co").textContent = "non-caloric";
             }
+
+
 
             document.getElementById("flav_sel_header").textContent = "Choose Your Flavor:";
 

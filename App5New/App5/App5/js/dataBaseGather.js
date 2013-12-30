@@ -315,6 +315,52 @@
             }, function (err) {
                 console.log(err);
             });
+        },
+        login: function (pass, email) {
+            var Age = thinkitdrinkitDataClient.getTable("Users");
+            var appData = Windows.Storage.ApplicationData.current;
+            var roamingSettings = appData.roamingSettings;
+
+            var query = Age.where({
+                Email: email,
+                Password: pass
+            }).read().done(function (results) {
+                if (results != "") {
+                    console.log(results, "nope");
+                    roamingSettings.values["login_lName"] = results[0].LastName;
+                    roamingSettings.values["login_fName"] = results[0].FirstName;
+                    roamingSettings.values["login_email"] = results[0].Email;
+                    roamingSettings.values["login_vID"] = results[0].VendId;
+                    roamingSettings.values["login_vcode"] = results[0].VendCode;
+           
+                    roamingSettings.values["true"] = true;
+                    WinJS.Navigation.navigate('pages/login_sessions/profile/profile.html');
+                    //console.log(roamingSettings.values["login_fName"], roamingSettings.values["login_lName"], roamingSettings.values["login_vID"], roamingSettings.values["login_vcode"]);
+                } else {
+                    document.getElementById("fail").removeAttribute("hidden");
+                }
+              
+            }, function (err) {
+                console.log(err);
+                roamingSettings.values["true"] = false;
+            });
+        },
+        login_user_past: function () {
+            var appData = Windows.Storage.ApplicationData.current;
+            var roamingSettings = appData.roamingSettings;
+            var Age = thinkitdrinkitDataClient.getTable("UserOrders");
+            var query = Age.where({
+                VendID: roamingSettings.values["login_vcode"]
+            }).read().done(function (results) {
+                for (var i = 0; i < results.length; i++) {
+                    age_data.model.login_user_past.push({ AgeName: results[i].Age, AgePic: results[i].AgeImage, BaseName: results[i].Base, BasePic: results[i].BaseImage, BaseID: results[i].BaseID,BasePrice: results[i].BasePrice, Boost1Name: results[i].Boost1, Boost1Pic: results[i].Boost1Image, Boost1ID: results[i].Boost1ID,
+                        Boost1Price: results[i].Boost1Price, Boost2Name: results[i].Boost2, Boost2Pic: results[i].Boost2Image, Boost2ID: results[i].Boost2ID, Boost2Price: results[i].Boost2Price, Boost3Name: results[i].Boost3, Boost3Pic: results[i].Boost3Image, Boost3ID: results[i].Boost3ID, Boost3Price: results[i].Boost3Price,
+                        FlavName: results[i].FlavName, FlavPic: results[i].FlavImage, FlavID: results[i].FlavID, Cal: results[i].Caloric, Date: results[i].PurchaseDate, Amount: results[i].TotalPrice
+                    });
+                }
+            }, function (err) {
+                console.log(err);
+            });
         }
 
     })

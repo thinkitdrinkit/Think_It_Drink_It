@@ -14,7 +14,7 @@
             // TODO: Initialize the page here.
             design.getThanks();
             design.changeTextColor();
-            document.getElementById("thanks_h1").textContent = "Thank you for your order.";
+            document.getElementById("thanks_h1").textContent = "Thank you for your order." ;
             document.getElementById("thanks_h2").textContent = "Your order number is: " + (parseFloat(roamingSettings.values["Invoice_number"]) + 1) + ".";
 
             var query = Age.where({
@@ -45,7 +45,7 @@
         },
         clicked_no: function () {
             roamingSettings.values["I_ordered"] === "no";
-            WinJS.Navigation.navigate('pages/home/home.html')
+            WinJS.Navigation.navigate('pages/launch_page/launch_page.html')
         }
     })
 })();

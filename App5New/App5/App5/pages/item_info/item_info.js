@@ -5,6 +5,7 @@
 
     var appData = Windows.Storage.ApplicationData.current;
     var roamingSettings = appData.roamingSettings;
+    var test1 = "";
 
     WinJS.UI.Pages.define("/pages/item_info/item_info.html", {
         // This function is called whenever a user navigates to this page. It
@@ -23,8 +24,20 @@
             if (roamingSettings.values["Clicked_cat"] === "Age") {
                  document.getElementById("item_info_label").setAttribute("hidden", true);
             }
+          
             document.onload = function () {
+                
                 console.log(document.getElementById("item_info_info").innerText.replace(/eros/g, "<span>cras</span>"));
+                if (document.getElementById("item_info_info2").textContent === "") {
+                    document.getElementById("item_info_info2").setAttribute("hidden", true)
+                }
+                if (document.getElementById("item_info_info3").textContent === "") {
+                    document.getElementById("item_info_info3").setAttribute("hidden", true)
+                }
+                function test() {
+                    document.getElementById("item_info_info").style.color = "blue";
+                };
+                test1 = test();
 
             };
         },
@@ -42,4 +55,6 @@
             // TODO: Respond to changes in layout.
         }
     });
+   
+    setTimeout(test1, 5000)
 })();

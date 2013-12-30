@@ -6,9 +6,9 @@
 
     <!-- WinJS references -->
     <script src="/js/myAzure.js"></script>
-    <link href="//Mic.rosoft.WinJS.2.0.Preview/css/ui-light.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
 
     <!-- thinkitdrinkitData references -->
     <script src="/MobileServicesJavaScriptClient/MobileServices.js"></script>
@@ -23,6 +23,7 @@
     <script src="/js/removeInfo.js"></script>
     <script src="/js/ChangeApp.js"></script>
     <script src="/js/dataBaseGather.js"></script>
+    <script src="/js/auth.js"></script>
 </head>
 <body>
     <header id="main_header">
@@ -34,37 +35,49 @@
              <!-- BEGINTEMPLATE: Template code for an app bar -->
     <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{placement: 'top' }">
 
-        <button 
+        <button id="home"
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdMorePurchase',label:'Home',icon:'home',
                 section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/launch_page/launch_page.html');">
         </button>
 
-         <button 
+        <button id="profile" hidden=""
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMorePurchase',label:'profile',icon:'placeholder',
+                section:'selection',tooltip:'go back to your profile'}" onclick=" WinJS.Navigation.navigate('pages/login_sessions/profile/profile.html');">
+        </button>
+
+         <button id="fav"
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdTopMixes',label:'Most Popular Mixes',icon:'favorite',
                 section:'section',tooltip:'See The Mixes People are Loving'}">
         </button>
 
-          <button 
+          <button id="login"
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdMoreLogin',label:'Login',icon:'contact',
-                section:'selection',tooltip:'Login to your account'}">
+                section:'selection',tooltip:'Login to your account'}" onclick="WinJS.Navigation.navigate('pages/login/login.html')">
         </button>
 
-        <button 
+         <button id="logout" hidden=""
+            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-options="{id:'cmdMoreLogout',label:'Logout',icon:'contact',
+                section:'selection',tooltip:'Logout of your account'}" onclick="login.logout()">
+        </button>
+
+        <button id="signUp"
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdSignUp',label:'Sign-Up',icon:'people',
                 section:'selection',tooltip:'Join The Fun'}" onclick="WinJS.Navigation.navigate('pages/signup/signup.html')">
         </button>
 
          <button 
-            data-win-control="WinJS.UI.AppBarCommand" 
+            data-win-control="WinJS.UI.AppBarCommand" id="more_info_home"
             data-win-options="{id:'cmdMoreInfo',label:'Learn More',icon:'list',
                 section:'selection',tooltip:'Learn More'}" onclick="WinJS.Navigation.navigate('pages/info_home/info_home.html')">
         </button>
 
-        <button 
+        <button id="shop"
             data-win-control="WinJS.UI.AppBarCommand" 
             data-win-options="{id:'cmdMorePurchase',label:'Make Purchase',icon:'shop',
                 section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/home/home.html');">

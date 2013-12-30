@@ -1,0 +1,12 @@
+﻿.login section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#fail{
+    color: red;
+    position: absolute;
+    margin-top: -20px;
+}#login ul li{
+     list-style: none;
+}#login{
+    margin-left: -40px;
+}

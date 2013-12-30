@@ -7,6 +7,8 @@
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
     var Age = thinkitdrinkitDataClient.getTable("Age");
+    var appData = Windows.Storage.ApplicationData.current;
+    var roamingSettings = appData.roamingSettings;
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
@@ -18,6 +20,7 @@
                 //it accepts some colors written as a string and all in hex
                 //www.html-color-codes.info is a good website to obtain hex color values
                 design.colorChange("#FF7C00", "white");
+                roamingSettings.values["true"] = false;
                 //This is the normal(default) app color in hex #BA5EB7
 
             } else {
