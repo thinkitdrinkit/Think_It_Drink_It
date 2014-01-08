@@ -162,7 +162,7 @@
                             type: "POST",
                             url: "http://thinkitdrinkit.vendhq.com/api/register_sales",
                             headers: { "Content-type": "application/json" },
-                            password: "agave2013",
+                            //password: "agave2013",
                             data: JSON.stringify({
                                 "register_id": "5ecccd41-3cbc-11e3-a29a-bc305bf5da20",
                                 "user_name": "",
@@ -194,8 +194,6 @@
                             }),
                         }).then(function sucess(res) {
                             roamingSettings.values["Invoice_number"] = JSON.parse(res.responseText).register_sale.invoice_number;
-                            console.log(roamingSettings.values["Invoice_number"]);
-                            console.log(res.responseText);
                             roamingSettings.values["I_ordered"] = "yes";
                         }, function error(err) {
                             console.log("fail", err.responseText)
@@ -249,7 +247,7 @@
                             console.log("fail", err.responseText)
                         });
                     }
-
+                    console.log(parseFloat(roamingSettings.values["Invoice_number"]) + 1)
                     Age.insert({
                         Name: "Guest",
                         Base: roamingSettings.values["Base_name"],

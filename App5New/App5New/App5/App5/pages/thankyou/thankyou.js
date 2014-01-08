@@ -16,6 +16,8 @@
             design.changeTextColor();
             document.getElementById("thanks_h1").textContent = "Thank you for your order." ;
             document.getElementById("thanks_h2").textContent = "Your order number is: " + (parseFloat(roamingSettings.values["Invoice_number"]) + 1) + ".";
+            console.log(parseFloat(roamingSettings.values["Invoice_number"]) + 1)
+            console.log(document.getElementById("thanks_h2").textContent)
 
             var query = Age.where({
                 OrderNumber: (parseFloat(roamingSettings.values["Invoice_number"]) + 1)
