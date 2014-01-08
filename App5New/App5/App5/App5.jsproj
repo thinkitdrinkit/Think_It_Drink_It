@@ -183,6 +183,7 @@
     <Content Include="js\MobileServices.intellisense.js" />
     <Content Include="js\MobileServices.js" />
     <Content Include="js\MobileServices.min.js" />
+    <Content Include="js\MobileServices.min.js.bck" />
     <Content Include="js\MobileServices.pri" />
     <Content Include="js\myAzure.js" />
     <Content Include="js\navigator.js" />
