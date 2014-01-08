@@ -1,0 +1,19 @@
+﻿.thankyou section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#choice_btn{
+     margin-left: -20px;
+}#choice_btn li{
+  list-style: none;
+  display: inline;
+  margin: 0;
+}#choice_btn li button{
+  background-color: yellow;
+  margin: 0;
+  color: #000;  
+}#thanks_h2{
+  font-size: 40px;
+  font-weight: 700;
+}#thanks_p{
+  font-size: 40px;
+}

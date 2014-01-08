@@ -1,0 +1,25 @@
+﻿.signup section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#sign_form ul li{
+    line-height: 20px;
+    list-style: none;
+}#sign_form ul li input{
+    border-color: orange;
+    margin-bottom: 5px;
+}#sign_btn{
+    background-color: orange;
+    color: #000;
+    border-color: orange;
+    margin-top: 10px;
+}#sign_form ul li label{
+    font-size: 20px;
+    font-weight: 500;
+}#the_reasons{
+     float: right;
+     margin-right: 300px;
+     margin-top: -400px;
+}#the_reasons img{
+    float: left;
+
+}

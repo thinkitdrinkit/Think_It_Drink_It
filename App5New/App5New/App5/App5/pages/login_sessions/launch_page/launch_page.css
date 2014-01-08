@@ -1,0 +1,33 @@
+﻿.launch_page section[role=main] {
+   margin-left: 120px;
+   margin-right: 120px;
+}.the_float{
+   float: left;
+   border: 3px solid;
+   margin-right: 100px;
+   margin-left: -70px;
+   width: 450px;
+   height: 450px;
+ }.the_float img{
+   position: absolute;
+   width: 450px;
+   height: 450px;
+   z-index: -1;
+}.the_float h2{
+   background-color: rgba(0,0,0,.6);
+   color: #fff;
+   width: 450px;
+   font-weight: bold;
+   margin-top: 380px;
+   height: 70px;
+ }#launch_sel{
+   margin-top: -90px;
+}.the_float:hover{
+     cursor: pointer;
+     box-shadow:3px 3px 3px #808080;
+}#explain{
+    clear: both;
+    font-size: 50px;
+    margin-bottom: -40px;
+    margin-left: -70px;
+}
