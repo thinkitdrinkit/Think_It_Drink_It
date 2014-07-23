@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>launch_page</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="../../launch_page/launch_page.css" rel="stylesheet" />
+    <script src="launch_page.js"></script>
+</head>
+<body>
+    <div class="launch_page fragment">
+       <!-- <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to launch_page</span>
+            </h1>
+        </header>-->
+        <section id="launch_sel" aria-label="Main content" role="main">
+            <section id="make_drink" class="the_float" onclick="WinJS.Navigation.navigate('pages/login_sessions/home/home.html');">
+                <img src="http://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/createOwn.jpg" />
+                <h2>Customize Your Supplement</br>14 day supply</h2 >
+            </section>
+            <section id="learn_more" class="the_float"  onclick="WinJS.Navigation.navigate('pages/login_sessions/info_home/info_home.html');">
+                <img src="http://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/learn_more.jpg" />
+                <h2>Learn More</h2>
+            </section>
+            <section id="sign_up" class="the_float" onclick="WinJS.Navigation.navigate('pages/login_sessions/profile/profile.html');">
+                <img src="http://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/sign_up.jpg" />
+                <h2>Your Profile</h2>
+            </section>
+            <p id="explain">Welcome to the ThinkitDrinkit Consumer Experience.(Beta)</p>
+         </section>
+         <footer id="main_footer">
+                <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+         </footer>
+    </div>
+</body>
+</html>

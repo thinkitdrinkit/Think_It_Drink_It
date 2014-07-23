@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>thankyou</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="../../thankyou/thankyou.css" rel="stylesheet" />
+    <script src="thankyou.js"></script>
+</head>
+<body>
+    <div class="thankyou fragment">
+        <header aria-label="Header content" role="banner">
+            <!--<button data-win-control="WinJS.UI.BackButton"></button>-->
+            <h1 id="thanks_h1" class="titlearea win-type-ellipsis"> </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <h2 id="thanks_h2"></h2>
+            <p hidden="" id="thanks_p">Would you like to become a member?</p>
+            <ul hidden="" id="choice_btn">
+                 <li><button id="yes_btn" onclick="thanksClick.clicked_yes()">Absolutely</button></li>
+                 <li><button id="no_btn" onclick="thanksClick.clicked_no()">No, Thank You</button></li>
+            </ul>
+        </section>
+         <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

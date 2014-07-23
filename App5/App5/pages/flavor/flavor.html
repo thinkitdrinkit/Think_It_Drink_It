@@ -5,9 +5,9 @@
     <title>flavor</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
     <link href="flavor.css" rel="stylesheet" />
     <script src="flavor.js"></script>
@@ -21,9 +21,9 @@
         <section aria-label="Main content" role="main">
 
            <div id="flavor" class="flavor_class" data-win-control="WinJS.Binding.Template">
-               <div class="the_flavors">
+               <div class="the_flavors" id="the_flavor" onclick="flavor_clicked.clicked(event.srcElement.innerText);">
                    <img class="flav_pic_class" id="flav_pic" data-win-bind="src: flavor_pic" />
-                   <h2 onclick="flavor_clicked.clicked(event.srcElement.textContent)" id="flav_name" class="flav_name_class" data-win-bind="textContent: flavor_name"></h2> 
+                   <h2 id="flav_name" class="flav_name_class" data-win-bind="textContent: flavor_name"></h2> 
                </div>
            </div><!-- ends the flavor div -->
 
@@ -37,7 +37,7 @@
                     <h2 id="the_choosen_name3" hidden="" data-win-bind="textContent: info_name_flav"></h2> 
                     <img class="choosen_flav_pic_class" id="choosen_flav_pic" data-win-bind="src: info_img_flav" />
                     <p class="choosen_flav_info_class" id="choosen_flav_info" data-win-bind="textContent: the_info_flav"></p>
-                     <button id="sel_btn2" onclick="flavor_clicked.next_page_boost()" name="sel_btn2" type="submit">Select Flavor</button>
+                    <button id="sel_btn9" onclick="flavor_clicked.next_page_boost()" name="sel_btn2" type="submit">Select</button>
                 </div>
             </div><!-- ends choosen_flav div -->
 
@@ -48,9 +48,16 @@
 
         </section>
          <footer id="main_footer">
-              <img id="age_pic" src="#" width="80" height="80" />
-              <img id="base_pic" src="#" width="80" height="80" />
-           <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->
+              <div id="age_div">
+                  <p id="age_p">Age</p>
+                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(2)" src="#" width="115" height="90" />
+              </div>
+             <div id="base_div">
+                <p id="base_p">Base</p>
+                <img id="base_pic_footer" onclick="WinJS.Navigation.back(1)" src="#" width="115" height="90" />
+             </div>
+             <h2 id="where_you_are2">You have chosen your age and base. You have 3 steps left.</h2>
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
         </footer>
     </div>
 </body>

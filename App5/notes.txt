@@ -1,0 +1,2 @@
+final.js
+  has the xhr stuff that gets sent to vend

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Supplement by Sport</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="supl_sport.css" rel="stylesheet" />
+    <script src="supl_sport.js"></script>
+    <script src="/js/gatherInfo.js"></script>
+    <script src="/js/dataBaseGather.js"></script>
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="fragment homepage">
+        <header id="home_header" aria-label="Header content" role="banner">
+            <!--<h1 id="header_me" class="titlearea win-type-ellipsis"></h1>-->
+            <button data-win-control="WinJS.UI.BackButton"></button> 
+            <h1 id="choosen_sport" class="titlearea win-type-ellipsis">Choose your Sport</h1>
+        </header>
+        <section id="sport_content" aria-label="Main content" role="main">
+
+            <div class="users_sport_template" data-win-control="WinJS.Binding.Template">
+                <div id="sport_display" onclick="show_detail.items_info1(event.srcElement.innerText);">
+                    <img class="sport_bg" data-win-bind="src: sport_img" />
+                    <h2 id="sport_title" data-win-bind="textContent: sport_name"></h2>
+                </div>
+            </div><!-- ends user_age_template -->
+
+            <div id="age_template_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_home_sport.dataSource" data-win-options="{
+                    itemTemplate: select ('.users_sport_template'),
+                    selectionMode: 'none'
+                }"></div><!-- this div is populating the div above (user_age_template) -->
+
+           <!-- <div id="age_info_template" data-win-control="WinJS.Binding.Template">
+                    <img id="sel_age_pic" class="info_pic" data-win-bind="src: sport_img" />
+                    <button id="info_btn" name="sel_btn" onclick="clicked_me.more_info(document.getElementById('sel_age_name').textContent)" type="submit">Learn More</button>
+                    <button onclick=" clicked_me.next_page()" id="sel_btn" name="sel_btn" type="submit">Choose This Sport</button>
+                   <h2 id="sel_age_name" class="sel_age_name_class" data-win-bind="textContent: sport_name"></h2>
+                    <p id="info_text" data-win-bind="textContent: sport_name"></p>
+            </div>
+
+            <div id="info_template_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info.dataSource" data-win-options="{
+                itemTemplate: select ('#age_info_template'),
+                selectionMode: 'none'
+                }"></div>-->
+
+        </section>
+
+
+
+        <footer id="main_footer">
+            <h1 id="footer_company_name" class="print_charm"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

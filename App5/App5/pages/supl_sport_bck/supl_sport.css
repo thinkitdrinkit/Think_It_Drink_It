@@ -1,0 +1,68 @@
+﻿.info_home section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#info1_bases, #info1_boost, #info1_flav, #info1_age {
+    float: left;
+    width: 160px;
+    height: 160px;
+    border: 2px solid;
+}
+
+#info1_bases img, #info1_boost img, #info1_flav img, #info1_age img {
+        width: 160px;
+        height: 160px;
+        position: absolute;
+        z-index: -1;
+    }
+
+#info1_bases h2, #info1_boost h2, #info1_flav h2, #info1_age h2 {
+        font-size: 13.5px;
+        width: 155px;
+        height: 35px;
+        background-color: rgba(0,0,0,.6);
+        color: #fff;
+        font-weight: bold;
+        margin-top: 125px;
+        padding-left: 5px;
+    }
+
+#base_section, #boost_section, #flav_section, #age_section {
+    float: left;
+    margin-right: 40px;
+}
+
+#info_boost_id, #info_base_id, #info_flav_id, #info_age_id {
+    cursor: pointer;
+    width: 293px;
+    background: -ms-linear-gradient(top, #FFCB9B 0%,#FF9F4C 50%,#FFA354 61%,#FF7B00 100%); /* IE10+ */
+    color: #fff;
+    /*background: -ms-linear-gradient(top, #68afc2 0%,#77c6d8 40%,#84def4 61%,#89e7ff 100%);*/ /* IE10+ */
+    padding: 20px;
+    font-weight: 400;
+    border-top-right-radius: 80px;
+    margin-left: 4px;
+    margin-bottom: 9px;
+    box-shadow: 5px 5px 5px #FFCB9B;
+}
+
+#info_age_placement {
+    margin-left: -90px;
+}
+
+#info_age_id {
+    margin-left: -85px;
+}
+
+#info_home_header {
+    margin-top: -30px;
+    margin-right: 75px;
+}
+
+#info_boost_id:active, #info_base_id:active, #info_flav_id:active, #info_age_id:active {
+    /* box-shadow: 4px 4px 4px #e8e8e8;*/
+    background: -ms-linear-gradient(top, #FF7B00 0%,#FFA354 50%,#FF9F4C 61%,#FFCB9B 100%); /* IE10+ */
+    color: #fff;
+    /*box-sizing: border-box;*/
+}

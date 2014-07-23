@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>all_products</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="all_products.css" rel="stylesheet" />
+    <script src="all_products.js"></script>
+</head>
+<body>
+    <div class="all_products fragment">
+        <header id="all_products_header" aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span id="info_title" class="pagetitle">Welcome to all_products</span>
+            </h1>
+        </header>
+        <section id="content_main" aria-label="Main content" role="main">
+           <div id="all_info" class="all_info_class" data-win-control="WinJS.Binding.Template">
+                   <div id="all_info1" onclick="want_more.items_info1(event.srcElement.innerText)">
+                       <img class="all_info_pic_class" id="all_info_pic" data-win-bind="src: img" />
+                       <h2 id="all_info_name" class="all_info_name_class" data-win-bind="textContent: name"></h2>
+                   </div>
+               </div>
+                <div id="all_info_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: whole_cat.dataSource" data-win-options="{
+                        itemTemplate: select ('#all_info'),
+                        selectionMode: 'none'
+                    }"></div>
+        </section>
+        <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

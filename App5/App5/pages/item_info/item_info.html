@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>item_info</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="item_info.css" rel="stylesheet" />
+    <script src="item_info.js"></script>
+</head>
+<body>
+    <div class="item_info fragment">
+        <header id="item_info_header" aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 id="item_name" class="titlearea win-type-ellipsis">
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div id="item_info" class="item_info_class" data-win-control="WinJS.Binding.Template">
+                   <div id="item_info1">
+                       <img class="item_info_pic_class" id="item_info_pic" data-win-bind="src: img" />
+                       <img class="item_info_label_class" id="item_info_label" data-win-bind="src: label" />
+                       <p id="item_info_info" class="item_info_info_class" data-win-bind="textContent: info"></p>
+                       <p id="item_info_info2" class="item_info_info_class" data-win-bind="textContent: info2"></p>
+                       <p id="item_info_info3" class="item_info_info_class" data-win-bind="textContent: info3"></p>
+                   </div>
+               </div>
+            <div id="item_info_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: item_info.dataSource" data-win-options="{
+                        itemTemplate: select ('#item_info'),
+                        selectionMode: 'none',
+                    tapBehavior: 'none'
+                    }"></div>
+        </section>
+          <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

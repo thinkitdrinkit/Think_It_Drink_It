@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>signup</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+
+    <link href="signup.css" rel="stylesheet" />
+    <script src="signup.js"></script>
+</head>
+<body>
+
+    <div id="fb-root"></div>
+<script>
+    window.fbAsyncInit = function () {
+        // init the FB JS SDK
+        FB.init({
+            appId: 'YOUR_APP_ID',                        // App ID from the app dashboard
+            status: true,                                 // Check Facebook Login status
+            xfbml: true                                  // Look for social plugins on the page
+        });
+
+        // Additional initialization code such as adding Event Listeners goes here
+    };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+    <div class="signup fragment">
+        <header  id="sign_header" aria-label="Header content" role="banner">
+           <!--<button data-win-control="WinJS.UI.BackButton"></button>-->
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Please fill out the form below.</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+           <form id="sign_form" method="post">
+               <ul>
+                   <li><label for="Fname">First Name:</label></li>
+                   <li><input class="input" type="text" name="Fname" id="Fname"/></li>
+                   <li><label for="Lname">Last Name:</label></li>
+                   <li><input class="input" type="text" name="Lname" id="Lname"/></li>
+                   <li><label for="email">Email:</label></li>
+                   <li><input class="input" type="email" name="email" id="email"/></li>
+                   <li><label for="phone">Phone:</label></li>
+                   <li><input class="input" type="tel" name="phone" id="phone"/></li>
+                   <li><label for="zip">Zip:</label></li>
+                   <li><input class="input" type="number" name="zip" id="zip"/></li>
+                   <li><label for="pass">Password:</label></li>
+                   <li><input class="input" type="password" name="pass" id="pass"/></li>
+                   <li><label for="cPass">Confirm Password:</label></li>
+                   <li><input onkeyup="Clicked.CheckOnType()" type="password" name="cPass" id="cPass" /></li>
+                  <!-- <li><label for="question" id="allboxtitle" class="right_float_select">Choose and answer 2 questions:</label></li>
+                   <li><select name="question" id="box1"class="right_float_select">
+                        <option></option>
+                        <option value="What is the name of your first dog?">What is the name of your first dog?</option>
+                        <option value="What is the name of the high school that you went to?">What is the name of the high school that you went to?</option>
+                        <option value="What street that you grew up on?">What street that you grew up on?</option>
+                    </select>
+                   </li>
+                   <li>
+                       <select id="box2" name="question" class="right_float_select">
+                           <option></option>
+                           <option value="What is your favorite food?">What is your favorite food?</option>
+                           <option value="What year were you born?">What year were you born?</option>
+                           <option value="Where did you go for your first vacation?">Where did you go on your first vacation?</option>
+                       </select>
+                   </li>-->
+               </ul>
+           </form>
+           
+            <button id="sign_btn" onclick="Clicked.finalClick()">Submit</button>
+              <section id="the_reasons" >
+                  <p class="signup_info_class">
+                      Sign up, being a member is FREE, we offer discounts, email subscriptions, order history which can be used to reorder.
+                  </p> 
+                <!--<img id="signup_img1" class="signup_img_class" src="http://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/label_age.jpg"/>-->
+                 
+                 
+                 
+              </section>
+        </section>
+         <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

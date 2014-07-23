@@ -1,0 +1,69 @@
+﻿.signup section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#sign_form ul li{
+    line-height: 20px;
+    list-style: none;
+}#sign_form ul li input{
+    border-color: orange;
+    margin-bottom: 5px;
+}#sign_btn{
+    background-color: orange;
+    color: #000;
+    border-color: orange;
+    margin-top: 10px;
+    margin-left: -70px;
+}#sign_form ul li label{
+    font-size: 20px;
+    font-weight: 500;
+}#the_reasons{
+     float: right;
+     margin-right: 300px;
+     margin-top: -400px;
+}#the_reasons img{
+    float: left;
+
+}#the_reasons {
+     float: right;
+     margin-right: 450px;
+     margin-top: -450px;
+     width: 600px;
+ }.signup_img_class {
+   float:left;
+}.signup_info_class {
+    font-size: 23px;
+    
+    margin-left: 20px;
+    margin-top: 30px;
+    
+    text-indent: 30px;
+    
+}#the_reasons img {
+    height: 205px;
+    width: 315px;
+    margin: 20px;
+    float: left;
+    text-align: right;
+    display: -ms-grid;
+    border: 2px solid;
+}#sign_form{
+ margin-left: -110px;
+ margin-top: -40px;
+}#sign_header{
+     margin-right: 65px;
+     margin-top: -40px;
+}
+.right_float_select {
+    position: absolute;
+    margin-left: 320px;
+    margin-top: -440px;
+}
+#allboxtitle {
+    font-size: 10px;
+}
+#box1 {
+    margin-bottom: -50px;
+}
+#box2 {
+    margin-top: 20px;
+}

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>info_home</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="info_home.css" rel="stylesheet" />
+    <script src="info_home.js"></script>
+</head>
+<body>
+    <div class="info_home fragment">
+        <header id="info_home_header" aria-label="Header content" role="banner">
+
+            <!-- might couse app to break -->
+             <button data-win-control="WinJS.UI.BackButton"></button> 
+            <h1 id="sport_heading" class="titlearea win-type-ellipsis">
+                Learn More About Our Products
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+            <div data-win-control="SdkSample.ScenarioInput">
+                
+                <input type="url" id="urlField" />
+                <!-- This button is initially a Go button, but changes to a Stop button while the WebView control is navigating. -->
+                <button id="goOrStopButton">Go</button>
+                <!-- This progress indicator is initially hidden. It will be shown while the WebView control is navigating. -->
+                <progress id="progressRing" class="win-ring win-medium" style="visibility: hidden"></progress>
+                <br />
+                <!-- These navigation buttons are initially disabled since this sample does not start with any navigation history. They will be enabled when navigation occurs, according to the WebView control's state. -->
+                <button id="backButton" disabled="disabled">Back</button>
+                <button id="forwardButton" disabled="disabled">Forward</button>
+            </div>
+            <div data-win-control="SdkSample.ScenarioOutput" id="outputContainer">
+                <div id="scenario1_left">
+                    <x-ms-webview id="webview"></x-ms-webview>
+                </div>
+                <div id="scenario1_right">
+                    <textarea id="logArea" readonly="readonly"></textarea>
+                </div>
+            </div>
+           
+
+        </section>
+        <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

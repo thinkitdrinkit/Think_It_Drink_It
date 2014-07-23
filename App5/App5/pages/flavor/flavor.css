@@ -1,44 +1,112 @@
 ﻿.flavor section[role=main] {
-    margin-left: 120px;
+    margin-left: 110px;
     margin-right: 120px;
-}.flav_pic_class{
+}
+
+.flav_pic_class {
     width: 300px;
     height: 250px;
     position: absolute;
     z-index: -1;
-}.the_flavors{
+}
+
+.the_flavors {
     width: 300px;
     height: 250px;
-    border: 2px solid #c8060c;
-}.flav_name_class{
+    border: 3px solid #c8060c;
+}
+
+.flav_name_class {
     width: auto;
-    height: 80px;
+    height: 35px;
     color: #fff;
-    font-weight: 800; 
+    font-weight: 800;
     margin-top: 210px;
     background-color: rgba(0,0,0,.6);
- }#base_pic{
-     border: 2px solid #000;
- }#flavor_header{
-       margin-top: -30px;
-  }#flavor_placement{
-     margin-top: -15px;
-     margin-left: -100px;
-}#choosen_flav_pic{
-   float: left;
-   width: 250px;
-   height: 200px;
-   background-color: #fff;
-   border: 2px solid #c8060c;
-   margin-right: 10px;
-}#choosen_flav_placement{
-      margin-left: -100px;
-      margin-top: -120px;
-      width: auto;
-      height: 210px;
-}.the_choosen_flav{
-   width: 700px;
-   background-color: #000;
-   height: 250px;
-   margin-top: -15px;
+    font-size: 20px;
+    padding-left: 2px;
+    padding-top: 5px;
+}
+
+#base_pic_footer {
+    border: 2px solid #fff;
+    margin-left: 15px;
+}
+
+#flavor_header {
+    margin-top: -30px;
+}
+
+#flavor_placement {
+    margin-top: -15px;
+    margin-left: -100px;
+}
+
+#choosen_flav_pic {
+    float: left;
+    width: 250px;
+    height: 200px;
+    background-color: #fff;
+    border: 2px solid #c8060c;
+    margin-right: 10px;
+}
+
+#choosen_flav_placement {
+    margin-top: -130px;
+    margin-left: -100px;
+    width: 710px;
+    /*height: 210px;*/
+}
+
+.the_choosen_flav {
+    width: 700px;
+    background-color: #fff;
+    height: 220px;
+    margin-top: 25px;
+}
+
+#base_div {
+    float: left;
+}
+
+#base_p {
+    position: absolute;
+    color: #fff;
+    height: 33px;
+    background-color: rgba(0,0,0,.6);
+    margin-left: 17px;
+    font-weight: 700;
+    font-size: 10px;
+    width: 112px;
+    margin-top: 57px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+#sel_btn9 {
+    margin-top: 108px;
+    position: absolute;
+    background-color: #FF7C00;
+    height: 60px;
+    width: 220px;
+    font-size: 20px;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 3px #b3b3b3, inset -2px -2px 3px 0px rgba(0,0,0,0.2), inset 2px 2px 3px 0px rgba(0,0,0,0.2);
+    border: 0;
+}
+
+#where_you_are2 {
+    margin-left: 280px;
+    margin-top: 30px;
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+/*Milo this actually works to fix glictch when too many products are hit at the same time, it DOES NOT SHOW UP IN THE CSS DOM eXPLORER DUNNO WHY BUT IT WORKS!!*/
+#choosen_flav_placement .win-viewport {
+    overflow-x: hidden;
+}
+#contenthost {
+    margin-top: 0;
 }

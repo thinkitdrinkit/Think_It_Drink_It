@@ -1,0 +1,44 @@
+﻿.login section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#fail {
+    color: red;
+    position: absolute;
+    margin-top: -20px;
+}
+
+#login1 ul li {
+    list-style: none;
+}
+
+#login1 {
+    margin-left: -40px;
+}
+
+#notMember {
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#login_images {
+    float: right;
+    margin-right: 600px;
+    margin-top: -300px;
+}
+
+#login_images img {
+        border: 2px solid;
+    }
+
+#login_image_last {
+    margin-left: -257px;
+    margin-top: 270px;
+    position: absolute;
+}
+#login_btn {
+    height: 60px;
+}

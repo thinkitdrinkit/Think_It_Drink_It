@@ -1,5 +1,5 @@
 ﻿(function () {
-
+    "use strict";
     WinJS.Namespace.define("remove", {
 
         pop_list: function (list) {

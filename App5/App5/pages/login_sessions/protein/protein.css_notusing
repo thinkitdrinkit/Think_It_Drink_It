@@ -1,0 +1,22 @@
+﻿.protein section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#age_pic {
+    border: 2px solid #fff;
+    margin-left: 15px;
+    float: left;
+}
+
+.moveRight {
+    margin-right: -200px;
+}
+
+#editForm ul li {
+    list-style: none;
+}
+
+#editForm ul {
+    list-style: none;
+}

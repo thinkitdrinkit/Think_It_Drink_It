@@ -5,25 +5,79 @@
     <title>App5</title>
 
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
+    <script src="/js/myAzure.js"></script>
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <!-- thinkitdrinkitData references -->
+    <!--<script src="/MobileServicesJavaScriptClient/MobileServices.js"></script>-->
+    <script src="/services/mobile services/thinkitdrinkitData/service.js"></script>
+
 
     <!-- App5 references -->
     <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/jquery.js"></script>
     <script src="/js/default.js"></script>
     <script src="/js/navigator.js"></script> 
     <script src="/js/gatherInfo.js"></script>   
     <script src="/js/removeInfo.js"></script>
-    <script src="/js/dataStore.js"></script>
+    <script src="/js/ChangeApp.js"></script>
+    <script src="/js/dataBaseGather.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/app_bar.js"></script>
 </head>
 <body>
-    <header id="main_header">
-        <h1 id="company_name">ThinkitDrinkit</h1>
+    <div id="main_header" class="print_charm">
+        <h1 id="company_name1">Swipe down for Navigation</h1>
+        <!--<p id="float_rightid" onclick="WinJS.Navigation.navigate('pages/login/login.html');">Already A Member? Click here to login.</p>-->
+    </div>
+    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/launch_page/launch_page.html'}"></div>
+    
+             <!-- BEGINTEMPLATE: Template code for an app bar -->
+    <header id="main_header_nav" class="print_charm">
+        <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{layout: 'custom', placement: 'top', sticky: 'true' }">
+            <h1 id="company_name">Start Customizing</h1>
+            <button id="home"
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmdHome',label:'Home',icon:'home',
+                section:'global',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/launch_page/launch_page.html');"></button>
+
+            <button id="profile" hidden=""
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmdProfile',label:'profile',icon:'placeholder',
+                section:'selection',tooltip:'go back to your profile'}" onclick="WinJS.Navigation.navigate('pages/login_sessions/profile/profile.html');"></button>
+
+            <!--<button id="fav"
+                data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'cmdTopMixes',label:'Most Popular Mixes',icon:'favorite',
+            section:'selection',tooltip:'See The Mixes People are Loving'}"></button>-->
+            <!--<button id="login"
+                data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'cmdMoreLogin',label:'Login',icon:'contact',
+            section:'selection',tooltip:'Login to your account'}" onclick="WinJS.Navigation.navigate('pages/login/login.html')"></button>-->
+
+            <button id="logout" hidden=""
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmdLogout',label:'Logout',icon:'contact',
+                section:'selection',tooltip:'Logout of your account'}" onclick="login.logout()"></button>
+
+            <!--<button id="signUp"
+                data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'cmdSignUp',label:'Sign-Up',icon:'people',
+            section:'selection',tooltip:'Join The Fun'}" onclick="WinJS.Navigation.navigate('pages/signup/signup.html')"></button>-->
+
+            <button data-win-control="WinJS.UI.AppBarCommand" id="more_info_home"
+                    data-win-options="{id:'cmdMoreInfo',label:'Learn More',icon:'list',
+                section:'selection',tooltip:'Learn More'}" onclick="WinJS.Navigation.navigate('pages/info_home/info_home.html')"></button>
+
+            <button id="shop"
+                    data-win-control="WinJS.UI.AppBarCommand"
+                    data-win-options="{id:'cmdMorePurchase',label:'Make Purchase',icon:'shop',
+                section:'selection',tooltip:'Ready to buy?'}" onclick=" WinJS.Navigation.navigate('pages/home/home.html');"></button>
+
+        </div>
     </header>
-    <div id="contenthost" data-win-control="Application.PageControlNavigator" data-win-options="{home: '/pages/home/home.html'}"></div>
-    <!-- <div id="appbar" data-win-control="WinJS.UI.AppBar">
-        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'cmd', label:'Command', icon:'placeholder'}" type="button"></button>
-    </div> -->
+    <!-- ENDTEMPLATE -->
 </body>
 </html>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>final</title>
+  
+    <!-- WinJS references -->
+   <link rel="stylesheet" href="print.css" type="text/css" media="print" /> 
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="final.css" rel="stylesheet" />
+    <script src="final.js"></script>
+</head>
+<body>
+    <div class="final fragment">
+        <header id="final_header" aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">Please Review Your 14 day supply and Hit Submit.</h1>      
+        </header>
+        <section aria-label="Main content" role="main">
+
+            <div id="float_right" class="final_list_class" data-win-control="WinJS.Binding.Template">
+
+                <div class="print" id="my_base">
+                    <h2 class="print" id="my_base_name">your base!</h2>
+                    <h2 id="base_price"></h2>
+                    <img class="print" src="#" id="my_base_img_final" width="75" height="65" />
+                    <img class="print" src="#" id="sel_base_pic_final" />
+                </div>
+
+                <div id="the_name">
+                    <div id="the_name_total1">
+                        Your Total: <span class="print" id="product_total"></span>
+                    </div>
+                    <div id="the_name_total2">Your Tax: <span id="tax"></span></div>
+                    <div id="the_name_total3">Your Grand Total: <span id="total"></span></div>
+
+                </div>
+
+                <div id="my_picked_grouped">
+                    <div class="print" id="my_flav">
+                        <h2 class="print" id="my_flav_name">your flav!</h2>
+                        <h2>$0</h2>
+                        <img class="print" src="#" id="my_flav_img_final" width="75" height="65" />
+                        <img class="print" src="#" id="my_flav_label_img_final" />
+                    </div>
+                    <ul id="your_boost">
+                        <li>
+                            <div class="print" id="my_boost1">
+                                <h2 class="print" id="my_boost1_name">your first boost!</h2>
+                                <h2 id="boost_price1"></h2>
+                                <img class="print" src="#" id="my_boost1_img_final" width="75" height="65" />
+                                <img class="print" src="#" id="my_boost1_img_label_final" />
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="print" hidden="" id="my_boost2">
+                                <h2 class="print" id="my_boost2_name">your second boost!</h2>
+                                <h2 id="boost_price2"></h2>
+                                <img class="print" src="#" id="my_boost2_img_final" width="75" height="65" />
+                                <img class="print" src="#" id="my_boost2_img_label_final" />
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="print" hidden="" id="my_boost3">
+                                <h2 class="print" id="my_boost3_name">your last boost!</h2>
+                                <h2 id="boost_price3"></h2>
+                                <img class="print" src="#" id="my_boost3_img_final" width="75" height="65" />
+                                <img class="print" src="#" id="my_boost3_img_label_final" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>    
+            
+            <div data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: boost.dataSource" data-win-options="{
+                    itemTemplate: select ('.final_list_class'),
+                    selectionMode: 'single',
+                    tapBehavior: 'toggleSelect'
+                }"></div>
+                 
+        </section>
+         <footer id="main_footer">
+
+             <div id="submit_wrap">
+                 <form id="cus_name" method="post">
+                     <ul>
+                         <li><label for="Cname">Add your name to track the order.</label></li>
+                         <li><input class="input" type="text" name="Cname" id="Cname" /></li>
+                         <!--<li><label for="Lname"></label></li>
+                         <li><input class="input" type="text" name="Lname" id="Lname" /></li>-->
+                     </ul>
+                 </form>
+                 <div id="the_name_sub"><button id="sub_button" class="sel_look_btn" onclick="FinalClick.saveName(), FinalClick.clicked(), FinalClick.grayOut()" type="submit">SUBMIT</button></div>
+                 <!--<div id="the_name_con"><button id="con_button" class="sel_look_btn" onclick="FinalClick.makeAnother()" type="submit">Cont. Shopping</button></div>-->
+             </div>
+
+
+
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

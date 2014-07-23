@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>flav_sel</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="../../flav_sel/flav_sel.css" rel="stylesheet" />
+    <script src="flav_sel.js"></script>
+</head>
+<body>
+    <div class="flav_sel fragment">
+        <header id="the_header_sel_flav" aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 id="flav_sel_header"class="titlearea win-type-ellipsis">Choose your Flavor.</h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+            <div id="flav_sel" class="flav_sel_class" data-win-control="WinJS.Binding.Template">
+                <div id="the_flav_sel" onclick="flav_sel_clicked.clicked(event.srcElement.innerText);">
+                    <img class="flav_sel_pic_class" id="flav_sel_pic" data-win-bind="src:  sel_flav_pic" />
+                    <h2 id="flav_sel_name" class="flac_sel_name_class" data-win-bind="textContent: sel_flav_name" ></h2>
+                </div>
+            </div><!-- ends flav_sel div -->
+
+            <div id="flav_sel_placement" class="flav_sel_placement_class" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: flavor1.dataSource" data-win-options="{
+                    itemTemplate: select ('#flav_sel'),
+                    selectionMode: 'none'
+                }"></div>
+
+            <div id="flav_sel_sel" class="flav_sel_sel_class" data-win-control="WinJS.Binding.Template">
+                <div id="the_flav_sel_sel">
+                    <img class="flav_sel_sel_pic_class" id="flav_sel_sel_pic" data-win-bind="src:   sel_label" />
+                    <img id="hidden_flav_pic" hidden="" data-win-bind="src: sel_pic" />
+                    <button id="info_btn4" name="sel_btn" onclick="flav_sel_clicked.more_info(document.getElementById('flav_sel_sel_name').textContent)" type="submit">Learn More</button>
+                    <button id="sel_btn4" onclick="flav_sel_clicked.next_page_boost()" name="sel_btn2" type="submit">Choose your flavor</button>
+                    <h2 id="flav_sel_sel_name" class="flac_sel_sel_name_class" data-win-bind="textContent: sel_name" ></h2>
+                    <p id="flav_sel_sel_info" class="flac_sel_sel_info_class" data-win-bind="textContent: sel_info" ></p>
+                    <p id="f_vend" hidden="" data-win-bind="textContent: f_vend"></p>
+                </div>
+            </div><!-- ends flav_sel div -->
+
+            <div id="flav_sel_sel_placement" class="flav_sel_sel_placement_class" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_page4.dataSource" data-win-options="{
+                    itemTemplate: select ('.flav_sel_sel_class'),
+                    selectionMode: 'none'
+                }"></div>
+
+        </section>
+         <footer id="main_footer">
+              <div id="age_div">
+                  <p id="age_p">Age</p>
+                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(3)" src="#" width="115" height="90" />
+              </div>
+             <div id="base_div">
+                 <p id="base_p">Base</p>
+                <img id="base_pic_footer" onclick="WinJS.Navigation.back(2)" src="#" width="115" height="90" />
+             </div>
+             <div id="flav_div">
+                  <p id="flav_p"></p>
+                  <img id="flav1_pic" src="#" onclick="WinJS.Navigation.back(1)" width="115" height="90" />
+              </div>         
+              <h2 id="where_you_are3">You have chosen your age, base, and <span id="cal_co"></span>. You have 2 steps left.</h2>
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

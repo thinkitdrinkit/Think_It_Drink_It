@@ -2,9 +2,10 @@
 // http://go.microsoft.com/fwlink/?LinkId=232511
 (function () {
     "use strict";
-    var _ageNum4 = "";
-    var _baseNum4 = "";
-    var _flavNum4 = "";
+    var appData = Windows.Storage.ApplicationData.current;
+    var roamingSettings = appData.roamingSettings;
+    var Age = thinkitdrinkitDataClient.getTable("Flavor");
+    var keepInfo = true;
 
     WinJS.UI.Pages.define("/pages/flav_sel/flav_sel.html", {
         // This function is called whenever a user navigates to this page. It
@@ -12,34 +13,42 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             WinJS.Binding.processAll(element, age_data.model);
+            design.getFlavSel();
+            design.changeTextColor();
+
+            document.getElementById("age_p").textContent = "Age: " + roamingSettings.values["Age_name"];
+            document.getElementById("base_p").textContent = "Base: " + roamingSettings.values["Base_name"];
            
+
             //the following are getting the information for the appropriate data and then changing it to numbers
             //and then storing that information inside var
-            _ageNum4 = age_data.get_age_num(get_set.set_age("name"));
-            _baseNum4 = age_data.get_base_num(get_set.set_base("name"));
-            _flavNum4 = age_data.get_flav_num(get_set.set_flav("name"));
 
-            document.getElementById("flav_sel_header").textContent = "Choose Your Flavor:";
+            if(roamingSettings.values["Flav_name"] === "Caloric"){
+                document.getElementById("flav_p").textContent = "Caloric";
+                document.getElementById("cal_co").textContent = "caloric";
+            } else {
+                document.getElementById("flav_p").textContent = "Non-Caloric";
+                document.getElementById("cal_co").textContent = "non-caloric";
+            }
 
-            document.getElementById("age_pic").src = get_set.set_age("pic");
-            document.getElementById("base_pic").src = get_set.set_base("pic");
-            document.getElementById("flav1_pic").src = get_set.set_flav("pic");
 
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var user_flav_sel = JSON.parse(xhr.responseText);
-                user_flav_sel.forEach(function (user_flav_sels) {
-                    for (var i = 0; i < user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors.length; i++) {
-                        age_data.model.flavor1.push({ sel_flav_name: user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[i].name, sel_flav_pic: user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[i].image })
-                        console.log(user_flav_sels[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[i].name);
-                    }
-                });
-            });
+
+            document.getElementById("flav_sel_header").textContent = "Choose Your " + roamingSettings.values["Flav_name"] + " Flavor for " + roamingSettings.values["Age_name"]+"s:";
+
+            document.getElementById("age_pic").src = roamingSettings.values["Age_pic"];
+            document.getElementById("base_pic_footer").src = roamingSettings.values["Base_pic"];
+            document.getElementById("flav1_pic").src = roamingSettings.values["Flav_pic"];
+
+            server.flav_sel(roamingSettings.values["Flav_name"]);
         },
 
         unload: function () {
             // TODO: Respond to navigations away from this page.
-            remove.pop_list(age_data.model.flavor1);
-            remove.pop_list(age_data.model.info_page4);
+                remove.pop_list(age_data.model.flavor1);
+            
+            if (!keepInfo) {
+                remove.pop_list(age_data.model.info_page4);
+            }
         },
 
         updateLayout: function (element) {
@@ -52,25 +61,29 @@
     WinJS.Namespace.define("flav_sel_clicked", {
       
         clicked: function (flav1) {
-            console.log(flav1);
-
-            the_choosenFlav = flav1;
+            var updated_flav1 = flav1.replace(/^\s+/, '').replace(/\s+$/, '');
 
             remove.pop_list(age_data.model.info_page4);
-
-            var the_flav_num = age_data.get_flav_sel_num(flav1);
-
-            WinJS.xhr({ url: "resource/data.txt" }).then(function (xhr) {
-                var sel_the_flav = JSON.parse(xhr.responseText);
-                sel_the_flav.forEach(function (sel_the_flavs) {
-                    age_data.model.info_page4.push({ sel_name: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].name, sel_label: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].label, sel_info: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].info, sel_pic: sel_the_flavs[_ageNum4].Base[_baseNum4].flavor[_flavNum4].flavors[the_flav_num].image });
-                });
-            });
+            the_choosenFlav = updated_flav1;
+            server.flav_sel_sub(updated_flav1);
         },
 
         next_page_boost: function () {
             WinJS.Navigation.navigate('pages/boost/boost.html')
-            get_set.get_sel_flav(the_choosenFlav, document.getElementById("hidden_flav_pic").src, null, null);
+
+            roamingSettings.values["FlavSel_name"] = the_choosenFlav;
+            roamingSettings.values["FlavSel_pic"] = document.getElementById("hidden_flav_pic").src;
+            roamingSettings.values["FlavSel_vend"] = document.getElementById("f_vend").textContent;
+            roamingSettings.values["FlavSel_info"] = null;
+            roamingSettings.values["FlavSel_price"] = null;
+            roamingSettings.values["FlavSel_label"] = document.getElementById("flav_sel_sel_pic").src;
+            keepInfo = false;
+        },
+        more_info: function (clicked) {
+            roamingSettings.values["Item_choosen"] = clicked;
+            roamingSettings.values["Clicked_cat"] = "Flavor";
+            WinJS.Navigation.navigate('pages/item_info/item_info.html');
+            keepInfo = true;
         }
 
     })

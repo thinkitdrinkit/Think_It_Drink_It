@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>launch_page</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="profile.css" rel="stylesheet" />
+    <link href="../../launch_page/launch_page.css" rel="stylesheet" />
+    <script src="profile.js"></script>
+</head>
+<body onload="reorder.sanitize()">
+    <div class="launch_page fragment">
+       <header id="header_profile" aria-label="Header content" role="banner">
+        </header>
+        <section id="launch_sel" aria-label="Main content" role="main">
+           <section id="profile_info">
+               <h3 class="hideClicked" id="fullName">This Is a placeholder!!!</h3>
+               <p class="hideClicked" id="email34">This is a placeholder!!!</p>
+               <div hidden="" id='addedForm'>
+                   <form id='editForm'>
+                       <ul>
+                           <li id="list1L">First Name:</li>
+                           <li id='list1'><input id='fname' type='text'/></li>
+                           <li id="list2L">Last Name:</li>
+                           <li id='list2'><input id='lname' type='text'/></li>
+                           <li id="list3L">Email:</li>
+                           <li id='list3'><input id='editEmail' type='email'/></li>
+                           <li id="moveRightL">Phone:</li>
+                           <li id='moveRight'><input id='phone' type='text'/></li>
+                           <li id="moveRight1L">Zip:</li>
+                           <li id='moveRight1'><input id='zip' type='text' /></li>
+                       </ul>
+                   </form>
+                   <button id='editSub_btn' onclick="reorder.onsub()" type='submit'>Submit</button>
+               </div>
+               <button class="hideClicked" id="edit_btn" onclick="reorder.edit()">Edit Profile</button>
+           </section>
+            <section id="loyal">
+                <div id="tier_one">
+                    <img id="tier_one_img" src="http://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/tenPercentOff.jpg" width="120" height="120"/>
+                    <p id="tier_one_p">10% off</p>
+                </div>
+                 <div id="tier_two">
+                    <img src="#" width="120" height="120"/>
+                    <p id="tier_two_p">15% off</p>
+                </div>
+                 <div id="tier_three">
+                    <img src="#" width="120" height="120"/>
+                    <p id="tier_three_p">25% off</p>
+                </div>
+            </section>
+            <section>
+                <button id="make_purchase" class="hideClicked" onclick="WinJS.Navigation.navigate('pages/login_sessions/home/home.html');">Make your own drink</button>
+            </section>
+           <h1 id="recent_header">Your Recent Orders:</h1>
+             <div id="previous_purchases" class="previous_purchases_class" data-win-control="WinJS.Binding.Template">
+                 <div class="purchased" id="purchased1">
+                 <h2 hidden="" id="ageName" data-win-bind="textContent: AgeName"></h2>
+
+               <div id="the_previous_purchases_bases">
+                   <img class="previous_purchases_base_pic_class" id="previous_purchases_base_pic" data-win-bind="src: BasePic" />
+                   <h2 id="previous_purchases_base_name" class="previous_purchases_base_name_class" data-win-bind="textContent: BaseName"></h2>
+                   <h2 id="previous_purchases_base_price" hidden="" class="previous_purchases_base_price_class" data-win-bind="textContent: BasePrice"></h2>
+                   <h2 id="previous_purchases_base_id" hidden="" class="previous_purchases_base_id_class" data-win-bind="textContent: BaseID"></h2>
+               </div>
+               
+               <div id="the_previous_purchases_boost1">
+                   <img class="previous_purchases_boost1_pic_class" id="previous_purchases_boost1_pic" data-win-bind="src: Boost1Pic" />
+                   <h2 id="previous_purchases_boost1_name" class="previous_purchases_boost1_name_class" data-win-bind="textContent: Boost1Name"></h2>
+                   <h2 id="previous_purchases_boost1_price" hidden="" class="previous_purchases_boost1_price_class" data-win-bind="textContent: Boost1Price"></h2>
+                   <h2 id="previous_purchases_boost1_id" hidden="" class="previous_purchases_boost1_id_class" data-win-bind="textContent: Boost1ID"></h2>
+               </div>
+
+               <div id="the_previous_purchases_boost2">
+                   <img class="previous_purchases_boost2_pic_class" id="previous_purchases_boost2_pic" data-win-bind="src: Boost2Pic" />
+                   <h2 id="previous_purchases_boost2_name" class="previous_purchases_boost2_name_class" data-win-bind="textContent: Boost2Name"></h2>
+                   <h2 id="previous_purchases_boost2_price" hidden="" class="previous_purchases_boost2_price_class" data-win-bind="textContent: Boost2Price"></h2>
+                   <h2 id="previous_purchases_boost2_id" hidden="" class="previous_purchases_boost2_id_class" data-win-bind="textContent: Boost2ID"></h2>
+               </div>
+
+               <div id="the_previous_purchases_boost3">
+                   <img class="previous_purchases_boost3_pic_class" id="previous_purchases_boost3_pic" data-win-bind="src: Boost3Pic" />
+                   <h2 id="previous_purchases_boost3_name" class="previous_purchases_boost3_name_class" data-win-bind="textContent: Boost3Name"></h2>
+                   <h2 id="previous_purchases_boost3_price" hidden="" class="previous_purchases_boost3_price_class" data-win-bind="textContent: Boost3Price"></h2>
+                   <h2 id="previous_purchases_boost3_id" hidden="" class="previous_purchases_boost3_id_class" data-win-bind="textContent: Boost3ID"></h2>
+               </div>
+
+               <div id="the_previous_purchases_flav">
+                   <img class="previous_purchases_flav_pic_class" id="previous_purchases_flav_pic" data-win-bind="src: FlavPic" />
+                   <h2 id="previous_purchases_flav_name" class="previous_purchases_flav_name_class" data-win-bind="textContent: FlavName"></h2>
+                   <h2 id="previous_purchases_flav_id" hidden="" class="previous_purchases_flav_id_class" data-win-bind="textContent: FlavID"></h2>
+                   <h2 id="previous_purchases_caloric_id" class="previous_purchases_caloric_id_class" data-win-bind="textContent: Cal"></h2>
+               </div>
+
+               <div id="theInfo">
+                    <p id="pruchaseDate">Date Purchased: <span id="theDate"data-win-bind="textContent: Date"></span></p>
+                    <p id="pruchaseTotal">Amount Paid: <span id="theAmount"data-win-bind="textContent: Amount"></span></p>
+                    <p id="orderNumber">Order Number: <span id="orderNum"data-win-bind="textContent: Order"></span></p>
+               </div>
+            <button id="buyAgain_btn" onclick="reorder.submit(event.currentTarget.parentNode.querySelector('#previous_purchases_base_price').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_base_pic').src,
+                event.currentTarget.parentNode.querySelector('#previous_purchases_base_name').innerText, 
+                event.currentTarget.parentNode.querySelector('#previous_purchases_base_id').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost1_price').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost1_pic').src,
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost1_name').innerText, 
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost1_id').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost2_price').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost2_pic').src,
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost2_name').innerText, 
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost2_id').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost3_price').innerText, event.currentTarget.parentNode.querySelector('#previous_purchases_boost3_pic').src,
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost3_name').innerText, 
+                event.currentTarget.parentNode.querySelector('#previous_purchases_boost3_id').innerText,event.currentTarget.parentNode.querySelector('#previous_purchases_flav_pic').src,
+                event.currentTarget.parentNode.querySelector('#previous_purchases_flav_name').innerText, 
+                event.currentTarget.parentNode.querySelector('#previous_purchases_flav_id').innerText)">Purchase Now</button>
+            </div>
+           </div>
+            <div id="purchase_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource:  login_user_past.dataSource" data-win-options="{
+                    itemTemplate: select ('.previous_purchases_class'),
+                    selectionMode: 'none'
+                }"></div>
+         
+        </section>
+         <footer id="main_footer">
+                <h1 id="footer_company_name"></h1>
+         </footer>
+    </div>
+</body>
+</html>

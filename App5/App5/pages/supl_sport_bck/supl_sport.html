@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>info_home</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="info_home.css" rel="stylesheet" />
+    <script src="info_home.js"></script>
+</head>
+<body>
+    <div class="info_home fragment">
+        <header id="info_home_header" aria-label="Header content" role="banner">
+            <!-- <button data-win-control="WinJS.UI.BackButton"></button> -->
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Learn More About Our Products</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+            <section id="age_section">
+                <h1 id="info_age_id" onclick="want_more.allProducts(event.srcElement.textContent)">The Ages:</h1>
+               <div id="info_age" class="info_age_class" data-win-control="WinJS.Binding.Template">
+                   <div id="info1_age" onclick="want_more.items_info(event.srcElement.innerText, document.getElementById('info_age_id').textContent)">
+                       <img class="info_age_pic_class" id="info_age_pic" data-win-bind="src: age_img" />
+                       <h2 id="info_age_name" class="info_age_name_class" data-win-bind="textContent: age_name"></h2>
+                   </div>
+               </div>
+                <div id="info_age_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_home_ages.dataSource" data-win-options="{
+                        itemTemplate: select ('#info_age'),
+                        selectionMode: 'none'
+                    }"></div>
+                </section>
+
+            <section id="base_section">
+                <h1 id="info_base_id" onclick="want_more.allProducts(event.srcElement.textContent)">The Bases:</h1>
+               <div id="info_bases" class="info_bases_class" data-win-control="WinJS.Binding.Template">
+                   <div id="info1_bases" onclick="want_more.items_info(event.srcElement.innerText, document.getElementById('info_base_id').textContent)">
+                       <img class="info_base_pic_class" id="info_base_pic" data-win-bind="src: base_img" />
+                       <h2 id="info_base_name" class="info_base_name_class" data-win-bind="textContent: base_name"></h2>
+                   </div>
+               </div>
+                <div id="info_bases_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_home_bases.dataSource" data-win-options="{
+                        itemTemplate: select ('#info_bases'),
+                        selectionMode: 'none'
+                    }"></div>
+                </section>
+
+             <section id="boost_section">
+                <h1 id="info_boost_id" onclick="want_more.allProducts(event.srcElement.textContent)">The Boost:</h1>
+               <div id="info_boost" class="info_boost_class" data-win-control="WinJS.Binding.Template">
+                   <div id="info1_boost" onclick="want_more.items_info(event.srcElement.innerText, document.getElementById('info_boost_id').textContent)">
+                       <img class="info_boost_pic_class" id="info_boost_pic" data-win-bind="src: boost_img" />
+                       <h2 id="info_boost_name" class="info_boost_name_class" data-win-bind="textContent: boost_name"></h2>
+                   </div>
+               </div>
+                <div id="info_boost_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_home_boost.dataSource" data-win-options="{
+                        itemTemplate: select ('#info_boost'),
+                        selectionMode: 'none'
+                    }"></div> 
+                </section>
+
+            
+             <section id="flav_section">
+                <h1 id="info_flav_id" onclick="want_more.allProducts(event.srcElement.textContent)">The Flavors:</h1>
+               <div id="info_flav" class="info_flav_class" data-win-control="WinJS.Binding.Template">
+                   <div id="info1_flav" onclick="want_more.items_info(event.srcElement.innerText, document.getElementById('info_flav_id').textContent)">
+                       <img class="info_boost_pic_class" id="info_flav_pic" data-win-bind="src: flav_img" />
+                       <h2 id="info_flav_name" class="info_flav_name_class" data-win-bind="textContent: flav_name"></h2>
+                   </div>
+               </div>
+                <div id="info_flav_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_home_flav.dataSource" data-win-options="{
+                        itemTemplate: select ('#info_flav'),
+                        selectionMode: 'none'
+                    }"></div> 
+                </section>
+        </section>
+        <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

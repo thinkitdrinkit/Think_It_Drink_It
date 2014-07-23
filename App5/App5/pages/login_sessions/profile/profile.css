@@ -1,0 +1,215 @@
+﻿#header_profile {
+    margin-right: 50px;
+    margin-top: -20px;
+}
+
+#profile_info {
+    width: 250px;
+    height: 200px;
+    border: 2px solid #000;
+    margin-left: -90px;
+    position: absolute;
+    color: #000;
+    box-shadow: -3px 3px 5px 1px #d1cfcf;
+}
+
+#fullName {
+    margin-left: 8px;
+    margin-top: 8px;
+    font-size: 18px;
+}
+
+#edit_btn {
+    margin-left: 8px;
+    margin-top: 10px;
+}
+
+#email34 {
+    margin-left: 8px;
+    margin-top: 3px;
+    font-size: 15px;
+}
+
+#past_purchases {
+    margin-top: 180px;
+    margin-left: -90px;
+}
+
+.purchased {
+    width: 700px;
+    height: 280px;
+    border: 2px solid #000;
+    margin-top: 10px;
+}
+
+.purchase {
+    float: left;
+    margin-left: 10px;
+}
+
+#the_previous_purchases_bases {
+    border: 2px solid;
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+    #the_previous_purchases_bases img {
+        position: absolute;
+        z-index: -1;
+        width: 250px;
+        height: 250px;
+    }
+
+    #the_previous_purchases_bases h2 {
+        width: auto;
+        height: 40px;
+        color: #fff;
+        font-weight: 800;
+        margin-top: 210px;
+        background-color: rgba(0,0,0,.6);
+        font-size: 18px;
+    }
+
+#the_previous_purchases_boost1, #the_previous_purchases_boost2, #the_previous_purchases_boost3 {
+    float: left;
+    width: 130px;
+    height: 130px;
+    border: 2px solid;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+    #the_previous_purchases_boost1 img, #the_previous_purchases_boost2 img, #the_previous_purchases_boost3 img {
+        width: 130px;
+        height: 130px;
+        position: absolute;
+        z-index: -1;
+    }
+
+#purchase_placement {
+    margin-left: -100px;
+    margin-top: 250px;
+    height: 320px;
+}
+
+#the_previous_purchases_boost1 h2, #the_previous_purchases_boost2 h2, #the_previous_purchases_boost3 h2 {
+    width: auto;
+    height: 30px;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 100px;
+    background-color: rgba(0,0,0,.6);
+    font-size: 13px;
+}
+
+#recent_header {
+    margin-left: -95px;
+    margin-top: 220px;
+    position: absolute;
+    font-size: 30px;
+}
+
+#buyAgain_btn {
+    float: right;
+    margin-top: 200px;
+    margin-left: -120px;
+    position: absolute;
+}
+
+#the_previous_purchases_flav {
+    width: 80px;
+    height: 80px;
+    border: 2px solid;
+    margin-top: 15px;
+    margin-right: 350px;
+    float: right;
+}
+
+    #the_previous_purchases_flav img {
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    #the_previous_purchases_flav h2 {
+        width: auto;
+        height: 30px;
+        color: #fff;
+        font-weight: 400;
+        margin-top: 50px;
+        background-color: rgba(0,0,0,.6);
+        font-size: 10px;
+    }
+
+#theInfo {
+    position: absolute;
+    float: right;
+    margin-left: 355px;
+    margin-top: 175px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 5px;
+}
+
+#loyal {
+    position: absolute;
+    float: right;
+    margin-left: 200px;
+    margin-top: 15px;
+}
+
+#tier_one img, tier_two img, #tier_three img {
+    position: absolute;
+    z-index: -1;
+    width: 120px;
+    height: 120px;
+}
+
+#tier_one, #tier_two, #tier_three {
+    float: left;
+    margin-left: 20px;
+    border: 2px solid;
+    width: 120px;
+    height: 120px;
+    /*background-color: rgba(0,0,0,.8);*/
+}
+
+.clickedTier:hover {
+    cursor: pointer;
+}
+
+#tier_one p, #tier_three p {
+    background-color: rgba(0,0,0,.6);
+    margin-top: 100px;
+    color: #fff;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+#tier_two_p {
+    background-color: rgba(0,0,0,.6);
+    margin-top: -24px;
+    color: #fff;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+#make_purchase {
+    position: absolute;
+    float: right;
+    margin-left: 915px;
+    margin-top: 35px;
+    background-color: #ffa500;
+    color: white;
+    border-color: #ffa500;
+    padding: 30px;
+    font-size: 30px;
+}
+#purchase_placement {
+    overflow-x: visible;
+}
+

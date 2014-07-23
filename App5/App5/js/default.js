@@ -6,12 +6,25 @@
     var app = WinJS.Application;
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
+    var Age = thinkitdrinkitDataClient.getTable("Age");
+    var appData = Windows.Storage.ApplicationData.current;
+    var roamingSettings = appData.roamingSettings;
 
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
                 // TODO: This application has been newly launched. Initialize
                 // your application here.
+
+                //this changes the theme color of th entire app
+                //it accepts some colors written as a string and all in hex
+                //www.html-color-codes.info is a good website to obtain hex color values
+                design.colorChange("#FF7C00", "white");
+                roamingSettings.values["true"] = false;
+                //This is the normal(default) app color in hex #BA5EB7
+
+                
+
             } else {
                 // TODO: This application has been reactivated from suspension.
                 // Restore application state here.
@@ -38,6 +51,12 @@
         // suspended, call args.setPromise().
         app.sessionState.history = nav.history;
     };
-
     app.start();
+
+
+
+
+
+
+
 })();

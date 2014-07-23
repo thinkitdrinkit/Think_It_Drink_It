@@ -1,47 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-
-  <Identity
-    Name="e3f10fc1-365d-4d2e-b488-7e61baad9bf4"
-    Version="1.0.0.0"
-    Publisher="CN=Anthony" />
-
+  <Identity Name="e3f10fc1-365d-4d2e-b488-7e61baad9bf4" Version="1.0.0.16" Publisher="CN=Anthony" />
   <Properties>
     <DisplayName>App5</DisplayName>
-    <PublisherDisplayName>Anthony</PublisherDisplayName>
+    <PublisherDisplayName>Anthony &amp; Milo</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.3.0</OSMinVersion>
     <OSMaxVersionTested>6.3.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application 
-      Id="App"
-      StartPage="default.html">
-
-      <m2:VisualElements
-        DisplayName="App5"
-        Description="App5"
-        ForegroundText="light"
-        BackgroundColor="#464646"
-        Square150x150Logo="images\Logo.png"
-        Square30x30Logo="images\SmallLogo.png">
-
-        <m2:SplashScreen Image="images\splashscreen.png" />
-
+    <Application Id="App" StartPage="default.html">
+      <m2:VisualElements DisplayName="ThinkitDrinkit" Description="ThinkitDrinkit" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\logo_avatar.png" Square30x30Logo="images\SmallLogo.png">
+        <m2:SplashScreen Image="images\splash_screen_logo.png" BackgroundColor="#FF7C00" />
       </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.printTaskSettings" />
+      </Extensions>
+      <ApplicationContentUriRules>
+        <Rule Match="https://thinkitdrinkit.azure-mobile.net/client/MobileServices.Web-1.0.0.min.js" Type="include" />
+      </ApplicationContentUriRules>
     </Application>
   </Applications>
-
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
 </Package>

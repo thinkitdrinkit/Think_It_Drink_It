@@ -1,0 +1,28 @@
+﻿body {
+   /*visibility: hidden;*/
+   margin: 0;
+   width: 1200px;
+   height: 1200px;  
+}.print{
+   visibility: visible;
+ }#the_name{
+   float: right;
+   margin: 0;
+   position: absolute;
+   margin-left: 780px;
+   font-size: 15px;
+   font-weight: bold;
+}#find_name{
+   margin: 0;
+   float: left;
+   position: absolute;
+   margin-bottom: -300px;
+}float_right{
+   float: right;
+}@page{
+    margin: 10%;
+    width: 1200px;
+    height: 1200px;  
+}#final_header{
+    visibility: hidden;
+ }

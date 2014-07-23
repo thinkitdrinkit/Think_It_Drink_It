@@ -28,7 +28,7 @@
 
         .fragment header[role=banner] .titlearea {
             -ms-grid-column: 6;
-            margin-top: 37px;
+            margin-top: 41px;
             margin-left: -1490px;
         }
 
@@ -38,28 +38,126 @@
 
     .fragment section[role=main] {
         -ms-grid-row: 2;
+        /*margin-top: 70px;*/
         height: 100%;
-        width: 100%;
-    }body{
-         background-color: #000;
-     }#main_header{
-          width: auto;
-          height: 110px;
-          background-color: #c8060c;
-          padding-top: 10px;
-      }footer{
-           width: auto;
-          height: 110px;
-          background-color: #c8060c;
-          margin-top: 670px;
-          padding-top: 10px;
-       }#company_name{
-            margin-left: 20px;
-            font-weight: bolder;
-            font-size: 80px;
-}#footer_company_name{
-             float: right;
-             margin-right: 20px;
-             font-weight: bolder;
-             font-size: 50px;
- }
+        width: 93%;
+    }
+
+
+body {
+    background-color: #fff;
+    /*Milo added the mstouch none, it disables multy touch -ms-touch-action: none; DID NOT WORK*/
+    touch-action: none;
+}
+
+#main_header {
+    width: auto;
+    height: 110px;
+    background-color: #FF7C00;
+    padding-top: 10px;
+    /*margin-top: -30px;*/
+}
+#main_header_nav {
+    width: auto;
+    height: 110px;
+    background-color: #c8060c;
+    padding-top: 10px;
+}
+footer {
+    width: auto;
+    height: 110px;
+    background-color: #c8060c;
+    margin-top: 668px;
+    padding-top: 10px;
+}
+
+#company_name {
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 60px;
+    font-family: Arial;
+    color: rgb(255, 255, 255);
+}
+
+#company_name1 {
+    margin-top: 15px;
+    margin-left: 35px;
+    font-size: 60px;
+    font-family: Arial;
+    color: rgb(255, 255, 255);
+}
+
+#footer_company_name {
+    float: right;
+    margin-right: 20px;
+    font-weight: bolder;
+    font-size: 50px;
+    //background-image: url();
+}
+
+#float_rightid {
+    float: right;
+    margin-right: 60px;
+    color: rgb(255, 255, 255);
+    margin-top: -50px;
+    font-size: 18px;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+#appBar {
+    text-align: right;
+    font-size: 0px;
+    min-height: 110px;
+    background-color: #ff7c00;
+    color: rgb(255, 255, 255); 
+/*milo the padding bellow is there to fix a glitch with be inline with the non appBar header*/
+    padding-top: 10px;
+}
+
+#company_name {
+    /*milo added this so appBar can be on the right*/
+    float: left;
+}
+.win-commandicon, .win-commandimage, .win-label, .win-label{
+    color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+#footer_company_name {
+    width: 306px;
+    height: 50px;
+    float: right;
+    background-image: url(../../images/logo_footer.png);
+    margin-top: 20px;
+    /*background: no-repeat;*/
+}
+
+.win-listview > .win-viewport {
+    -ms-overflow-style: scrollbar;
+    -ms-scrollbar-base-color: ActiveBorder;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+h1, .win-type-xx-large {
+    font-size: 38pt;
+    font-weight: 200;
+    letter-spacing: 0px;
+    line-height: 1.1429;
+}
+
+.article {
+    background: white;
+    color: black;
+    float: left;
+    /*padding: 10pt 10pt 10pt 10pt;*/
+    position: relative;
+    text-align: justify;
+    border-color:#808080;
+    border-style:dashed;
+    border-width:2px;
+    cursor:text;
+    -ms-user-select:element; 
+}

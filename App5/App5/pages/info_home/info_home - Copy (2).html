@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>info_home</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="info_home.css" rel="stylesheet" />
+    <script src="info_home.js"></script>
+</head>
+<body>
+    <div class="info_home fragment">
+        <header id="info_home_header" aria-label="Header content" role="banner">
+
+            <!-- might couse app to break -->
+             <button data-win-control="WinJS.UI.BackButton"></button> 
+            <h1 id="sport_heading" class="titlearea win-type-ellipsis">
+                Learn More About Our Products
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+            <progress id="progressRing" class="win-ring win-medium" style="visibility: hidden"></progress>
+            <div id="webviewNavigationButtons">
+                <button id="backButton" disabled>Back</button>
+                <button id="forwardButton" disabled>Forward</button>
+            </div>
+            <x-ms-webview id="webview_learn" onload="inner_site_browsing(event.srcElement.textContent);"></x-ms-webview>
+
+           
+
+        </section>
+        <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

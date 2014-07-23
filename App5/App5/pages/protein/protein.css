@@ -1,0 +1,11 @@
+﻿.protein section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#age_pic{
+     border: 2px solid #fff;
+   margin-left: 15px;
+   float: left;
+}
+ #protein_header{
+   margin-top: -30px;
+}

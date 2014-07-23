@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <title>final</title>
-
+  
     <!-- WinJS references -->
-    <link href="//Microsoft.WinJS.2.0.Preview/css/ui-dark.css" rel="stylesheet" />
-    <script src="//Microsoft.WinJS.2.0.Preview/js/base.js"></script>
-    <script src="//Microsoft.WinJS.2.0.Preview/js/ui.js"></script>
+   <link rel="stylesheet" href="print.css" type="text/css" media="print" /> 
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
     <link href="final.css" rel="stylesheet" />
     <script src="final.js"></script>
@@ -16,74 +17,142 @@
     <div class="final fragment">
         <header id="final_header" aria-label="Header content" role="banner">
             <button data-win-control="WinJS.UI.BackButton"></button>
-            <h1 class="titlearea win-type-ellipsis">Please Enter Your Name, Review Your Order, and Hit Submit.</h1>
+            <h1 class="titlearea win-type-ellipsis">Please Review Your 14 day supply and Hit Submit.</h1>      
         </header>
         <section aria-label="Main content" role="main">
+
+           
+
+            <div id="final_entire">
+
+                <div id="section1">
+                    <div class="print" id="my_base">
+                        <h2 class="print" id="my_base_name">your base!</h2>
+                        <h2 id="base_price"></h2>
+                        <img class="print" src="#" id="my_base_img_final" width="75" height="65" />
+                        <img class="print" src="#" id="sel_base_pic_final" />
+                    </div>
+                    <div class="print" id="my_flav">
+                        <h2 class="print" id="my_flav_name">your flav!</h2>
+                        <h2>$0</h2>
+                        <img class="print" src="#" id="my_flav_img_final" width="75" height="65" />
+                        <img class="print" src="#" id="my_flav_label_img_final" />
+                    </div>
+                </div>
+
+                <div id="scrollable">
+                    <div id="scrollable_boost">
+                        <ul id="your_boost">
+                            <li>
+                                <div class="print" id="my_boost1">
+                                    <h2 class="print" id="my_boost1_name">your first boost!</h2>
+                                    <h2 id="boost_price1"></h2>
+                                    <img class="print" src="#" id="my_boost1_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost1_img_label_final" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="print" hidden="" id="my_boost2">
+                                    <h2 class="print" id="my_boost2_name">your second boost!</h2>
+                                    <h2 id="boost_price2"></h2>
+                                    <img class="print" src="#" id="my_boost2_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost2_img_label_final" />
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="print" hidden="" id="my_boost3">
+                                    <h2 class="print" id="my_boost3_name">your third boost!</h2>
+                                    <h2 id="boost_price3"></h2>
+                                    <img class="print" src="#" id="my_boost3_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost3_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost4">
+                                    <h2 class="print" id="my_boost4_name">your fourth boost!</h2>
+                                    <h2 id="boost_price4"></h2>
+                                    <img class="print" src="#" id="my_boost4_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost4_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost5">
+                                    <h2 class="print" id="my_boost5_name">your fifth boost!</h2>
+                                    <h2 id="boost_price5"></h2>
+                                    <img class="print" src="#" id="my_boost5_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost5_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost6">
+                                    <h2 class="print" id="my_boost6_name">your sixth boost!</h2>
+                                    <h2 id="boost_price6"></h2>
+                                    <img class="print" src="#" id="my_boost6_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost6_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost7">
+                                    <h2 class="print" id="my_boost7_name">your seventh boost!</h2>
+                                    <h2 id="boost_price7"></h2>
+                                    <img class="print" src="#" id="my_boost7_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost7_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost8">
+                                    <h2 class="print" id="my_boost8_name">your eight boost!</h2>
+                                    <h2 id="boost_price8"></h2>
+                                    <img class="print" src="#" id="my_boost8_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost8_img_label_final" />
+                                </div>
+                            </li>
+                            <li>
+                                <div class="print" hidden="" id="my_boost9">
+                                    <h2 class="print" id="my_boost9_name">your nineth boost!</h2>
+                                    <h2 id="boost_price9"></h2>
+                                    <img class="print" src="#" id="my_boost9_img_final" width="75" height="65" />
+                                    <img class="print" src="#" id="my_boost9_img_label_final" />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                <div id="the_name">
+                    <div id="the_name_total1">
+                        Your Total: <span class="print" id="product_total"></span>
+                    </div>
+                    <div id="the_name_total2">Your Tax: <span id="tax"></span></div>
+                    <div id="the_name_total3">Your Grand Total: <span id="total"></span></div>
+
+                </div>
+
+          
             
-            <div id="my_base">
-                <img src="#" id="my_base_img" width="210" height="210"/>
-                <h2 id="my_base_name">your base!</h2>
-            </div>
-
-            <div id="my_flav">
-                <img src="#" id="my_flav_img" width="100" height="100"/>
-                <h2 id="my_flav_name">your flav!</h2>
-            </div>
-
-             <ul id="your_boost">
-
-               <li><div id="my_boost1">
-                    <img src="#" id="my_boost1_img" width="100" height="100"/>
-                    <h2 id="my_boost1_name">your first boost!</h2>
-                </div></li>
-
-               <li><div hidden="" id="my_boost2">
-                    <img src="#" id="my_boost2_img" width="100" height="100"/>
-                    <h2 id="my_boost2_name">your second boost!</h2>
-                </div></li>
-
-                <li><div hidden="" id="my_boost3">
-                    <img src="#" id="my_boost3_img" width="100" height="100"/>
-                    <h2 id="my_boost3_name">your last boost!</h2>
-                </div></li>
-
-            </ul>
-
-            <form action="mailto: anthony@thinkitdrink.com" enctype="text/plain" method="post" id="find_name">
-                <ul>              
-                    <li><label for="first_name">First Name:</label></li>
-                    <li><input type="text" name="first_name" id="first_name" /></li>
-                    <li><label for="last_name">Last Name:</label></li>
-                    <li><input type="text" name="last_name" id="last_name" /></li>
-                                  
-                 <ul id="the_name">
-                    <li><label for="base_price" id="price_base">Base Price</label></li>
-                    <li><input type="text" name="base_price" id="base_price" /></li>
-                    <li><label for="boost_price1" id="price1_boost">First Boost Price</label></li>
-                    <li><input name="boost_price1" type="text" id="boost_price1" /></li>
-                    <li><label hidden=""  for="boost_price2" id="price2_boost">Second Boost Price</label></li>
-                    <li><input hidden=""  name="boost_price2" type="text" id="boost_price2" /></li>
-                    <li><label hidden=""  for="boost_price3" id="price3_boost">Third Boost Price</label></li>
-                    <li><input hidden=""  name="boost_price3" type="text" id="boost_price3" /></li> 
-                    <li><label for="total" id="the_total">Your Total:</label></li>
-                    <li><input name="total" type="text" id="total" /></li>  
-                    <li><input type="submit" name="sub_btn" id="sub_btn"/></li>
-                     </ul>                       
-                </ul>
-            </form>
-
-             
+                 
         </section>
          <footer id="main_footer">
-              <img id="age_pic" src="#" width="80" height="80" />
-              <img id="base_pic" src="#" width="80" height="80" />
-              <img id="flav1_pic" src="#" width="80" height="80" />
-              <img id="flav2_pic" src="#" width="80" height="80" />
 
-              <img id="boost_pic1" src="#" width="80" height="80" />
-              <img id="boost_pic2" hidden="" src="#" width="80" height="80" />
-              <img id="boost_pic3" hidden="" src="#" width="80" height="80" />
-           <h1 id="footer_company_name">ThinkitDrinkit</h1><!-- this is being styled in the default.js folder -->
+             <div id="submit_wrap">
+                 <form id="cus_name" method="post">
+                     <ul>
+                         <li><label for="Cname">Add your name to track the order.</label></li>
+                         <li><input class="input" type="text" name="Cname" id="Cname" /></li>
+                         <!--<li><label for="Lname"></label></li>
+                         <li><input class="input" type="text" name="Lname" id="Lname" /></li>-->
+                     </ul>
+                 </form>
+                 <div id="the_name_sub"><button id="sub_button" class="sel_look_btn" onclick="FinalClick.saveName(), FinalClick.clicked(), FinalClick.grayOut()" type="submit">SUBMIT</button></div>
+                 <!--<div id="the_name_con"><button id="con_button" class="sel_look_btn" onclick="FinalClick.makeAnother()" type="submit">Cont. Shopping</button></div>-->
+             </div>
+
+
+
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
         </footer>
     </div>
 </body>

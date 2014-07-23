@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>boost</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="../../boost/boost.css" rel="stylesheet" />    
+    <script src="boost.js"></script>
+</head>
+<body>
+    <div class="boost fragment">
+        <header id="boost_header" aria-label="Header content" role="banner">          
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis" id="choosen_base">Choose Your <span id="theBoostAge"></span> Boost (You Have Choosen <span id="the_num">0</span> of up to 3 boosts).</h1>
+             <p class="titlearea win-type-ellipsis" id="overError"></p>
+        </header>
+        <section aria-label="Main content" role="main" data-win-options="{selectionMode: 'multi',
+                    tapBehavior: 'toggleSelect'}">
+
+            <div id="boost_list" class="boost_list_class" data-win-control="WinJS.Binding.Template">
+                <div id="boost_list_id" class="the_boost_list" onclick="boost_clicked.clicked(event.srcElement.innerText);">
+                    <img class="boost_bg_img_class" id="boost_bg_img" data-win-bind="src: boost_pic" />
+                    <h2 id="boost_name" class="boost_name_class" data-win-bind="textContent: boost_name"></h2>
+                </div>
+            </div>
+
+            <div id="boost_list_placement" class="boost_placement_class" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: boost.dataSource" data-win-options="{
+                    itemTemplate: select ('.boost_list_class'),
+                    selectionMode: 'none'
+                }"></div>
+
+            <div id="choosen_boost_info" class="choosen_boost_info_class" data-win-control="WinJS.Binding.Template">
+                <div class="the_choosen_boost">
+                    <img id="choosen_bg_img" class="choosen_bg_img_class" data-win-bind="src: the_label" />
+                    <img id="choosen_img" hidden="" class="choosen_img_class" data-win-bind="src: the_pic" />
+                    <button id="info_btn3" name="sel_btn" onclick="boost_clicked.more_info(document.getElementById('choosen_name').textContent)" type="submit">More Info</button>
+                    <button id="sel_btn3" onclick="boost_clicked.clicked1( document.getElementById('choosen_name').textContent, document.getElementById('choosen_img').src, document.getElementById('choosen_price').textContent, document.getElementById('bo_vend').textContent)" name="sel_btn2" type="submit">Choose This Boost</button>
+                    <h2 id="choosen_name" class="choosen_name_class" data-win-bind="textContent: the_name"></h2>
+                    <p id="choosen_price" hidden="" data-win-bind="textContent: the_price"></p>
+                    <p id="choosen_info" class="choosen_info_class" data-win-bind="textContent: the_info"></p>
+                    <p id="bo_vend" hidden="" data-win-bind="textContent: bo_vend"></p>
+                </div>
+            </div>
+
+            <div id="choosen_boost_info_placement" class="choosen_boost_info_placement_class" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: info_page5.dataSource" data-win-options="{
+                    itemTemplate: select ('.choosen_boost_info_class'),
+                    selectionMode: 'none'
+                }"></div>
+
+            <div id="the_test">
+                <div hidden="" id="boost1_div">
+                    <img src="#" hidden="" width="150" height="124" id="area_img1" class="area_img_class" />
+                    <p id="div_boost1_name"></p>
+                </div>
+                <div id="boost2_div" hidden="">
+                    <img src="#" hidden="" width="150" height="124" id="area_img2" class="area_img_class" />
+                    <p id="div_boost2_name"></p>
+                </div>
+                <div hidden="" id="boost3_div">
+                    <img src="#" hidden="" width="150" height="124" id="area_img3" class="area_img_class" />
+                    <p id="div_boost3_name"></p>
+                </div>
+
+            </div>
+
+            <div id="btn_right" hidden="">
+
+                <button onclick="boost_clicked.release()" id="del_btn10" name="del_btn10" type="reset">Remove Last</button>
+                <button id="sel_btn10" class="sel_look_btn" onclick=" WinJS.Navigation.navigate('pages/login_sessions/final/final.html')" name="sel_btn10" type="submit">CHECKOUT</button>
+                <p style="font-size: 20px" id="hidden_p">You have choosen <span id="the_number"></span> of up to 3 boosts.</p>
+            </div>
+        </section>
+          <footer id="main_footer">
+              <div id="age_div">
+                  <p id="age_p">Age</p>
+                <img id="age_pic" alt="This is a test"  onclick="WinJS.Navigation.back(4)" src="#" width="115" height="90" />
+              </div>
+             <div id="base_div">
+                 <p id="base_p">Base</p>
+                <img id="base_pic_footer" onclick="WinJS.Navigation.back(3)" src="#" width="115" height="90" />
+             </div>
+             <div id="flav_div">
+                  <p id="flav_p"></p>
+                  <img id="flav1_pic" src="#" onclick="WinJS.Navigation.back(2)" width="115" height="90" />
+              </div>         
+              <div id="flav2_div">
+                  <p id="flav2_p">Flavor</p>
+                  <img id="flav2_pic" src="#" width="115" onclick="WinJS.Navigation.back(1)" height="90" />
+              </div>                      
+              <h2 id="where_you_are4">You have chosen your age, base, and a <span id="cal_co"></span> flavor. You have 1 step left.</h2>
+              <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

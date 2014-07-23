@@ -1,0 +1,117 @@
+﻿.base section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+#age_pic {
+    border: 2px solid #fff;
+    margin-left: 15px;
+    float: left;
+}
+
+.base_pic_class {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+    margin-right: 10px;
+}
+
+#bases_placement {
+    margin-top: -15px;
+    margin-left: -100px;
+}
+
+#base_header {
+    margin-top: -30px;
+}
+
+#base_name {
+    width: auto;
+    height: 40px;
+    color: #fff;
+    font-weight: 800;
+    margin-top: 210px;
+    background-color: rgba(0,0,0,.6);
+    font-size: 20px;
+}
+
+#the_bases {
+    width: 300px;
+    height: 250px;
+    border: 3px solid #c8060c;
+}
+
+#choosen_age {
+    margin-right: 20px;
+    position: relative;
+}
+
+.sel_base_pic_class {
+    float: left;
+    width: 250px;
+    height: auto;
+    background-color: #fff;
+    border: 2px solid #c8060c;
+    margin-right: 10px;
+}
+
+#sel_bases_placement {
+    margin-top: -120px;
+    margin-left: -100px;
+    width: auto;
+    height: 210px;
+}
+
+#info_btn2 {
+    height: 60px;
+    margin-top: 128px;
+    position: absolute;
+    margin-left: 146px;
+    font-size: 11px;
+}
+#sel_btn2 {
+   /*margin-left: 5px;*/
+   margin-top: 128px;
+   position: absolute;
+   background-color: #FF7C00;
+   height:60px;
+   /*margin-left: 20px;*/
+}
+
+#the_sel_bases {
+    width: 700px;
+    background-color: #fff;
+    height: 200px;
+}
+
+#choosen_age {
+    position: relative;
+}
+
+#age_p {
+    position: absolute;
+    color: #fff;
+    font-weight: 700;
+    height: 38px;
+    background-color: rgba(0,0,0,.6);
+    width: 105px;
+    margin-left: 17px;
+    margin-top: 52px;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+#sel_base_name {
+    font-weight: bold;
+}
+
+#where_you_are {
+    margin-left: 140px;
+    margin-top: 30px;
+    position: absolute;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}

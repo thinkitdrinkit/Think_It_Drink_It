@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>login</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="login.css" rel="stylesheet" />
+    <script src="login.js"></script>
+</head>
+<body>
+    <div class="login fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Login Below:</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <h2 hidden="" id="fail">Sorry, the email address or password you've entered is incorrect.</h2>
+            <form id="login1" method="post">
+                <ul>
+                    <li><label for="email">Email:</label></li>
+                    <li><input id="email" name="email" type="email" /></li>
+                    <li><label for="pass">Password:</label></li>
+                    <li><input id="pass" name="pass" type="password" /></li>
+                </ul>
+            </form>
+            <button id="login_btn" type="submit" onclick="thelogin.login()" >LOGIN</button>
+            <p id="notMember" onclick="WinJS.Navigation.navigate('pages/signup/signup.html')">Not a member? Sign-up today!</p>
+            <section id="login_images">
+                <!--<img id="login_image_first" src="#" width="250" height="250" />
+                <img id="login_image_last" src="#" width="250" height="250" />-->
+            </section>
+        </section>
+         <footer id="main_footer">
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

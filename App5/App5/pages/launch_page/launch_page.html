@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>launch_page</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="launch_page.css" rel="stylesheet" />
+    <script src="launch_page.js"></script>
+</head>
+<body>
+    <div class="launch_page fragment">
+       <!-- <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Welcome to launch_page</span>
+            </h1>
+        </header>-->
+        <section id="launch_sel" aria-label="Main content" role="main">
+            <section id="make_drink" class="the_float" onclick="WinJS.Navigation.navigate('pages/home/home.html');">
+                <img src="https://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/createOwn.jpg" />
+                <h2>Customize Your Supplement</br>14 day supply</h2 >
+            </section>
+            <section id="learn_more" class="the_float"  onclick="WinJS.Navigation.navigate('pages/info_home/info_home.html'), cat_clicked.clicked2(document.getElementById('learn_more_title').textContent);">
+                <img src="https://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/learn_more.jpg"/>
+                <h2 id="learn_more_title">Learn How to Customize</h2>
+            </section>
+            <section id="supl_sport" class="the_float" onclick="WinJS.Navigation.navigate('pages/supl_sport/supl_sport.html'), cat_clicked.clicked(document.getElementById('supl_sport_name').textContent);">
+                <img src="https://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/supplement_by_sport.jpg" />
+                <h2 id="supl_sport_name">Customize for your Sport</h2>
+            </section>
+            <!--<section id="sign_up" class="the_float" onclick="WinJS.Navigation.navigate('pages/signup/signup.html');">
+                <img src="https://thinkitdrinkit.blob.core.windows.net/thinkitdrinkitappimages/sign_up.jpg" />
+                <h2>Join Us</h2>
+            </section>-->
+            <p id="explain">Welcome to the ThinkitDrinkit Consumer Experience.</p>
+         </section>
+         <footer id="main_footer">
+                <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+         </footer>
+    </div>
+</body>
+</html>

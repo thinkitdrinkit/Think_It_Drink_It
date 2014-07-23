@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>protein</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="../../protein/protein.css" rel="stylesheet" />
+    <script src="protein.js"></script>
+</head>
+<body>
+    <div class="protein fragment">
+        <header id="protein_header" aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 id="choosen_age" class="titlearea win-type-ellipsis">
+                Welcome to logedin protein base
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+               <div id="bases" class="bases_class" data-win-control="WinJS.Binding.Template">
+               <div id="the_bases" onclick="protein_clicked.clicked(event.srcElement.innerText)" >
+               <img class="base_pic_class" id="base_pic" data-win-bind="src: b_pic" />
+               <h2 id="base_name" class="base_name_class" data-win-bind="textContent: b_name"></h2>
+               </div>
+           </div>
+            <div id="bases_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource: the_protein.dataSource" data-win-options="{
+                    itemTemplate: select ('.bases_class'),
+                    selectionMode: 'none'
+                }"></div>
+
+             <div id="bases_sel" class="bases_sel_class" data-win-control="WinJS.Binding.Template">
+               <div id="the_sel_bases">
+                   <img id="choosen_base_carry" hidden="" data-win-bind="src: the_pic" />
+                   <p id="base_price" hidden="" data-win-bind="textContent: base_price"></p>
+                   <img class="sel_base_pic_class" id="sel_base_pic" data-win-bind="src: the_img" />
+                   <button id="info_btn2" name="sel_btn" onclick="base_clicked.more_info(document.getElementById('sel_base_name').textContent)" type="submit">Learn More</button>
+                   <button id="sel_btn2" onclick="protein_clicked.next_page_flavor()" name="sel_btn2" type="submit">Choose This Flav</button>
+                   <h2 id="sel_base_name" class="sel_base_name_class" data-win-bind="textContent: the_name"></h2>
+                   <p id="sel_base_info" class="sel_base_info_class" data-win-bind="textContent: the_info"></p>
+                   <p id="p_vend" hidden="" data-win-bind="textContent: p_vend"></p>
+               </div>
+           </div>
+            <div id="sel_bases_placement" data-win-control="WinJS.UI.ListView" data-win-bind="winControl.itemDataSource:  protein_info.dataSource" data-win-options="{
+                    itemTemplate: select ('.bases_sel_class'),
+                    selectionMode: 'none'
+                }"></div>
+        </section>
+        <footer id="main_footer">
+            <div id="age_div">
+                <p id="age_p">Age</p>
+                <img id="age_pic" alt="This is a test" onclick="WinJS.Navigation.back(2)" src="#" width="115" height="90" />
+              </div>
+           <h1 id="footer_company_name"></h1><!-- this is being styled in the default.js folder -->
+        </footer>
+    </div>
+</body>
+</html>

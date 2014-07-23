@@ -1,0 +1,79 @@
+﻿.homepage section[role=main] {
+    margin-left: 120px;
+    margin-right: 120px;
+}#home_content{
+     margin-left: 20px;
+     color: #000;
+     font-size: 30px;
+     margin-top: -100px;
+ }.age_bg{
+     position: absolute;
+     width: 300px;
+     height: 289px;
+     margin-top: 0px;
+     z-index: -1;
+}#age_display{
+     width: 300px;
+     height: 289px;
+     border: 3px solid  #c8060c;
+}#user_age{ 
+    width: 296px;
+    background-color: rgba(0,0,0,.6);
+    margin-left: 0px;
+    height: 40px;
+    margin-top: 244.5px;
+    color: #fff;
+    font-size: 50px;
+    padding: 2px;
+    font-weight: 800;
+    font-size: 20px;
+}#info_display{
+    width: 800px;
+    height: 540px;
+    margin-top: -200px;
+    background-color: #000;
+    border-top: 1px solid rgba(194, 191, 191, 0.54);
+}#info_text{
+    width: auto;
+    height: 40px;
+    color: #000;
+    font-weight: 500; 
+    margin-left: 210px;
+}.info_pic{
+    float: left;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border: 2px solid #c8060c;
+}#info_template_placement{
+    margin-top: -90px;
+    width: auto;
+    height: 220px;
+}#age_info_template{
+    background-color: #fff;
+    border: 2px solid #c8060c;
+ }
+#info_btn {
+    height: 60px;
+    margin-top: 128px;
+    position: absolute;
+    margin-left: 142px;
+    font-size: 11px;
+}
+#sel_btn {
+   /*margin-left: 5px;*/
+   margin-top: 128px;
+   position: absolute;
+   background-color: #FF7C00;
+   height:60px;
+   /*margin-left: 20px;*/
+}
+#sel_age_name{
+   margin-bottom: 0;
+   font-weight: bold;
+   padding-left: 100px;
+}#info_text{
+   font-size: 14px;
+}#sel_age_pic{
+     margin-right: 5px;
+ }

@@ -1,5 +1,8 @@
-﻿(function () {
+﻿//This file is currently inactive, the data is instead being stored using local Storage
+//Will use a modified version of this file in the future
 
+/*(function () {
+   
     var _ageName = "";
     var _agePic = "";
     var _ageInfo = "";
@@ -163,4 +166,4 @@
         }
     })
 
-})()
+})()*/
